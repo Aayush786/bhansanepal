@@ -156,7 +156,7 @@ export default function RecipeDetail() {
               <span className="text-brand-600">👨‍🍳</span> {t('instructions')}
             </h2>
             <div className="space-y-6">
-              {recipe.steps.map((step, idx) => {
+              {(language === 'np' && recipe.nepaliSteps ? recipe.nepaliSteps : recipe.steps).map((step, idx) => {
                 const isChecked = checkedSteps.has(idx);
                 return (
                   <div 
