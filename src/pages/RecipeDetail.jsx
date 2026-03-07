@@ -1,4 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { useLanguage } from '../utils/LanguageContext';
 import { mockRecipes } from '../data/mockRecipes';
 import { ArrowLeft, Clock, BarChart, MapPin, CheckCircle2, Lightbulb, ShoppingCart, MessageSquare, PlayCircle, Star } from 'lucide-react';
 import { useState } from 'react';
@@ -6,6 +8,7 @@ import { useState } from 'react';
 export default function RecipeDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { language, t } = useLanguage();
   const recipe = mockRecipes.find(r => r.id === id);
   
   // Track checked steps for interactive cooking
@@ -46,12 +49,18 @@ export default function RecipeDetail() {
 
   return (
     <div className="max-w-4xl mx-auto pb-20 animate-in fade-in slide-in-from-bottom-8 duration-500">
+      <Helmet>
+        <title>Authentic {recipe.title} Recipe | Bhansa Nepal</title>
+        <meta name="description" content={`Learn how to cook authentic ${recipe.title}. Detailed step-by-step ${recipe.category} recipe from Nepal.`} />
+        <meta name="keywords" content={`${recipe.title} recipe, Nepali ${recipe.category}, how to make ${recipe.title}, Nepali food`} />
+      </Helmet>
+      
       <button 
         onClick={() => navigate(-1)} 
         className="mb-6 flex items-center gap-2 text-gray-500 hover:text-brand-700 font-semibold transition-colors group"
       >
         <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" /> 
-        Back
+        {t('back')}
       </button>
 
       {/* Hero Header */}
@@ -90,15 +99,15 @@ export default function RecipeDetail() {
       <div className="bg-white rounded-2xl p-6 shadow-sm border border-brand-100 mb-10 flex flex-wrap justify-between items-center gap-6">
         <div className="flex gap-8">
           <div className="flex flex-col">
-            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><Clock className="w-3.5 h-3.5"/> Prep Time</span>
+            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><Clock className="w-3.5 h-3.5"/> {t('prep_time')}</span>
             <span className="text-lg font-bold text-gray-900">{recipe.prepTime}</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><BarChart className="w-3.5 h-3.5"/> Difficulty</span>
-            <span className="text-lg font-bold text-gray-900">{recipe.difficulty}</span>
+            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><BarChart className="w-3.5 h-3.5"/> {t('difficulty')}</span>
+            <span className="text-lg font-bold text-gray-900">{t(recipe.difficulty) || recipe.difficulty}</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5"/> Region</span>
+            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5"/> {t('region')}</span>
             <span className="text-lg font-bold text-brand-600">{recipe.region}</span>
           </div>
         </div>
@@ -113,7 +122,7 @@ export default function RecipeDetail() {
         <div className="md:col-span-1 space-y-6">
           <div className="bg-white rounded-3xl p-6 shadow-xl shadow-brand-100/50 border border-brand-100 sticky top-24">
             <h2 className="text-2xl font-display font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <span className="text-brand-600">🛒</span> Ingredients
+              <span className="text-brand-600">🛒</span> {t('ingredients')}
             </h2>
             <ul className="space-y-4">
               {recipe.ingredients.map((ing, idx) => {
@@ -129,7 +138,7 @@ export default function RecipeDetail() {
                         <ShoppingCart className="w-4 h-4"/>
                       </button>
                     ) : (
-                      <span className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">Added</span>
+                      <span className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">{t('added')}</span>
                     )}
                   </li>
                 );
@@ -144,7 +153,7 @@ export default function RecipeDetail() {
           {/* Instructions */}
           <div>
             <h2 className="text-3xl font-display font-bold text-gray-900 mb-8 flex items-center gap-2">
-              <span className="text-brand-600">👨‍🍳</span> Instructions
+              <span className="text-brand-600">👨‍🍳</span> {t('instructions')}
             </h2>
             <div className="space-y-6">
               {recipe.steps.map((step, idx) => {
@@ -179,7 +188,7 @@ export default function RecipeDetail() {
             {recipe.videoUrl && (
               <div className="mt-10 rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-gray-900 group relative">
                 <div className="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 text-white text-sm font-semibold">
-                  <PlayCircle className="w-4 h-4 text-brand-400" /> Watch Tutorial
+                  <PlayCircle className="w-4 h-4 text-brand-400" /> {t('watch_tutorial')}
                 </div>
                 {/* Embedded Video Placeholder */}
                 <iframe 
@@ -198,7 +207,7 @@ export default function RecipeDetail() {
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 border border-amber-200/50 shadow-inner">
               <h3 className="text-xl font-display font-bold text-amber-900 mb-4 flex items-center gap-2">
                 <Lightbulb className="w-6 h-6 text-amber-500" />
-                Chef's Tips
+                {t('chef_tips')}
               </h3>
               <ul className="space-y-3">
                 {recipe.tips.map((tip, idx) => (
@@ -215,7 +224,7 @@ export default function RecipeDetail() {
           <div className="mt-12 mb-8">
             <h3 className="text-2xl font-display font-bold text-gray-900 mb-6 flex items-center gap-2">
               <MessageSquare className="w-6 h-6 text-brand-600" />
-              Community Reviews
+              {t('community_reviews')}
             </h3>
             
             {recipe.comments && recipe.comments.length > 0 ? (
