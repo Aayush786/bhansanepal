@@ -5,7 +5,7 @@ import { useLanguage } from '../utils/LanguageContext';
 import { mockRecipes, RECIPE_CATEGORIES } from '../data/mockRecipes';
 import RecipeCard from '../components/RecipeCard';
 import IngredientSearch from '../components/IngredientSearch';
-import { UtensilsCrossed, Sparkles, Dices } from 'lucide-react';
+import { UtensilsCrossed, Sparkles, Dices, Flame, TrendingUp } from 'lucide-react';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -71,6 +71,50 @@ export default function Home() {
 
         <IngredientSearch recipes={mockRecipes} onFilter={handleSearchResults} />
       </div>
+
+      {/* Trending Today Section */}
+      {!isSearching && (
+        <div className="mb-16">
+          <div className="flex items-center gap-2 mb-8">
+            <div className="bg-orange-100 p-2 rounded-xl">
+              <Flame className="w-6 h-6 text-orange-600 animate-pulse" />
+            </div>
+            <h2 className="text-3xl font-display font-bold text-gray-900">🔥 {t('trending_today') || "Trending Today"}</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {mockRecipes.filter(r => r.trending).map(recipe => (
+              <button 
+                key={recipe.id}
+                onClick={() => navigate(`/recipe/${recipe.id}`)}
+                className="group relative h-48 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+              >
+                <img 
+                  src={recipe.image} 
+                  alt={recipe.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-4 left-6 right-6 text-left">
+                  <div className="flex items-center gap-2 mb-1">
+                    <TrendingUp className="w-4 h-4 text-orange-400" />
+                    <span className="text-orange-400 text-xs font-bold uppercase tracking-widest">Trending Now</span>
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-white mb-1 group-hover:text-brand-300 transition-colors">
+                    {language === 'np' ? recipe.nepaliTitle : recipe.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm font-medium line-clamp-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {recipe.description}
+                  </p>
+                </div>
+                <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full border border-white/30">
+                  <span className="text-white text-xs font-bold">★ {recipe.rating}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Category Navigation */}
       <div className="mb-12">

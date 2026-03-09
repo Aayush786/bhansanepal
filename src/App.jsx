@@ -4,6 +4,7 @@ import RecipeDetail from "./pages/RecipeDetail";
 import AddRecipe from "./pages/AddRecipe";
 import ShoppingList from "./pages/ShoppingList";
 import Blog from "./pages/Blog";
+import Festivals from "./pages/Festivals";
 import { useLanguage } from "./utils/LanguageContext";
 import { UtensilsCrossed, PlusCircle, ShoppingCart, BookOpen, Globe } from 'lucide-react';
 
@@ -20,6 +21,7 @@ function App() {
           </div>
           <div className="flex gap-6 font-medium text-brand-800 items-center">
             <a href="/" className="hover:text-brand-900 transition-colors">{t('nav_discover')}</a>
+            <a href="/festivals" className="hover:text-brand-900 transition-colors">{t('nav_festivals') || "Festivals"}</a>
             <a href="/blog" className="hover:text-brand-900 transition-colors">{t('nav_blog')}</a>
             <a href="/add-recipe" className="hover:text-brand-900 transition-colors">{t('nav_submit_recipe')}</a>
             <a href="/shopping-list" className="hover:text-brand-900 transition-colors flex items-center gap-1">
@@ -43,6 +45,7 @@ function App() {
             <Route path="/add-recipe" element={<AddRecipe />} />
             <Route path="/shopping-list" element={<ShoppingList />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/festivals" element={<Festivals />} />
           </Routes>
         </main>
       </div>

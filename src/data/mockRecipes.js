@@ -32,15 +32,22 @@ export const mockRecipes = [
   "1 tsp Cumin seeds",
   "1 tbsp Ghee"
 ],
+    nutrition: { calories: 350, protein: "8g", carbs: "65g", fat: "6g" },
     baseServings: 4,
-    steps: ["Boil rice.", "Pressure cook lentils with turmeric and salt.", "Temper lentils with ghee and cumin seeds.", "Cook mixed vegetables with spices until tender.", "Serve hot together on a thali."],
+    steps: [
+      "Wash rice thoroughly and boil in a pot with water ratio 1:2 until fluffy [20 min].",
+      "Wash yellow lentils and pressure cook with turmeric and salt until soft [15 min].",
+      "Heat ghee in a small pan, add cumin seeds until they splutter, and pour over the cooked lentils (Tadka).",
+      "Chop seasonal vegetables and sauté with spices (turmeric, cumin, coriander) until tender [15 min].",
+      "Serve hot rice, dal, and vegetable curry together on a traditional thali."
+    ],
     nepaliSteps: [
-  "चामल उसिन्नुहोस् वा पकाउनुहोस्।",
-  "बेसार र नुन हालेर दाल प्रेसर कुकरमा पकाउनुहोस्।",
-  "घिउ र जिरा पड्काएर दाल झान्नुहोस्।",
-  "मिसाएको तरकारीमा मसला हालेर नरम नहुन्जेल पकाउनुहोस्।",
-  "थालीमा सबै तातो-तातो पस्कनुहोस्।"
-],
+      "चामललाई राम्ररी धोएर १:२ को अनुपातमा पानी राखेर नरम नहुन्जेल पकाउनुहोस् [२० मिनेट]।",
+      "दाललाई धोएर बेसार र नुन हाली प्रेसर कुकरमा गलाउनुहोस् [१५ मिनेट]।",
+      "सानो तावामा घिउ तताएर जिरा पड्काउनुहोस् र पाकेको दालमा झान्नुहोस्।",
+      "मौसमी तरकारीलाई काटेर मसला (बेसार, जिरा, धनियाँ) हाली मध्यम आँचमा पकाउनुहोस् [१५ मिनेट]।",
+      "भात, दाल र तरकारीलाई थालीमा सजाएर तातो-तातो पस्कनुहोस्।"
+    ],
     tips: ["A dollop of ghee on the rice changes everything."]
   },
   {
@@ -55,15 +62,24 @@ export const mockRecipes = [
   "50g Soybean",
   "3 Dry chilies"
 ],
+    nutrition: { calories: 120, protein: "4g", carbs: "15g", fat: "5g" },
     baseServings: 4,
-    steps: ["Soak gundruk in warm water for 10 mins.", "Roast soybeans and set aside.", "Fry onions, garlic, and tomato until soft.", "Add gundruk, soybeans, and water. Boil for 15 minutes.", "Serve hot with Dhido or Rice."],
+    steps: [
+      "Soak gundruk in warm water for 10 minutes to soften it.",
+      "Roast soybeans in a dry pan until they start to pop and turn brown [5 min].",
+      "Heat mustard oil, fry chopped onions, garlic, and ginger until fragrant.",
+      "Add chopped tomatoes and turmeric, cook until soft [5 min].",
+      "Add soaked gundruk, roasted soybeans, and 3 cups of water. Simmer on medium heat [15 min].",
+      "Serve hot with Dhido or steamed rice."
+    ],
     nepaliSteps: [
-  "गुन्द्रुकलाई १० मिनेट मनतातो पानीमा भिजाउनुहोस्।",
-  "भटमास भुटेर छुट्टै राख्नुहोस्।",
-  "प्याज, लसुन र टमाटर नरम नहुन्जेल तेलमा भुट्नुहोस्।",
-  "भिजाएको गुन्द्रुक, भुटेको भटमास र पानी हालेर १५ मिनेट उमाल्नुहोस्।",
-  "ढिँडो वा भातसँग तातो-तातो खानुहोस्।"
-],
+      "गुन्द्रुकलाई नरम बनाउन १० मिनेट मनतातो पानीमा भिजाउनुहोस्।",
+      "भटमासलाई सुक्खा कराामा रङ्ग बदलिउन्जेल भुट्नुहोस् [५ मिनेट]।",
+      "तोरीको तेल तताएर प्याज, लसुन र अदुवा वासना आउन्जेल भुट्नुहोस्।",
+      "टमाटर र बेसार हालेर नरम नहुन्जेल पकाउनुहोस् [५ मिनेट]।",
+      "भिजाएको गुन्द्रुक, भुटेको भटमास र ३ कप पानी हालेर मध्यम आँचमा उमाल्नुहोस् [१५ मिनेट]।",
+      "ढिँडो वा भातसँग तातो-तातो खानुहोस्।"
+    ],
     tips: ["Roasted soybeans add a necessary crunch."]
   },
   {
@@ -76,14 +92,22 @@ export const mockRecipes = [
   "2 tbsp Ghee",
   "1 tsp Salt"
 ],
+    nutrition: { calories: 450, protein: "12g", carbs: "80g", fat: "10g" },
     baseServings: 4,
-    steps: ["Boil water in a heavy-bottomed pan.", "Gradually pour flour while continuously stirring vigorously with a spatula (Dabilo) to avoid lumps.", "Cook until the mixture pulls away from the pan walls.", "Serve immediately with a generous amount of hot ghee and Gundruk."],
+    steps: [
+      "Bring 1 liter of water to a rolling boil in a heavy-bottomed pan [10 min].",
+      "Gradually add millet or buckwheat flour while continuously stirring with a spatula (Dabilo) to avoid lumps.",
+      "Add a pinch of salt and a tablespoon of ghee for richness.",
+      "Keep stirring and mashing the dough against the sides of the pan until it thickens and pulls away [15 min].",
+      "Serve immediately with hot ghee and a side of Gundruk Jhol."
+    ],
     nepaliSteps: [
-  "ताप्के वा कराइमा पानी उमाल्नुहोस्।",
-  "उम्लेको पानीमा अलि-अलि गर्दै पिठो हाल्नुहोस् र डबिलाले मज्जाले चलाउनुहोस् ताकि डल्ला नपरोस्।",
-  "पिठो पाकेर कराएको भित्ताबाट नछुटुन्जेल चलाइरहनुहोस्।",
-  "तयार भएपछि तातो घिउ र गुन्द्रुकसँग तुरुन्तै खानुहोस्।"
-],
+      "बाक्लो भाँडोमा १ लिटर पानी मज्जाले उमाल्नुहोस् [१० मिनेट]।",
+      "उम्लेको पानीमा कोदो वा फापरको पिठो अलि-अलि गर्दै हाल्नुहोस् र डबिलाले निरन्तर चलाइरहनुहोस्।",
+      "स्वादका लागि थोरै नुन र एक चम्चा घिउ हाल्नुहोस्।",
+      "पिठो बाक्लो भएर भाँडोको भित्ताबाट नछुटुन्जेल मज्जाले चलाइरहनुहोस् [१५ मिनेट]।",
+      "तातो घिउ र गुन्द्रुकको झोलसँग तुरुन्तै पस्कनुहोस्।"
+    ],
     tips: ["Requires immense arm strength to stir properly! Do not chew dhido, just swallow."]
   },
   {
@@ -98,15 +122,24 @@ export const mockRecipes = [
   "300g Mustang potatoes",
   "1/2 tsp Timur (Szechuan pepper)"
 ],
+    nutrition: { calories: 600, protein: "25g", carbs: "90g", fat: "18g" },
     baseServings: 4,
-    steps: ["Cook rice until fluffy.", "Slow cook black lentils until creamy. Temper with ghee and jimbu.", "Prepare spicy potato curry.", "Make tomato and timur achar.", "Serve neatly arranged on a brass plate."],
+    steps: [
+      "Cook Sona Mansuli rice until perfectly fluffy and non-sticky [25 min].",
+      "Soak black lentils for 2 hours, then slow cook until creamy [40 min].",
+      "Heat ghee, add Jimbu herb until dark, and pour over the lentils for that signature aroma.",
+      "Sauté Mustang potatoes with cumin, turmeric, and local spices until crispy [20 min].",
+      "Prepare tomato and timur (Szechuan pepper) chutney by grinding them together.",
+      "Arrange everything neatly on a brass thali with a dollop of fresh butter."
+    ],
     nepaliSteps: [
-  "चामललाई राम्ररी पकाउनुहोस्।",
-  "कालो दाललाई बाक्लो नहुन्जेल पकाउनुहोस् र घिउमा जिम्बु पड्काएर झान्नुहोस्।",
-  "पिरो आलुको तरकारी तयार पार्नुहोस्।",
-  "टमाटर र टिमुरको अचार बनाउनुहोस्।",
-  "काँसको थालीमा राम्ररी सजाएर पस्कनुहोस्।"
-],
+      "चामललाई राम्ररी पखालेर भुसभुसे हुने गरी पकाउनुहोस् [२५ मिनेट]।",
+      "कालो दाललाई २ घण्टा भिजाएर बाक्लो नहुन्जेल बिस्तारै पकाउनुहोस् [४० मिनेट]।",
+      "घिउ तताएर जिम्बु डढाउनुहोस् र दालमा झान्नुहोस्।",
+      "मुस्ताङे आलुलाई जिरा र स्थानीय मसला हालेर कुरकुरे हुने गरी भुट्नुहोस् [२० मिनेट]।",
+      "टमाटर र टिमुरलाई सिलौटामा पिसेर अचार बनाउनुहोस्।",
+      "काँसको थालीमा सबै परिकार सजाएर ताजा मख्खनसँग पस्कनुहोस्।"
+    ],
     tips: ["The distinct flavor comes entirely from the Jimbu herb."]
   },
   {
@@ -120,14 +153,22 @@ export const mockRecipes = [
   "2 tbsp Mustard oil",
   "1 tsp Turmeric"
 ],
+    nutrition: { calories: 180, protein: "8g", carbs: "25g", fat: "6g" },
     baseServings: 4,
-    steps: ["Boil the black-eyed peas and potatoes.", "Fry the bamboo shoots in mustard oil to reduce the raw smell.", "Add boiled potatoes, peas, and water to create a broth.", "Simmer with spices for 20 minutes."],
+    steps: [
+      "Boil black-eyed peas and potatoes separately until tender [20 min].",
+      "Heat mustard oil until smoking, fry bamboo shoots (Tama) for 5 minutes to reduce bitterness.",
+      "Add cumin seeds, ginger-garlic paste, and chopped onions to the oil.",
+      "Combine boiled potatoes, peas, and fried tama; add water to create a sour stew [15 min].",
+      "Simmer with turmeric, chili powder, and salt until flavors meld."
+    ],
     nepaliSteps: [
-  "आलु र बोडीलाई उसिन्नुहोस्।",
-  "तामालाई तोरीको तेलमा भुट्नुहोस् ताकि यसको कडा गन्ध हटोस्।",
-  "उसिनेको आलु, बोडी र पानी हालेर झोल बनाउनुहोस्।",
-  "मसलाहरू हालेर २० मिनेटसम्म सानो आँचमा पकाउनुहोस्।"
-],
+      "बोडी र आलुलाई छुट्टाछुट्टै नरम नहुन्जेल उसिन्नुहोस् [२० मिनेट]।",
+      "तोरीको तेल तताएर तामालाई ५ मिनेट भुट्नुहोस् ताकि यसको कडा गन्ध हटोस्।",
+      "तेलमा जिरा, अदुवा-लसुन पेस्ट र प्याज हालेर भुट्नुहोस्।",
+      "उसिनेको आलु, बोडी र तामा मिसाउनुहोस् र झोल बनाउन पानी हाल्नुहोस् [१५ मिनेट]।",
+      "बेसार, खुर्सानी र नुन हालेर स्वाद नमिलेसम्म उमाल्नुहोस्।"
+    ],
     tips: ["Always fry the tama first; otherwise, the soup will be too bitter."]
   },
   {
@@ -140,14 +181,22 @@ export const mockRecipes = [
   "2 tbsp Ghee",
   "1 tbsp Ginger garlic paste"
 ],
+    nutrition: { calories: 250, protein: "18g", carbs: "40g", fat: "4g" },
     baseServings: 4,
-    steps: ["Sprout the beans for 2-3 days prior.", "Pressure cook the sprouted beans until soft.", "Temper ghee with ajwain/jwano and pour over the soup.", "Simmer until the broth is thick."],
+    steps: [
+      "Soak 9 varieties of beans for 2-3 days until they sprout [72 hr].",
+      "Pressure cook the sprouted beans with turmeric and ginger-garlic paste until soft [30 min].",
+      "In a small pan, heat ghee and fry lovage seeds (jwano) until aromatic.",
+      "Pour the hot ghee over the bean soup and simmer until the broth is thick and creamy [10 min].",
+      "Serve hot, traditionally with a piece of roasted meat or beaten rice."
+    ],
     nepaliSteps: [
-  "गेडागुडीलाई पकाउनु भन्दा २-३ दिन अघि नै भिजाएर टुसा उमार्नुहोस्।",
-  "टुसा उम्रेको क्वाँटीलाई प्रेसर कुकरमा नरम नहुन्जेल पकाउनुहोस्।",
-  "घिउमा ज्वानो पड्काएर सुपमा झान्नुहोस्।",
-  "झोल बाक्लो नहुन्जेल केही बेर उमाल्नुहोस्।"
-],
+      "९ थरिका गेडागुडीलाई २-३ दिनसम्म भिजाएर टुसा उमार्नुहोस् [७२ घण्टा]।",
+      "टुसा उम्रेको क्वाँटीलाई बेसार र अदुवा-लसुन पेस्ट हालेर प्रेसर कुकरमा पकाउनुहोस् [३० मिनेट]।",
+      "सानो कराहीमा घिउ तताएर ज्वानो फुराउनुहोस्।",
+      "ज्वानो फुराएको घिउलाई क्वाँटीमा झान्नुहोस् र झोल बाक्लो नहुन्जेल उमाल्नुहोस् [१० मिनेट]।",
+      "तातो-तातो पस्कनुहोस्।"
+    ],
     tips: ["The longer the beans sprout, the sweeter the soup tastes."]
   },
   {
@@ -230,14 +279,22 @@ export const mockRecipes = [
   "1/2 tsp Szechuan pepper (Timur)",
   "1 tbsp Lemon juice"
 ],
+    nutrition: { calories: 650, protein: "28g", carbs: "12g", fat: "55g" },
     baseServings: 4,
-    steps: ["Cut pork into medium cubes.", "Marinate overnight with all spices, ginger, garlic, and lemon.", "Skewer the meat.", "Grill slowly over a charcoal fire until charred on the outside and juicy inside."],
+    steps: [
+      "Cut pork into medium cubes and clean thoroughly.",
+      "Mix with garlic paste, ginger paste, cumin powder, and timur. Marinate for at least 2 hours.",
+      "Thread the meat onto wooden or metal skewers.",
+      "Grill slowly over a natural charcoal fire, turning occasionally until charred and juicy [30 min].",
+      "Brush with mustard oil while grilling for extra shine and flavor."
+    ],
     nepaliSteps: [
-  "बँगेलको मासुलाई मध्यम आकारमा काट्नुहोस्।",
-  "लसुन, अदुवा, जिराको धुलो, टिमुर र कागतीको रस हालेर रातभरि मोल्नुहोस्।",
-  "मासुलाई सिकबामा उन्दै जानुहोस्।",
-  "कोइलाको आँचमा बाहिर कुरकुरे र भित्र नरम हुने गरी बिस्तारै पोल्नुहोस्।"
-],
+      "बंगुरको मासुलाई मध्यम टुक्रामा काट्नुहोस् र राम्ररी धुनुहोस्।",
+      "लसुन, अदुवाको पेस्ट, जिराको धुलो र टिमुर हालेर कम्तीमा २ घण्टा मोल्नुहोस्।",
+      "मासुलाई सिकबामा उन्दै जानुहोस्।",
+      "कोइलाको आँचमा बाहिर कुरकुरे र भित्र नरम हुने गरी बिस्तारै पोल्नुहोस् [३० मिनेट]।",
+      "स्वाद र चमकका लागि पोल्दापोल्दै अलिअलि तोरीको तेल लगाउनुहोस्।"
+    ],
     tips: ["Fatty cuts work best as the melting fat keeps the meat moist on the grill."]
   },
 
@@ -254,15 +311,25 @@ export const mockRecipes = [
   "1 bunch Coriander",
   "2 tbsp Momo Masala"
 ],
+    nutrition: { calories: 320, protein: "18g", carbs: "45g", fat: "9g" },
     baseServings: 4,
-    steps: ["Knead flour and water into a soft dough.", "Mix the minced meat with finely chopped onion and heavy spices.", "Roll dough into small circles, place a spoonful of filling, and pleat the edges to seal.", "Steam for 12-15 minutes.", "Serve with spicy tomato/sesame chutney."],
+    trending: true,
+    steps: [
+      "Mix minced meat with chopped onions, momo masala, and oil. Let it rest for 20 minutes.",
+      "Knead a smooth dough with flour and water, let it rest [30 min].",
+      "Roll dough into small thin circles and place a spoonful of filling.",
+      "Pleat the edges to seal the momo into traditional round or half-moon shapes.",
+      "Layer momos in a steamer and steam over boiling water [15 min].",
+      "Serve with spicy sesame and tomato chutney."
+    ],
     nepaliSteps: [
-  "मैदा र पानी हालेर नरम पिठो मुस्नुहोस्।",
-  "किमामा मसिनो गरी काटेको प्याज र म:म मसला हालेर मोल्नुहोस्।",
-  "पिठोलाई ससाना रोटी जस्तो बेलेर बीचमा किमा राखी आकार दिनुहोस्।",
-  "म:म स्टिमरमा १२-१५ मिनेटसम्म पकाउनुहोस्।",
-  "टमाटर वा तिलको चटनीसँग पस्कनुहोस्।"
-],
+      "किमामा मसिनो प्याज, म:म मसला र तेल हालेर मोल्नुहोस् र २० मिनेट राख्नुहोस्।",
+      "पिठो मुछेर ३० मिनेटसम्म छोपेर राख्नुहोस्।",
+      "पिठोलाई ससाना रोटी जस्तो बेलेर बीचमा किमा राख्नुहोस्।",
+      "छेउ छेउबाट मोलेर म:मको आकार दिनुहोस्।",
+      "म:म स्टिमरमा राखेर १५ मिनेटसम्म पकाउनुहोस् [१५ मिनेट]।",
+      "पिरो गोलभेडा र तिलको अचारसँग पस्कनुहोस्।"
+    ],
     tips: ["A fatty ratio in the minced meat makes the momos incredibly juicy."]
   },
   {
@@ -324,15 +391,25 @@ export const mockRecipes = [
   "1 Lemon",
   "1 tbsp Mustard oil"
 ],
+    nutrition: { calories: 280, protein: "6g", carbs: "50g", fat: "8g" },
     baseServings: 4,
-    steps: ["Chop potatoes, onions, tomatoes, and chilies.", "Crush the Wai Wai noodles in a large steel bowl.", "Add puffed rice and the chopped veggies.", "Add mustard oil, massive squeeze of lemon, and spices.", "Toss aggressively and serve in a paper cone."],
+    trending: true,
+    steps: [
+      "Chop potatoes, onions, tomatoes, and chilies into tiny cubes.",
+      "In a large bowl, crush instant noodles (Wai Wai) into small pieces.",
+      "Add puffed rice (Bhuja), chickpeas, and the chopped vegetables.",
+      "Pour in raw mustard oil, lemon juice, chili powder, and black salt.",
+      "Toss aggressively for 1 minute to ensure everything is coated evenly.",
+      "Serve immediately in a paper cone while it's still crunchy."
+    ],
     nepaliSteps: [
-  "आलु, प्याज, टमाटर र खुर्सानी काट्नुहोस्।",
-  "एउटा भाँडोमा वाइवाइ चाउचाउलाई फुटाउनुहोस्।",
-  "भुजा र काटेका तरकारीहरू मिसाउनुहोस्।",
-  "तोरीको तेल, कागतीको रस र मसला हाल्नुहोस्।",
-  "राम्ररी हल्लाएर वा चलाएर कागजको कोनीमा पस्कनुहोस्।"
-],
+      "आलु, प्याज, टमाटर र खुर्सानीलाई ससाना टुक्रामा काट्नुहोस्।",
+      "एउटा ठूलो भाँडोमा वाइवाइ चाउचाउलाई फुटाउनुहोस्।",
+      "भुजा, चना र काटेका तरकारीहरू मिसाउनुहोस्।",
+      "तोरीको तेल, कागतीको रस, खुर्सानी र बिरेनुन हाल्नुहोस्।",
+      "सबै मसला मिल्ने गरी १ मिनेटसम्म मज्जाले हल्लाउनुहोस् वा चलाउनुहोस्।",
+      "कुरकुरे हुँदै कागजको कोनीमा पस्कनुहोस्।"
+    ],
     tips: ["A dash of raw mustard oil gives it the signature street food kick."]
   },
   {
@@ -485,15 +562,25 @@ export const mockRecipes = [
   "4 pods Cardamom",
   "Water"
 ],
+    nutrition: { calories: 280, protein: "3g", carbs: "45g", fat: "12g" },
     baseServings: 4,
-    steps: ["Soak rice overnight, grind into a slightly grainy paste.", "Mix sugar, mashed banana, and ghee into the paste.", "Heat a deep pan with oil/ghee.", "Pour the batter in a continuous circular ring shape into the hot oil by hand.", "Deep fry until reddish-brown."],
+    trending: true,
+    steps: [
+      "Soak rice overnight, then grind into a slightly grainy, thick paste [12 hr].",
+      "In a bowl, mix sugar, mashed bananas, and ghee into the rice paste until smooth.",
+      "Heat a generous amount of oil or ghee in a deep flat-bottomed pan.",
+      "Pour the batter in a continuous circular ring shape using your hands or a funnel.",
+      "Deep fry on medium heat until the roti is reddish-brown and crispy [5 min].",
+      "Flip and cook the other side, then drain and cool."
+    ],
     nepaliSteps: [
-  "चामललाई रातभरि भिजाउनुहोस् र अलि दानेदार हुने गरी पिस्नुहोस्।",
-  "पिठोमा चिनी, मुछेको कोसेरा र घिउ हालेर मोल्नुहोस्।",
-  "कराइमा तेल वा घिउ तताउनुहोस्।",
-  "हातले पिठोलाई गोलो घेरा बनाउँदै तातो तेलमा हाल्नुहोस्।",
-  "रातो र खैरो नहुन्जेल दुवैतिर पकाउनुहोस्।"
-],
+      "चामललाई रातभरि भिजाउनुहोस् र पिसेर दानेदार लेदो बनाउनुहोस् [१२ घण्टा]।",
+      "पिठोमा चिनी, मुछेको कोसेरा र घिउ हालेर राम्ररी फिट्नुहोस्।",
+      "बाक्लो कराउमा पर्याप्त तेल वा घिउ तताउनुहोस्।",
+      "हात वा सोलीको सहायताले गोलो घेरा बनाएर तातो तेलमा हाल्नुहोस्।",
+      "मध्यम आँचमा रातो-खैरो र कुरकुरे नहुन्जेल ५ मिनेट तार्नुहोस् [५ मिनेट]।",
+      "दुवैतिर पाकेपछि तेल निथारेर निकाल्नुहोस्।"
+    ],
     tips: ["Batter consistency is key. If too thick, the roti is hard. If too thin, it loses shape."]
   },
   {

@@ -2,7 +2,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../utils/LanguageContext';
 import { mockRecipes } from '../data/mockRecipes';
-import { ArrowLeft, Clock, BarChart, MapPin, CheckCircle2, Lightbulb, ShoppingCart, MessageSquare, PlayCircle, Star } from 'lucide-react';
+import { ArrowLeft, Clock, BarChart, MapPin, CheckCircle2, Lightbulb, ShoppingCart, MessageSquare, PlayCircle, Star, Timer, Activity, Zap, Droplet } from 'lucide-react';
+import { useEffect } from 'react';
 import { useState } from 'react';
 
 export default function RecipeDetail() {
@@ -15,6 +16,42 @@ export default function RecipeDetail() {
   const [checkedSteps, setCheckedSteps] = useState(new Set());
   const [addedItems, setAddedItems] = useState(new Set());
   const [servings, setServings] = useState(recipe.baseServings || 4);
+  const [activeTimer, setActiveTimer] = useState(null); // {id: idx, seconds: total}
+  const [timeLeft, setTimeLeft] = useState(0);
+
+  useEffect(() => {
+    let interval = null;
+    if (activeTimer && timeLeft > 0) {
+      interval = setInterval(() => {
+        setTimeLeft(prev => prev - 1);
+      }, 1000);
+    } else if (timeLeft === 0 && activeTimer) {
+      clearInterval(interval);
+      alert(`${recipe.title}: Timer Finished!`);
+      setActiveTimer(null);
+    }
+    return () => clearInterval(interval);
+  }, [activeTimer, timeLeft, recipe.title]);
+
+  const startTimer = (idx, durationStr) => {
+    let seconds = 0;
+    const minMatch = durationStr.match(/(\d+)\s*min/);
+    const hrMatch = durationStr.match(/(\d+)\s*hr/);
+    
+    if (hrMatch) seconds += parseInt(hrMatch[1]) * 3600;
+    if (minMatch) seconds += parseInt(minMatch[1]) * 60;
+    
+    if (seconds > 0) {
+      setActiveTimer({ id: idx, total: seconds });
+      setTimeLeft(seconds);
+    }
+  };
+
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
 
   const scaleIngredient = (ingredient) => {
     const factor = servings / (recipe.baseServings || 4);
@@ -154,6 +191,32 @@ export default function RecipeDetail() {
         {/* Sidebar: Ingredients */}
         <div className="md:col-span-1 space-y-6">
           <div className="bg-white rounded-3xl p-6 shadow-xl shadow-brand-100/50 border border-brand-100 sticky top-24">
+            {/* Nutrition Info */}
+            <div className="bg-brand-900 text-white rounded-3xl p-6 shadow-xl mb-6 relative overflow-hidden group">
+              <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all"></div>
+              <h3 className="text-xl font-display font-bold mb-4 flex items-center gap-2">
+                <Activity className="w-5 h-5 text-brand-300" /> {t('nutrition_info') || "Nutrition Info"}
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
+                  <div className="text-brand-300 text-[10px] font-bold uppercase tracking-widest mb-1">Calories</div>
+                  <div className="text-xl font-black">{recipe.nutrition?.calories || 320}</div>
+                </div>
+                <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
+                  <div className="text-brand-300 text-[10px] font-bold uppercase tracking-widest mb-1">Protein</div>
+                  <div className="text-xl font-black">{recipe.nutrition?.protein || "6g"}</div>
+                </div>
+                <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
+                  <div className="text-brand-300 text-[10px] font-bold uppercase tracking-widest mb-1">Carbs</div>
+                  <div className="text-xl font-black">{recipe.nutrition?.carbs || "40g"}</div>
+                </div>
+                <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
+                  <div className="text-brand-300 text-[10px] font-bold uppercase tracking-widest mb-1">Fat</div>
+                  <div className="text-xl font-black">{recipe.nutrition?.fat || "10g"}</div>
+                </div>
+              </div>
+            </div>
+
             <h2 className="text-2xl font-display font-bold text-gray-900 mb-6 flex items-center gap-2">
               <span className="text-brand-600">🛒</span> {t('ingredients')}
             </h2>
@@ -194,25 +257,52 @@ export default function RecipeDetail() {
                 return (
                   <div 
                     key={idx} 
-                    onClick={() => toggleStep(idx)}
-                    className={`flex gap-4 p-5 rounded-2xl cursor-pointer transition-all duration-300 border ${
+                    className={`flex flex-col p-5 rounded-2xl transition-all duration-300 border ${
                       isChecked 
                         ? 'bg-brand-50 border-brand-200 opacity-60' 
                         : 'bg-white border-transparent shadow-sm hover:shadow-md hover:border-brand-100'
                     }`}
                   >
-                    <div className="flex-shrink-0 mt-1">
-                      {isChecked ? (
-                        <CheckCircle2 className="w-8 h-8 text-brand-500" />
-                      ) : (
-                        <div className="w-8 h-8 rounded-full border-2 border-brand-300 flex items-center justify-center font-bold text-brand-500 bg-brand-50">
-                          {idx + 1}
-                        </div>
-                      )}
+                    <div className="flex gap-4 cursor-pointer" onClick={() => toggleStep(idx)}>
+                      <div className="flex-shrink-0 mt-1">
+                        {isChecked ? (
+                          <CheckCircle2 className="w-8 h-8 text-brand-500" />
+                        ) : (
+                          <div className="w-8 h-8 rounded-full border-2 border-brand-300 flex items-center justify-center font-bold text-brand-500 bg-brand-50">
+                            {idx + 1}
+                          </div>
+                        )}
+                      </div>
+                      <p className={`text-lg transition-all duration-300 flex-1 pt-1 ${isChecked ? 'text-gray-400 line-through decoration-brand-300' : 'text-gray-800 font-medium'}`}>
+                        {step}
+                      </p>
                     </div>
-                    <p className={`text-lg transition-all duration-300 flex-1 pt-1 ${isChecked ? 'text-gray-400 line-through decoration-brand-300' : 'text-gray-800 font-medium'}`}>
-                      {step}
-                    </p>
+
+                    {/* Timer Integration */}
+                    {step.includes('[') && step.includes(']') && !isChecked && (
+                      <div className="mt-4 ml-12">
+                        {activeTimer?.id === idx ? (
+                          <div className="flex items-center gap-4 bg-brand-900 text-white px-4 py-2 rounded-xl w-max shadow-lg animate-pulse">
+                            <Timer className="w-5 h-5" />
+                            <span className="font-mono text-xl font-bold">{formatTime(timeLeft)}</span>
+                            <button 
+                              onClick={() => {setActiveTimer(null); setTimeLeft(0);}}
+                              className="bg-white/20 hover:bg-white/30 p-1 rounded-lg text-xs font-bold"
+                            >
+                              STOP
+                            </button>
+                          </div>
+                        ) : (
+                          <button 
+                            onClick={() => startTimer(idx, step.match(/\[(.*?)\]/)[1])}
+                            className="flex items-center gap-2 bg-brand-100 text-brand-700 px-4 py-2 rounded-xl hover:bg-brand-600 hover:text-white transition-all font-bold text-sm"
+                          >
+                            <Timer className="w-4 h-4" />
+                            Start Timer ({step.match(/\[(.*?)\]/)[1]})
+                          </button>
+                        )}
+                      </div>
+                    )}
                   </div>
                 );
               })}
