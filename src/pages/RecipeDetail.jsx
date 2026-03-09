@@ -14,6 +14,16 @@ export default function RecipeDetail() {
   // Track checked steps for interactive cooking
   const [checkedSteps, setCheckedSteps] = useState(new Set());
   const [addedItems, setAddedItems] = useState(new Set());
+  const [servings, setServings] = useState(recipe.baseServings || 4);
+
+  const scaleIngredient = (ingredient) => {
+    const factor = servings / (recipe.baseServings || 4);
+    return ingredient.replace(/(\d+(\.\d+)?)/g, (match) => {
+      const num = parseFloat(match);
+      const scaled = num * factor;
+      return Math.round(scaled * 10) / 10;
+    });
+  };
 
   const addIngredientToList = (ingredient) => {
     const list = JSON.parse(localStorage.getItem('bhansaShoppingList') || '[]');
@@ -111,6 +121,29 @@ export default function RecipeDetail() {
             <span className="text-lg font-bold text-brand-600">{recipe.region}</span>
           </div>
         </div>
+
+        {/* Servings Selector */}
+        <div className="flex flex-col items-center md:items-end gap-2 bg-brand-50 p-4 rounded-xl border border-brand-100">
+           <span className="text-brand-900 text-xs font-bold uppercase tracking-widest">{t('servings')}</span>
+           <div className="flex items-center gap-4">
+              <button 
+                onClick={() => setServings(Math.max(1, servings - 1))}
+                className="w-10 h-10 rounded-full bg-white border border-brand-200 flex items-center justify-center text-brand-700 font-bold hover:bg-brand-600 hover:text-white transition-all shadow-sm"
+              >
+                -
+              </button>
+              <div className="flex flex-col items-center min-w-[60px]">
+                <span className="text-2xl font-display font-black text-brand-900">{servings}</span>
+                <span className="text-[10px] font-bold text-brand-600 uppercase">{t('people')}</span>
+              </div>
+              <button 
+                onClick={() => setServings(servings + 1)}
+                className="w-10 h-10 rounded-full bg-white border border-brand-200 flex items-center justify-center text-brand-700 font-bold hover:bg-brand-600 hover:text-white transition-all shadow-sm"
+              >
+                +
+              </button>
+           </div>
+        </div>
       </div>
 
       <p className="text-lg text-gray-700 leading-relaxed font-medium mb-12 px-2 border-l-4 border-brand-500 pl-6 italic bg-brand-50 py-4 rounded-r-2xl">
@@ -131,7 +164,7 @@ export default function RecipeDetail() {
                   <li key={idx} className="flex items-start justify-between gap-3 group">
                     <div className="flex items-start gap-3 flex-1">
                       <div className="w-2 h-2 rounded-full bg-brand-300 mt-2 group-hover:bg-brand-600 transition-colors"></div>
-                      <span className="text-gray-700 font-medium">{ing}</span>
+                      <span className="text-gray-700 font-medium">{scaleIngredient(ing)}</span>
                     </div>
                     {!isAdded ? (
                       <button onClick={() => addIngredientToList(ing)} className="opacity-0 group-hover:opacity-100 p-1.5 text-brand-600 hover:bg-brand-50 rounded-lg transition-all" title="Add to Shopping List">

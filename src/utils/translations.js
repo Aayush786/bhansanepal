@@ -30,7 +30,10 @@ export const translations = {
     watch_tutorial: "Watch Tutorial",
     chef_tips: "Chef's Tips",
     community_reviews: "Community Reviews",
-    added: "Added"
+    added: "Added",
+    servings: "Servings",
+    servings_desc: "Adjust ingredients based on people",
+    people: "People"
   },
   np: {
     nav_discover: "खोज्नुहोस्",
@@ -63,6 +66,9 @@ export const translations = {
     watch_tutorial: "भिडियो हेर्नुहोस्",
     chef_tips: "मुख्य भान्सेको सुझाव",
     community_reviews: "समुदायको प्रतिक्रिया",
-    added: "थपियो"
+    added: "थपियो",
+    servings: "पस्कने संख्या",
+    servings_desc: "मानिसहरूको संख्या अनुसार सामग्री मिलाउनुहोस्",
+    people: "जना"
   }
 };
