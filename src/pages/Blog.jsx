@@ -11,7 +11,7 @@ const BLOG_POSTS = [
     category: "Food Guides",
     readTime: "8 min read",
     date: "Aug 15, 2024",
-    image: "https://images.unsplash.com/photo-1626779836855-30fa1cc04c10?auto=format&fit=crop&q=80&w=800"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg"
   },
   {
     id: "best-street-foods-nepal",
@@ -20,7 +20,7 @@ const BLOG_POSTS = [
     category: "Street Food",
     readTime: "5 min read",
     date: "Sep 02, 2024",
-    image: "https://images.unsplash.com/photo-1541529086526-db283c563270?auto=format&fit=crop&q=80&w=800"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg"
   },
   {
     id: "traditional-newari-dishes",
@@ -29,7 +29,7 @@ const BLOG_POSTS = [
     category: "Culture",
     readTime: "12 min read",
     date: "Sep 28, 2024",
-    image: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&q=80&w=800"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg"
   },
   {
     id: "nepali-food-for-festivals",
@@ -38,7 +38,7 @@ const BLOG_POSTS = [
     category: "Festivals",
     readTime: "6 min read",
     date: "Oct 10, 2024",
-    image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=800"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg"
   }
 ];
 
@@ -60,7 +60,7 @@ export default function Blog() {
 
       {/* Blog Header */}
       <div className="bg-brand-900 rounded-3xl p-12 text-center mb-16 relative overflow-hidden shadow-2xl">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&q=80&w=1200')] opacity-10 mix-blend-overlay object-cover"></div>
+        <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/9/94/Lunch_Platter%2C_Nepali_Lunch%2C_La_Cocina_Food_Conference.jpg')] opacity-10 mix-blend-overlay object-cover"></div>
         <div className="relative z-10">
           <BookOpen className="w-12 h-12 text-brand-300 mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">

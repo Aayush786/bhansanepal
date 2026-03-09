@@ -102,7 +102,7 @@ export default function Home() {
                {/* Decorative traditional element */}
                <div className="aspect-square bg-brand-900/50 rounded-3xl border-2 border-white/20 shadow-2xl overflow-hidden relative">
                   <div className="absolute inset-0 flex items-center justify-center text-7xl opacity-50">🔥</div>
-                  <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover mix-blend-overlay opacity-80" alt="Traditional cooking"/>
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg" className="w-full h-full object-cover mix-blend-overlay opacity-80" alt="Traditional cooking"/>
                </div>
             </div>
           </div>
