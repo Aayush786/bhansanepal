@@ -4,6 +4,8 @@ export const translations = {
     nav_blog: "Blog",
     nav_submit_recipe: "Submit Recipe",
     nav_shopping_list: "List",
+    nav_festivals: "Festivals",
+    nav_tools: "Kitchen Tools",
     hero_sparkle: "Discover Authentic Nepali Flavors",
     hero_title_1: "What's cooking in",
     hero_title_2: "Bhansa Nepal?",
@@ -33,13 +35,20 @@ export const translations = {
     added: "Added",
     servings: "Servings",
     servings_desc: "Adjust ingredients based on people",
-    people: "People"
+    people: "People",
+    more_like_this: "More Like This",
+    view_all: "View All Recipes",
+    sub_title: "Smart Substitutions",
+    sub_try_instead: "Try this instead:",
+    sub_no_ingredient: "Don't have this?"
   },
   np: {
     nav_discover: "खोज्नुहोस्",
     nav_blog: "ब्लग",
     nav_submit_recipe: "रेसिपी थप्नुहोस्",
     nav_shopping_list: "सूची",
+    nav_festivals: "चाडपर्व",
+    nav_tools: "भाँडाकुँडा",
     hero_sparkle: "प्रामाणिक नेपाली स्वादहरू पत्ता लगाउनुहोस्",
     hero_title_1: "आज",
     hero_title_2: "भान्सा नेपालमा के पाक्दैछ?",
@@ -69,6 +78,11 @@ export const translations = {
     added: "थपियो",
     servings: "पस्कने संख्या",
     servings_desc: "मानिसहरूको संख्या अनुसार सामग्री मिलाउनुहोस्",
-    people: "जना"
+    people: "जना",
+    more_like_this: "यस्तै अरु परिकारहरु",
+    view_all: "सबै रेसिपीहरू हेर्नुहोस्",
+    sub_title: "विकल्प सुझाव",
+    sub_try_instead: "यसको सट्टा यो प्रयोग गर्नुहोस्:",
+    sub_no_ingredient: "यो सामग्री छैन?"
   }
 };

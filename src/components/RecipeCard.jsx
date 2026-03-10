@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function RecipeCard({ recipe }) {
   return (
-    <Link to={`/recipe/${recipe.id}`} className="group hover-lift block bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-100">
+    <Link to={`/recipe/${recipe.slug}`} className="group hover-lift block bg-white rounded-3xl overflow-hidden shadow-sm border border-brand-100">
       <div className="relative h-56 w-full overflow-hidden">
         <img 
           src={recipe.image} 

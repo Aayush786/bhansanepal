@@ -2,55 +2,70 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../utils/LanguageContext';
 import { mockRecipes } from '../data/mockRecipes';
-import { ArrowLeft, Clock, BarChart, MapPin, CheckCircle2, Lightbulb, ShoppingCart, MessageSquare, PlayCircle, Star, Timer, Activity, Zap, Droplet } from 'lucide-react';
+import { ArrowLeft, Clock, BarChart, MapPin, CheckCircle2, Lightbulb, ShoppingCart, MessageSquare, PlayCircle, Star, Timer, Activity, Zap, Droplet, ArrowRight, HelpCircle } from 'lucide-react';
 import { useEffect } from 'react';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import RecipeCard from '../components/RecipeCard';
+import { SUBSTITUTIONS } from '../data/substitutions';
 
 export default function RecipeDetail() {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
   const { language, t } = useLanguage();
-  const recipe = mockRecipes.find(r => r.id === id);
+  const recipe = mockRecipes.find(r => r.slug === slug);
   
+  // Calculate related recipes
+  const relatedRecipes = useMemo(() => {
+    if (!recipe) return [];
+    return mockRecipes
+      .filter(r => r.category === recipe.category && r.id !== recipe.id)
+      .slice(0, 3);
+  }, [recipe]);
+
   // Track checked steps for interactive cooking
   const [checkedSteps, setCheckedSteps] = useState(new Set());
   const [addedItems, setAddedItems] = useState(new Set());
   const [servings, setServings] = useState(recipe.baseServings || 4);
-  const [activeTimer, setActiveTimer] = useState(null); // {id: idx, seconds: total}
+  const [activeSubstitution, setActiveSubstitution] = useState(null);
+  
+  // Consolidated Timer State
+  const [activeTimer, setActiveTimer] = useState(null); // { seconds: number, stepIndex: number }
   const [timeLeft, setTimeLeft] = useState(0);
 
   useEffect(() => {
-    let interval = null;
+    let interval;
     if (activeTimer && timeLeft > 0) {
       interval = setInterval(() => {
         setTimeLeft(prev => prev - 1);
       }, 1000);
     } else if (timeLeft === 0 && activeTimer) {
-      clearInterval(interval);
-      alert(`${recipe.title}: Timer Finished!`);
       setActiveTimer(null);
+      alert(`${t('timer_done') || 'Timer Done!'} for step ${activeTimer.stepIndex + 1}`);
     }
     return () => clearInterval(interval);
-  }, [activeTimer, timeLeft, recipe.title]);
+  }, [activeTimer, timeLeft, t]);
 
-  const startTimer = (idx, durationStr) => {
-    let seconds = 0;
-    const minMatch = durationStr.match(/(\d+)\s*min/);
-    const hrMatch = durationStr.match(/(\d+)\s*hr/);
-    
-    if (hrMatch) seconds += parseInt(hrMatch[1]) * 3600;
-    if (minMatch) seconds += parseInt(minMatch[1]) * 60;
-    
-    if (seconds > 0) {
-      setActiveTimer({ id: idx, total: seconds });
-      setTimeLeft(seconds);
-    }
+  const startTimer = (seconds, index) => {
+    setActiveTimer({ seconds, stepIndex: index });
+    setTimeLeft(seconds);
   };
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins}:${secs.toString().padStart(2, '0')}`;
+  };
+
+  const parseTimer = (text) => {
+    const match = text.match(/\[(\d+)\s*(min|hr)\]/);
+    if (!match) return null;
+    const value = parseInt(match[1]);
+    const unit = match[2];
+    return unit === 'hr' ? value * 3600 : value * 60;
+  };
+
+  const cleanStepText = (text) => {
+    return text.replace(/\[(\d+)\s*(min|hr)\]/, '').trim();
   };
 
   const scaleIngredient = (ingredient) => {
@@ -97,9 +112,67 @@ export default function RecipeDetail() {
   return (
     <div className="max-w-4xl mx-auto pb-20 animate-in fade-in slide-in-from-bottom-8 duration-500">
       <Helmet>
-        <title>Authentic {recipe.title} Recipe | Bhansa Nepal</title>
-        <meta name="description" content={`Learn how to cook authentic ${recipe.title}. Detailed step-by-step ${recipe.category} recipe from Nepal.`} />
-        <meta name="keywords" content={`${recipe.title} recipe, Nepali ${recipe.category}, how to make ${recipe.title}, Nepali food`} />
+        <title>{recipe.title} Recipe - Authentic Nepali Cuisine | Bhansa Nepal</title>
+        <meta name="description" content={`Authentic ${recipe.title} recipe from Nepal. ${recipe.description} Learn how to make ${recipe.title} with step-by-step instructions and cooking timers.`} />
+        <meta name="keywords" content={`${recipe.title} recipe, Nepali ${recipe.category}, how to make ${recipe.title}, authentic Nepali food, ${recipe.region} cuisine`} />
+        {/* Schema.org Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Recipe",
+            "name": recipe.title,
+            "image": [recipe.image],
+            "author": {
+              "@type": "Person",
+              "name": "Bhansa Nepal"
+            },
+            "datePublished": "2026-03-10",
+            "description": recipe.description,
+            "prepTime": "PT15M", 
+            "totalTime": "PT" + (recipe.prepTime.includes('hr') ? recipe.prepTime.split(' ')[0] + 'H' : recipe.prepTime.split(' ')[0] + 'M'),
+            "aggregateRating": recipe.rating ? {
+              "@type": "AggregateRating",
+              "ratingValue": recipe.rating,
+              "reviewCount": recipe.reviews
+            } : undefined,
+            "keywords": `${recipe.title} recipe, Nepali food`,
+            "recipeYield": `${recipe.baseServings} servings`,
+            "recipeCategory": recipe.category,
+            "recipeCuisine": "Nepali",
+            "nutrition": {
+              "@type": "NutritionInformation",
+              "calories": `${recipe.nutrition?.calories || 300} calories`,
+              "proteinContent": recipe.nutrition?.protein || "10g"
+            },
+            "recipeIngredient": recipe.ingredients,
+            "recipeInstructions": recipe.steps.map(s => ({
+              "@type": "HowToStep",
+              "text": s
+            }))
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [{
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://bhansanepal.com/"
+            },{
+              "@type": "ListItem",
+              "position": 2,
+              "name": recipe.category,
+              "item": `https://bhansanepal.com/sitemap#${recipe.category}`
+            },{
+              "@type": "ListItem",
+              "position": 3,
+              "name": recipe.title,
+              "item": `https://bhansanepal.com/recipe/${recipe.slug}`
+            }]
+          })}
+        </script>
       </Helmet>
       
       <button 
@@ -109,6 +182,15 @@ export default function RecipeDetail() {
         <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" /> 
         {t('back')}
       </button>
+
+      {/* SEO Breadcrumbs UI */}
+      <nav className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-400 mb-6 bg-white/50 w-max px-4 py-2 rounded-full border border-brand-100/50">
+        <a href="/" className="hover:text-brand-600 transition-colors">Home</a>
+        <ArrowRight className="w-3 h-3" />
+        <a href={`/sitemap#${recipe.category}`} className="hover:text-brand-600 transition-colors">{recipe.category}</a>
+        <ArrowRight className="w-3 h-3" />
+        <span className="text-brand-600 truncate max-w-[150px]">{recipe.title}</span>
+      </nav>
 
       {/* Hero Header */}
       <div className="relative h-80 md:h-[400px] w-full rounded-3xl overflow-hidden shadow-2xl mb-8 group">
@@ -183,58 +265,108 @@ export default function RecipeDetail() {
         </div>
       </div>
 
-      <p className="text-lg text-gray-700 leading-relaxed font-medium mb-12 px-2 border-l-4 border-brand-500 pl-6 italic bg-brand-50 py-4 rounded-r-2xl">
+      <p className="text-lg text-gray-700 leading-relaxed font-medium mb-8 px-2 border-l-4 border-brand-500 pl-6 italic bg-brand-50 py-4 rounded-r-2xl">
         {recipe.description}
       </p>
+
+      {/* Nutrition Bar */}
+      {recipe.nutrition && (
+        <div className="bg-white rounded-3xl p-6 shadow-xl border border-brand-50 mb-12 grid grid-cols-2 md:grid-cols-4 gap-6">
+           <div className="flex items-center gap-4 p-4 bg-orange-50 rounded-2xl">
+              <div className="bg-orange-500 p-2.5 rounded-xl text-white shadow-lg shadow-orange-500/30">
+                <Zap className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="block text-xs font-bold text-orange-900 uppercase tracking-tighter">Calories</span>
+                <span className="text-xl font-black text-orange-600">{recipe.nutrition.calories}</span>
+              </div>
+           </div>
+           <div className="flex items-center gap-4 p-4 bg-blue-50 rounded-2xl">
+              <div className="bg-blue-500 p-2.5 rounded-xl text-white shadow-lg shadow-blue-500/30">
+                <Activity className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="block text-xs font-bold text-blue-900 uppercase tracking-tighter">Protein</span>
+                <span className="text-xl font-black text-blue-600">{recipe.nutrition.protein}</span>
+              </div>
+           </div>
+           <div className="flex items-center gap-4 p-4 bg-green-50 rounded-2xl">
+              <div className="bg-green-500 p-2.5 rounded-xl text-white shadow-lg shadow-green-500/30">
+                <Droplet className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="block text-xs font-bold text-green-900 uppercase tracking-tighter">Carbs</span>
+                <span className="text-xl font-black text-green-600">{recipe.nutrition.carbs}</span>
+              </div>
+           </div>
+           <div className="flex items-center gap-4 p-4 bg-purple-50 rounded-2xl">
+              <div className="bg-purple-500 p-2.5 rounded-xl text-white shadow-lg shadow-purple-500/30">
+                <Activity className="w-5 h-5" />
+              </div>
+              <div>
+                <span className="block text-xs font-bold text-purple-900 uppercase tracking-tighter">Fat</span>
+                <span className="text-xl font-black text-purple-600">{recipe.nutrition.fat || '5g'}</span>
+              </div>
+           </div>
+        </div>
+      )}
 
       <div className="grid md:grid-cols-3 gap-12">
         {/* Sidebar: Ingredients */}
         <div className="md:col-span-1 space-y-6">
           <div className="bg-white rounded-3xl p-6 shadow-xl shadow-brand-100/50 border border-brand-100 sticky top-24">
-            {/* Nutrition Info */}
-            <div className="bg-brand-900 text-white rounded-3xl p-6 shadow-xl mb-6 relative overflow-hidden group">
-              <div className="absolute -right-4 -top-4 w-24 h-24 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all"></div>
-              <h3 className="text-xl font-display font-bold mb-4 flex items-center gap-2">
-                <Activity className="w-5 h-5 text-brand-300" /> {t('nutrition_info') || "Nutrition Info"}
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
-                  <div className="text-brand-300 text-[10px] font-bold uppercase tracking-widest mb-1">Calories</div>
-                  <div className="text-xl font-black">{recipe.nutrition?.calories || 320}</div>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
-                  <div className="text-brand-300 text-[10px] font-bold uppercase tracking-widest mb-1">Protein</div>
-                  <div className="text-xl font-black">{recipe.nutrition?.protein || "6g"}</div>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
-                  <div className="text-brand-300 text-[10px] font-bold uppercase tracking-widest mb-1">Carbs</div>
-                  <div className="text-xl font-black">{recipe.nutrition?.carbs || "40g"}</div>
-                </div>
-                <div className="bg-white/10 rounded-2xl p-3 backdrop-blur-sm border border-white/10">
-                  <div className="text-brand-300 text-[10px] font-bold uppercase tracking-widest mb-1">Fat</div>
-                  <div className="text-xl font-black">{recipe.nutrition?.fat || "10g"}</div>
-                </div>
-              </div>
-            </div>
-
             <h2 className="text-2xl font-display font-bold text-gray-900 mb-6 flex items-center gap-2">
               <span className="text-brand-600">🛒</span> {t('ingredients')}
             </h2>
             <ul className="space-y-4">
               {recipe.ingredients.map((ing, idx) => {
                 const isAdded = addedItems.has(ing);
+                const subKey = Object.keys(SUBSTITUTIONS).find(key => ing.toLowerCase().includes(key));
+                const substitution = subKey ? SUBSTITUTIONS[subKey] : null;
+
                 return (
-                  <li key={idx} className="flex items-start justify-between gap-3 group">
-                    <div className="flex items-start gap-3 flex-1">
-                      <div className="w-2 h-2 rounded-full bg-brand-300 mt-2 group-hover:bg-brand-600 transition-colors"></div>
-                      <span className="text-gray-700 font-medium">{scaleIngredient(ing)}</span>
+                  <li key={idx} className="relative">
+                    <div className="flex items-start justify-between gap-3 group p-2 rounded-xl hover:bg-brand-50/50 transition-all">
+                      <div className="flex items-start gap-3 flex-1">
+                        <div className="w-2 h-2 rounded-full bg-brand-300 mt-2 group-hover:bg-brand-600 transition-colors"></div>
+                        <div className="flex flex-col">
+                          <span className="text-gray-700 font-medium">{scaleIngredient(ing)}</span>
+                          {substitution && (
+                            <button 
+                              onClick={() => setActiveSubstitution(activeSubstitution === ing ? null : ing)}
+                              className="text-[10px] uppercase tracking-widest font-bold text-brand-600 flex items-center gap-1 mt-1 hover:text-brand-800 transition-colors"
+                            >
+                              <HelpCircle className="w-3 h-3" /> {t('sub_no_ingredient')}
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                      {!isAdded ? (
+                        <button onClick={() => addIngredientToList(ing)} className="opacity-0 group-hover:opacity-100 p-1.5 text-brand-600 hover:bg-brand-50 rounded-lg transition-all" title="Add to Shopping List">
+                          <ShoppingCart className="w-4 h-4"/>
+                        </button>
+                      ) : (
+                        <span className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">{t('added')}</span>
+                      )}
                     </div>
-                    {!isAdded ? (
-                      <button onClick={() => addIngredientToList(ing)} className="opacity-0 group-hover:opacity-100 p-1.5 text-brand-600 hover:bg-brand-50 rounded-lg transition-all" title="Add to Shopping List">
-                        <ShoppingCart className="w-4 h-4"/>
-                      </button>
-                    ) : (
-                      <span className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">{t('added')}</span>
+                    
+                    {/* Substitution Card */}
+                    {activeSubstitution === ing && substitution && (
+                      <div className="mt-2 ml-5 p-4 bg-gradient-to-br from-brand-900 to-brand-800 text-white rounded-2xl shadow-xl animate-in slide-in-from-top-2 duration-300 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-16 h-16 bg-white/5 rounded-full -mr-8 -mt-8"></div>
+                        <h4 className="text-[10px] uppercase tracking-[0.2em] font-black text-brand-300 mb-2">{t('sub_title')}</h4>
+                        <p className="text-xs font-bold mb-1 opacity-80">{t('sub_try_instead')}</p>
+                        <p className="text-sm font-black text-white mb-2">{language === 'np' ? substitution.np : substitution.en}</p>
+                        {substitution.note && (
+                          <p className="text-[10px] italic text-brand-200 border-t border-white/10 pt-2">{substitution.note}</p>
+                        )}
+                        <button 
+                          onClick={() => setActiveSubstitution(null)}
+                          className="absolute top-2 right-2 text-white/50 hover:text-white"
+                        >
+                          ×
+                        </button>
+                      </div>
                     )}
                   </li>
                 );
@@ -254,6 +386,7 @@ export default function RecipeDetail() {
             <div className="space-y-6">
               {(language === 'np' && recipe.nepaliSteps ? recipe.nepaliSteps : recipe.steps).map((step, idx) => {
                 const isChecked = checkedSteps.has(idx);
+                const stepTimerSeconds = parseTimer(step);
                 return (
                   <div 
                     key={idx} 
@@ -274,14 +407,14 @@ export default function RecipeDetail() {
                         )}
                       </div>
                       <p className={`text-lg transition-all duration-300 flex-1 pt-1 ${isChecked ? 'text-gray-400 line-through decoration-brand-300' : 'text-gray-800 font-medium'}`}>
-                        {step}
+                        {cleanStepText(step)}
                       </p>
                     </div>
 
                     {/* Timer Integration */}
-                    {step.includes('[') && step.includes(']') && !isChecked && (
+                    {stepTimerSeconds && !isChecked && (
                       <div className="mt-4 ml-12">
-                        {activeTimer?.id === idx ? (
+                        {activeTimer?.stepIndex === idx ? (
                           <div className="flex items-center gap-4 bg-brand-900 text-white px-4 py-2 rounded-xl w-max shadow-lg animate-pulse">
                             <Timer className="w-5 h-5" />
                             <span className="font-mono text-xl font-bold">{formatTime(timeLeft)}</span>
@@ -294,7 +427,7 @@ export default function RecipeDetail() {
                           </div>
                         ) : (
                           <button 
-                            onClick={() => startTimer(idx, step.match(/\[(.*?)\]/)[1])}
+                            onClick={() => startTimer(stepTimerSeconds, idx)}
                             className="flex items-center gap-2 bg-brand-100 text-brand-700 px-4 py-2 rounded-xl hover:bg-brand-600 hover:text-white transition-all font-bold text-sm"
                           >
                             <Timer className="w-4 h-4" />
@@ -376,6 +509,30 @@ export default function RecipeDetail() {
 
         </div>
       </div>
+
+      {/* Internal Linking: Related Recipes */}
+      {relatedRecipes.length > 0 && (
+        <div className="mt-20 pt-16 border-t border-brand-100">
+          <div className="flex justify-between items-end mb-10">
+            <div>
+              <h2 className="text-3xl font-display font-bold text-gray-900 mb-2">
+                {t('more_like_this') || 'More Like This'}
+              </h2>
+              <p className="text-gray-500 font-medium">Discover more authentic flavors from the {recipe.category} category.</p>
+            </div>
+            <a href="/sitemap" className="text-brand-600 font-bold flex items-center gap-2 hover:text-brand-800 transition-colors">
+              {t('view_all') || 'View All Recipes'} <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {relatedRecipes.map(related => (
+              <RecipeCard key={related.id} recipe={related} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+

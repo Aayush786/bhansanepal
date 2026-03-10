@@ -11,6 +11,7 @@ export default function Home() {
   const navigate = useNavigate();
   const { language, t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('All');
+  const trendingRecipes = mockRecipes.filter(r => r.trending);
   const [filteredRecipes, setFilteredRecipes] = useState(mockRecipes);
   
   // Track if search is active to override category tabs if necessary
@@ -61,7 +62,7 @@ export default function Home() {
         <button 
           onClick={() => {
             const randomIdx = Math.floor(Math.random() * mockRecipes.length);
-            navigate(`/recipe/${mockRecipes[randomIdx].id}`);
+            navigate(`/recipe/${mockRecipes[randomIdx].slug}`);
           }}
           className="inline-flex items-center gap-3 bg-gradient-to-r from-brand-600 to-brand-800 text-white font-extrabold px-8 py-4 rounded-full shadow-xl shadow-brand-600/30 hover:scale-105 hover:shadow-2xl hover:shadow-brand-600/40 transition-all duration-300 mb-10 group"
         >
@@ -71,6 +72,8 @@ export default function Home() {
 
         <IngredientSearch recipes={mockRecipes} onFilter={handleSearchResults} />
       </div>
+
+
 
       {/* Trending Today Section */}
       {!isSearching && (
@@ -86,7 +89,7 @@ export default function Home() {
             {mockRecipes.filter(r => r.trending).map(recipe => (
               <button 
                 key={recipe.id}
-                onClick={() => navigate(`/recipe/${recipe.id}`)}
+                onClick={() => navigate(`/recipe/${recipe.slug}`)}
                 className="group relative h-48 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
               >
                 <img 
@@ -116,7 +119,50 @@ export default function Home() {
         </div>
       )}
 
-      {/* Category Navigation */}
+      {/* Featured Festival Dish Spotlight */}
+      {!isSearching && (
+        <div className="mb-16 relative group cursor-pointer" onClick={() => navigate('/festivals')}>
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-brand-600/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          <div className="relative bg-white border border-brand-100 rounded-[3rem] p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-50 rounded-full blur-3xl -mr-20 -mt-20 opacity-50"></div>
+            
+            <div className="flex flex-col md:flex-row items-center gap-10 relative z-10">
+              <div className="w-full md:w-1/2">
+                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 text-orange-700 font-bold text-xs uppercase tracking-widest mb-6">
+                  <Sparkles className="w-3 h-3" /> Cultural Spotlight
+                </div>
+                <h2 className="text-4xl font-display font-black text-slate-900 mb-6 leading-tight">
+                  Taste the <span className="text-orange-600">Tradition</span>
+                </h2>
+                <p className="text-lg text-gray-600 font-medium mb-8 leading-relaxed">
+                  Every Nepali festival is defined by its flavors. From the crispy <span className="text-brand-700 font-bold">Sel Roti</span> of Tihar to the spicy <span className="text-brand-700 font-bold">Choila</span> of Indra Jatra.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <button className="bg-brand-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-brand-600/20 hover:scale-105 transition-all">
+                    Explore Festival Guide
+                  </button>
+                </div>
+              </div>
+              
+              <div className="w-full md:w-1/2 grid grid-cols-2 gap-4">
+                 <div className="space-y-4 pt-8">
+                    <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Sel-roti-nepali-food.jpg/800px-Sel-roti-nepali-food.jpg" className="w-full h-full object-cover" alt="Sel Roti"/>
+                    </div>
+                 </div>
+                 <div className="space-y-4">
+                    <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Tal_Kachila.JPG/800px-Tal_Kachila.JPG" className="w-full h-full object-cover" alt="Festive Food"/>
+                    </div>
+                    <div className="aspect-square bg-brand-50 rounded-3xl flex items-center justify-center p-6 text-center shadow-inner">
+                       <p className="text-brand-800 font-display font-black text-xl leading-none">50+ <br/> <span className="text-sm font-bold text-brand-600 uppercase tracking-tighter">Festive Dishes</span></p>
+                    </div>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="mb-12">
         
         {/* Grandma's Recipe Spotlight */}

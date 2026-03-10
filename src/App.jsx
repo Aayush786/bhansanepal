@@ -5,15 +5,17 @@ import AddRecipe from "./pages/AddRecipe";
 import ShoppingList from "./pages/ShoppingList";
 import Blog from "./pages/Blog";
 import Festivals from "./pages/Festivals";
+import Sitemap from "./pages/Sitemap";
+import KitchenTools from "./pages/KitchenTools";
 import { useLanguage } from "./utils/LanguageContext";
-import { UtensilsCrossed, PlusCircle, ShoppingCart, BookOpen, Globe } from 'lucide-react';
+import { UtensilsCrossed, PlusCircle, ShoppingCart, BookOpen, Globe, List } from 'lucide-react';
 
 function App() {
   const { language, toggleLanguage, t } = useLanguage();
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-brand-50 w-full overflow-x-hidden">
+      <div className="min-h-screen bg-brand-50 w-full overflow-x-hidden flex flex-col">
         {/* Simple Navbar */}
         <nav className="glass-panel sticky top-0 z-50 px-8 py-4 flex justify-between items-center">
           <div className="text-2xl font-display font-bold text-brand-700 flex items-center gap-2">
@@ -22,6 +24,7 @@ function App() {
           <div className="flex gap-6 font-medium text-brand-800 items-center">
             <a href="/" className="hover:text-brand-900 transition-colors">{t('nav_discover')}</a>
             <a href="/festivals" className="hover:text-brand-900 transition-colors">{t('nav_festivals') || "Festivals"}</a>
+            <a href="/kitchen-tools" className="hover:text-brand-900 transition-colors">{t('nav_tools') || "Kitchen Tools"}</a>
             <a href="/blog" className="hover:text-brand-900 transition-colors">{t('nav_blog')}</a>
             <a href="/add-recipe" className="hover:text-brand-900 transition-colors">{t('nav_submit_recipe')}</a>
             <a href="/shopping-list" className="hover:text-brand-900 transition-colors flex items-center gap-1">
@@ -38,18 +41,36 @@ function App() {
           </div>
         </nav>
 
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/recipe/:id" element={<RecipeDetail />} />
+            <Route path="/recipe/:slug" element={<RecipeDetail />} />
             <Route path="/add-recipe" element={<AddRecipe />} />
             <Route path="/shopping-list" element={<ShoppingList />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/festivals" element={<Festivals />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/kitchen-tools" element={<KitchenTools />} />
           </Routes>
         </main>
+
+        {/* Footer with Sitemap */}
+        <footer className="glass-panel mt-20 py-8 border-t border-brand-100">
+          <div className="max-w-7xl mx-auto px-8 flex justify-between items-center transition-all">
+            <div className="text-brand-900 font-display font-bold">© 2026 Bhansa Nepal</div>
+            <div className="flex gap-6 text-sm font-medium text-brand-600">
+              <a href="/sitemap" className="hover:text-brand-900 flex items-center gap-1.5">
+                <List className="w-4 h-4" /> Recipes Index (Sitemap)
+              </a>
+              <a href="/blog" className="hover:text-brand-900">Articles</a>
+              <a href="/festivals" className="hover:text-brand-900">Cultural Guide</a>
+              <a href="/kitchen-tools" className="hover:text-brand-900">Kitchen Tools</a>
+            </div>
+          </div>
+        </footer>
       </div>
     </BrowserRouter>
+
   );
 }
 
