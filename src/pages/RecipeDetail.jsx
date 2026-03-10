@@ -88,6 +88,10 @@ export default function RecipeDetail() {
     setAddedItems(newAdded);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [recipe]);
+
   if (!recipe) {
     return (
       <div className="text-center py-20">
@@ -110,11 +114,11 @@ export default function RecipeDetail() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto pb-20 animate-in fade-in slide-in-from-top-8 duration-500">
+    <div className="max-w-4xl mx-auto pb-20 animate-in fade-in slide-in-from-top-20 duration-700 ease-out">
       <Helmet>
-        <title>{recipe.title} Recipe - Authentic Nepali Cuisine | Bhansa Nepal</title>
-        <meta name="description" content={`Authentic ${recipe.title} recipe from Nepal. ${recipe.description} Learn how to make ${recipe.title} with step-by-step instructions and cooking timers.`} />
-        <meta name="keywords" content={`${recipe.title} recipe, Nepali ${recipe.category}, how to make ${recipe.title}, authentic Nepali food, ${recipe.region} cuisine`} />
+        <title>{recipe.seoTitle || `${recipe.title} Recipe - Authentic Nepali Cuisine | Bhansa Nepal`}</title>
+        <meta name="description" content={recipe.seoDescription || `Authentic ${recipe.title} recipe from Nepal. ${recipe.description} Learn how to make ${recipe.title} with step-by-step instructions and cooking timers.`} />
+        <meta name="keywords" content={recipe.seoKeywords || `${recipe.title} recipe, Nepali ${recipe.category}, how to make ${recipe.title}, authentic Nepali food, ${recipe.region} cuisine`} />
         {/* Schema.org Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({

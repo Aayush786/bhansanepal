@@ -35,8 +35,8 @@ function App() {
       <div className="min-h-screen bg-brand-50 w-full overflow-x-hidden flex flex-col">
         {/* Responsive Navbar */}
         <nav className="glass-panel sticky top-0 z-50 px-6 py-4 flex justify-between items-center shadow-lg">
-          <Link to="/" className="text-xl md:text-2xl font-display font-bold text-brand-700 flex items-center gap-2 hover:scale-105 transition-transform shrink-0">
-            <span className="text-brand-900">🌶️</span> Bhansa Nepal
+          <Link to="/" className="text-xl md:text-2xl font-display font-bold text-brand-700 flex items-center gap-2 hover:scale-105 transition-all shrink-0">
+            <span className="text-brand-900 drop-shadow-sm">🌶️</span> <span className="tracking-tight">Bhansa Nepal</span>
           </Link>
           
           {/* Desktop Nav */}

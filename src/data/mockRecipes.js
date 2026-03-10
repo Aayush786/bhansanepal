@@ -21,8 +21,10 @@ export const REGIONS = [
 export const mockRecipes = [
   // --- MAIN DISHES ---
   {
-    id: "1", slug: "dal-bhat-tarkari-recipe", title: "Dal Bhat Tarkari", nepaliTitle: "दाल भात तरकारी", category: "Main Dishes", prepTime: "45 mins", difficulty: "Medium", isGrandmaRecipe: true, region: "All Nepal",
+    id: "1", slug: "easy-dal-bhat-recipe", title: "Dal Bhat Tarkari", nepaliTitle: "दाल भात तरकारी", category: "Main Dishes", prepTime: "45 mins", difficulty: "Medium", isGrandmaRecipe: true, region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Dal_Bhat_Tarkari_2.jpg", rating: 4.9, reviews: 1042, videoUrl: "",
+    seoTitle: "How to Cook Nepali Dal Bhat - Authentic Easy Recipe | Bhansa Nepal",
+    seoDescription: "Learn how to cook Nepali Dal Bhat Tarkari with this authentic, easy-to-follow recipe. The ultimate everyday comfort food of Nepal.",
     description: "The ultimate everyday Nepali meal consisting of steamed rice, lentil soup, and vegetable curry.",
     ingredients: [
       "500g Rice",
@@ -53,6 +55,7 @@ export const mockRecipes = [
   {
     id: "2", slug: "gundruk-ko-jhol-recipe", title: "Gundruk ko Jhol", nepaliTitle: "गुन्द्रुक को झोल", category: "Main Dishes", prepTime: "30 mins", difficulty: "Easy", isGrandmaRecipe: true, region: " पहाड (Hills)",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 4.8, reviews: 412, videoUrl: "",
+    seoTitle: "Gundruk ko Jhol Recipe - Authentic Nepali Fermented Soup | Bhansa Nepal",
     description: "A fermented leafy green soup, tangy and rich, a staple in the hilly regions.",
     ingredients: [
       "100g Gundruk (Fermented greens)",
@@ -302,6 +305,7 @@ export const mockRecipes = [
   {
     id: "11", slug: "buff-momo-recipe", title: "Buff Momo", nepaliTitle: "बफ म:म", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "Kathmandu Valley",
     image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Buff_Momo_1.jpg", rating: 5.0, reviews: 3102, videoUrl: "",
+    seoTitle: "Traditional Buff Momo Recipe - Nepali Steamed Dumplings | Bhansa Nepal",
     description: "The undisputed king of Nepali street food. Steamed dumplings filled with spiced minced buffalo meat.",
     ingredients: [
       "500g Flour",
@@ -358,6 +362,7 @@ export const mockRecipes = [
   {
     id: "13", slug: "veg-momo-recipe", title: "Veg Momo", nepaliTitle: "भेज म:म", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Veg_Momos_.jpg", rating: 4.6, reviews: 954, videoUrl: "",
+    seoTitle: "Veg Momo Recipe Nepal Style - Healthy Steamed Dumplings | Bhansa Nepal",
     description: "Delicious steamed dumplings filled with finely chopped cabbage, carrots, paneer, and onions.",
     ingredients: [
       "500g Flour",
@@ -553,6 +558,7 @@ export const mockRecipes = [
   {
     id: "21", slug: "sel-roti-recipe", title: "Sel Roti", nepaliTitle: "सेल रोटी", category: "Sweets", prepTime: "2 hrs", difficulty: "Medium", isGrandmaRecipe: true, region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/9/99/Sel_roti%2C_Nepalese_food.jpg", rating: 4.8, reviews: 124, videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    seoTitle: "Sel Roti Recipe – Traditional Nepali Sweet Rice Bread | Bhansa Nepal",
     description: "Traditional Nepali festival bread made during Tihar. Sweet, crispy on the outside, soft inside.",
     ingredients: [
       "500g Rice flour",
@@ -830,6 +836,7 @@ export const mockRecipes = [
   {
     id: "32", slug: "chatamari-recipe", title: "Chatamari", nepaliTitle: "चतामरी", category: "Traditional / Ethnic Food", prepTime: "45 mins", difficulty: "Medium", isGrandmaRecipe: false, region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Meat_Chatamari.jpg", rating: 4.7, reviews: 521, videoUrl: "",
+    seoTitle: "Nepali Pizza Recipe - Traditional Newari Chatamari | Bhansa Nepal",
     description: "Often called the 'Nepali Pizza'. A thin, crispy rice flour crepe topped with minced meat and an egg.",
     ingredients: [
       "2 cups Rice flour",
@@ -1286,9 +1293,10 @@ export const mockRecipes = [
     tips: ["Do not add water. Cooking the vegetables in their own steam yields the best taste."]
   },
   {
-    id: "47", slug: "tomato-chutney-recipe", title: "Tomato Chutney (Golbheda ko Achar)", nepaliTitle: "गोलभेडाको अचार", category: "Simple Home Foods", prepTime: "10 mins", difficulty: "Easy", isGrandmaRecipe: true, region: "All Nepal",
+    id: "47", slug: "momo-chutney-recipe", title: "Tomato Chutney (Golbheda ko Achar)", nepaliTitle: "गोलभेडाको अचार", category: "Simple Home Foods", prepTime: "10 mins", difficulty: "Easy", isGrandmaRecipe: true, region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 4.8, reviews: 1891, videoUrl: "",
-    description: "A spicy, tangy, and smoky condiment served alongside almost every Dal Bhat meal.",
+    seoTitle: "Nepali Momo Achar Recipe - Spicy Tomato & Sesame Chutney | Bhansa Nepal",
+    description: "A spicy, tangy, and smoky condiment served alongside almost every Dal Bhat meal and every Momo plate.",
     ingredients: [
       "4 large Tomatoes",
       "4 cloves Garlic",
