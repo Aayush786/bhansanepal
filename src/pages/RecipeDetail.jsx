@@ -110,7 +110,7 @@ export default function RecipeDetail() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto pb-20 animate-in fade-in slide-in-from-bottom-8 duration-500">
+    <div className="max-w-4xl mx-auto pb-20 animate-in fade-in slide-in-from-top-8 duration-500">
       <Helmet>
         <title>{recipe.title} Recipe - Authentic Nepali Cuisine | Bhansa Nepal</title>
         <meta name="description" content={`Authentic ${recipe.title} recipe from Nepal. ${recipe.description} Learn how to make ${recipe.title} with step-by-step instructions and cooking timers.`} />
@@ -225,19 +225,19 @@ export default function RecipeDetail() {
       </div>
 
       {/* Meta Info Bar */}
-      <div className="bg-white rounded-2xl p-6 shadow-sm border border-brand-100 mb-10 flex flex-wrap justify-between items-center gap-6">
-        <div className="flex gap-8">
-          <div className="flex flex-col">
-            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><Clock className="w-3.5 h-3.5"/> {t('prep_time')}</span>
-            <span className="text-lg font-bold text-gray-900">{recipe.prepTime}</span>
+      <div className="bg-white rounded-2xl p-6 shadow-sm border border-brand-100 mb-10 flex flex-wrap justify-center md:justify-between items-center gap-8">
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <span className="text-gray-400 text-[10px] md:text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><Clock className="w-3.5 h-3.5"/> {t('prep_time')}</span>
+            <span className="text-base md:text-lg font-bold text-gray-900">{recipe.prepTime}</span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><BarChart className="w-3.5 h-3.5"/> {t('difficulty')}</span>
-            <span className="text-lg font-bold text-gray-900">{t(recipe.difficulty) || recipe.difficulty}</span>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <span className="text-gray-400 text-[10px] md:text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><BarChart className="w-3.5 h-3.5"/> {t('difficulty')}</span>
+            <span className="text-base md:text-lg font-bold text-gray-900">{t(recipe.difficulty) || recipe.difficulty}</span>
           </div>
-          <div className="flex flex-col">
-            <span className="text-gray-400 text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5"/> {t('region')}</span>
-            <span className="text-lg font-bold text-brand-600">{recipe.region}</span>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <span className="text-gray-400 text-[10px] md:text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5"/> {t('region')}</span>
+            <span className="text-base md:text-lg font-bold text-brand-600">{recipe.region}</span>
           </div>
         </div>
 
@@ -342,11 +342,11 @@ export default function RecipeDetail() {
                         </div>
                       </div>
                       {!isAdded ? (
-                        <button onClick={() => addIngredientToList(ing)} className="opacity-0 group-hover:opacity-100 p-1.5 text-brand-600 hover:bg-brand-50 rounded-lg transition-all" title="Add to Shopping List">
+                        <button onClick={() => addIngredientToList(ing)} className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 p-1.5 text-brand-600 hover:bg-brand-50 rounded-lg transition-all" title="Add to Shopping List">
                           <ShoppingCart className="w-4 h-4"/>
                         </button>
                       ) : (
-                        <span className="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full">{t('added')}</span>
+                        <span className="text-[10px] font-semibold text-green-600 bg-green-50 px-2 py-1 rounded-full whitespace-nowrap">{t('added')}</span>
                       )}
                     </div>
                     
