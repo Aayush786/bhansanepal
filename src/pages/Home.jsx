@@ -157,7 +157,7 @@ export default function Home() {
           </section>
         )}
 
-        {/* Grandma's Recipe Spotlight */}
+        {/* HajurAama Ko Recipe Spotlight */}
         {!isSearching && (
           <section className="bg-gradient-to-tr from-brand-900 via-brand-800 to-brand-700 rounded-3xl p-8 relative overflow-hidden shadow-2xl flex flex-col md:flex-row items-center gap-8 group">
             <div className="absolute -right-20 -top-20 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-700"></div>
@@ -183,7 +183,7 @@ export default function Home() {
             <div className="w-full md:w-1/3 relative z-10 hidden md:block group-hover:rotate-3 transition-transform duration-500">
               <div className="aspect-square bg-brand-900/50 rounded-3xl border-2 border-white/20 shadow-2xl overflow-hidden relative">
                 <div className="absolute inset-0 flex items-center justify-center text-7xl opacity-50">🔥</div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Nepali_Dal_Bhat.JPG" className="w-full h-full object-cover mix-blend-overlay opacity-80" alt="Traditional cooking" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Nepali_Dal_Bhat.JPG" className="w-full h-full object-cover mix-blend-overlay opacity-100" alt="Traditional cooking" />
               </div>
             </div>
           </section>
