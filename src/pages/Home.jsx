@@ -80,7 +80,7 @@ export default function Home() {
               <div className="bg-orange-100 p-2 rounded-xl">
                 <Flame className="w-6 h-6 text-orange-600 animate-pulse" />
               </div>
-              <h2 className="text-3xl font-display font-bold text-gray-900">🔥 {t('trending_today') || "Trending Today"}</h2>
+              <h2 className="text-3xl font-display font-bold text-gray-900">🔥 {t('Trending_Today') || "Trending Today"}</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -183,7 +183,7 @@ export default function Home() {
             <div className="w-full md:w-1/3 relative z-10 hidden md:block group-hover:rotate-3 transition-transform duration-500">
               <div className="aspect-square bg-brand-900/50 rounded-3xl border-2 border-white/20 shadow-2xl overflow-hidden relative">
                 <div className="absolute inset-0 flex items-center justify-center text-7xl opacity-50">🔥</div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg" className="w-full h-full object-cover mix-blend-overlay opacity-80" alt="Traditional cooking" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Nepali_Dal_Bhat.JPG" className="w-full h-full object-cover mix-blend-overlay opacity-80" alt="Traditional cooking" />
               </div>
             </div>
           </section>
