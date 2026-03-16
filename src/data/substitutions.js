@@ -35,7 +35,7 @@ export const SUBSTITUTIONS = {
     note: "May not have the same fermentation sourness."
   },
   "buff": {
-    en: "Beef or Mutton",
+    en: "Buffalo Meat or Mutton",
     np: "गाई वा खसीको मासु",
     note: "Similar texture for momos."
   },

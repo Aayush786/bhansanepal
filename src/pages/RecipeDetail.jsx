@@ -118,7 +118,19 @@ export default function RecipeDetail() {
       <Helmet>
         <title>{recipe.seoTitle || `${recipe.title} Recipe - Authentic Nepali Cuisine | Bhansa Nepal`}</title>
         <meta name="description" content={recipe.seoDescription || `Authentic ${recipe.title} recipe from Nepal. ${recipe.description} Learn how to make ${recipe.title} with step-by-step instructions and cooking timers.`} />
-        <meta name="keywords" content={recipe.seoKeywords || `${recipe.title} recipe, Nepali ${recipe.category}, how to make ${recipe.title}, authentic Nepali food, ${recipe.region} cuisine`} />
+        <meta name="keywords" content={recipe.seoKeywords || `${recipe.title} recipe, Nepali ${recipe.category}, how to make ${recipe.title}, authentic Nepali food, ${recipe.region} cuisine, Nepali cooking, traditional recipes`} />
+        <meta name="author" content="Bhansa Nepal" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta property="og:title" content={recipe.seoTitle || `${recipe.title} Recipe - Authentic Nepali Cuisine | Bhansa Nepal`} />
+        <meta property="og:description" content={recipe.seoDescription || `Learn how to cook ${recipe.title} with this authentic Nepali recipe. Step-by-step instructions for traditional ${recipe.category}.`} />
+        <meta property="og:image" content={recipe.image} />
+        <meta property="og:url" content={`https://bhansanepal.com/recipe/${recipe.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={recipe.seoTitle || `${recipe.title} Recipe - Authentic Nepali Cuisine | Bhansa Nepal`} />
+        <meta name="twitter:description" content={recipe.seoDescription || `Learn how to cook ${recipe.title} with this authentic Nepali recipe.`} />
+        <meta name="twitter:image" content={recipe.image} />
         {/* Schema.org Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -201,16 +213,12 @@ export default function RecipeDetail() {
         <img 
           src={recipe.image} 
           alt={recipe.title} 
+          loading="lazy"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/30 to-transparent"></div>
         
         <div className="absolute bottom-0 left-0 p-8 w-full">
-          {recipe.isGrandmaRecipe && (
-            <span className="inline-block bg-brand-900 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md border border-white/20">
-              👵 Grandma's Secret Recipe
-            </span>
-          )}
           <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-2 drop-shadow-lg">
             {recipe.title}
           </h1>
@@ -323,7 +331,7 @@ export default function RecipeDetail() {
               <span className="text-brand-600">🛒</span> {t('ingredients')}
             </h2>
             <ul className="space-y-4">
-              {recipe.ingredients.map((ing, idx) => {
+              {(language === 'np' && recipe.nepaliIngredients ? recipe.nepaliIngredients : recipe.ingredients).map((ing, idx) => {
                 const isAdded = addedItems.has(ing);
                 const subKey = Object.keys(SUBSTITUTIONS).find(key => ing.toLowerCase().includes(key));
                 const substitution = subKey ? SUBSTITUTIONS[subKey] : null;
@@ -335,6 +343,9 @@ export default function RecipeDetail() {
                         <div className="w-2 h-2 rounded-full bg-brand-300 mt-2 group-hover:bg-brand-600 transition-colors"></div>
                         <div className="flex flex-col">
                           <span className="text-gray-700 font-medium">{scaleIngredient(ing)}</span>
+                          {language === 'np' && recipe.ingredients[idx] && (
+                            <span className="text-gray-500 text-sm">{recipe.ingredients[idx]}</span>
+                          )}
                           {substitution && (
                             <button 
                               onClick={() => setActiveSubstitution(activeSubstitution === ing ? null : ing)}

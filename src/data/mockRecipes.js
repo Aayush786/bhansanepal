@@ -21,7 +21,7 @@ export const REGIONS = [
 export const mockRecipes = [
   // --- MAIN DISHES ---
   {
-    id: "1", slug: "easy-dal-bhat-recipe", title: "Dal Bhat Tarkari", nepaliTitle: "दाल भात तरकारी", category: "Main Dishes", prepTime: "45 mins", difficulty: "Medium", isGrandmaRecipe: true, region: "All Nepal",
+    id: "1", slug: "easy-dal-bhat-recipe", title: "Dal Bhat Tarkari", nepaliTitle: "दाल भात तरकारी", category: "Main Dishes", prepTime: "45 mins", difficulty: "Medium", region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Dal_Bhat_Tarkari_2.jpg", rating: 4.9, reviews: 1042, videoUrl: "",
     seoTitle: "How to Cook Nepali Dal Bhat - Authentic Easy Recipe | Bhansa Nepal",
     seoDescription: "Learn how to cook Nepali Dal Bhat Tarkari with this authentic, easy-to-follow recipe. The ultimate everyday comfort food of Nepal.",
@@ -34,26 +34,36 @@ export const mockRecipes = [
       "1 tsp Cumin seeds",
       "1 tbsp Ghee"
     ],
+    nepaliIngredients: [
+      "५०० ग्राम चामल",
+      "२०० ग्राम पहेंलो दाल",
+      "३०० ग्राम मौसमी तरकारी (काउली/आलु)",
+      "१ चम्चा बेसार",
+      "१ चम्चा जिरा",
+      "१ चम्चा घिउ"
+    ],
     nutrition: { calories: 350, protein: "8g", carbs: "65g", fat: "6g" },
     baseServings: 4,
     steps: [
-      "Wash rice thoroughly and boil in a pot with water ratio 1:2 until fluffy [20 min].",
-      "Wash yellow lentils and pressure cook with turmeric and salt until soft [15 min].",
-      "Heat ghee in a small pan, add cumin seeds until they splutter, and pour over the cooked lentils (Tadka).",
-      "Chop seasonal vegetables and sauté with spices (turmeric, cumin, coriander) until tender [15 min].",
-      "Serve hot rice, dal, and vegetable curry together on a traditional thali."
+      "Start by washing the rice thoroughly under running water until the water runs clear. This removes any impurities and prevents the rice from becoming sticky.",
+      "In a large pot, add the washed rice and 1 liter of water (1:2 ratio). Bring to a boil over high heat, then reduce to medium heat and cover. Cook for 15-20 minutes until the rice is fluffy and all water is absorbed. Let it rest for 5 minutes before fluffing with a fork.",
+      "While the rice is cooking, wash the yellow lentils thoroughly. In a pressure cooker, add the lentils, 1/2 tsp turmeric, 1 tsp salt, and 4 cups of water. Cook on high pressure for 10-15 minutes until the lentils are soft and mushy.",
+      "For the tadka: Heat 1 tbsp ghee in a small pan over medium heat. Add 1 tsp cumin seeds and let them splutter for 30 seconds. Pour this hot ghee mixture over the cooked lentils and stir well.",
+      "Prepare the vegetable curry: Chop the seasonal vegetables into bite-sized pieces. Heat 2 tbsp oil in a pan, add 1/2 tsp cumin seeds, 1/2 tsp turmeric, and sauté for 1 minute. Add the vegetables and cook on medium heat for 10-15 minutes until tender, stirring occasionally.",
+      "To serve: Arrange the hot rice, dal, and vegetable curry on a traditional thali (plate). Add a dollop of ghee on top of the rice for extra flavor. Serve immediately while hot."
     ],
     nepaliSteps: [
-      "चामललाई राम्ररी धोएर १:२ को अनुपातमा पानी राखेर नरम नहुन्जेल पकाउनुहोस् [२० मिनेट]।",
-      "दाललाई धोएर बेसार र नुन हाली प्रेसर कुकरमा गलाउनुहोस् [१५ मिनेट]।",
-      "सानो तावामा घिउ तताएर जिरा पड्काउनुहोस् र पाकेको दालमा झान्नुहोस्।",
-      "मौसमी तरकारीलाई काटेर मसला (बेसार, जिरा, धनियाँ) हाली मध्यम आँचमा पकाउनुहोस् [१५ मिनेट]।",
-      "भात, दाल र तरकारीलाई थालीमा सजाएर तातो-तातो पस्कनुहोस्।"
+      "सुरुमा चामललाई बगिरहेको पानीमा राम्ररी धुनुहोस् जबसम्म पानी सफा हुँदैन। यसले कुनै पनि अशुद्धता हटाउँछ र चामल चिप्लो हुनबाट रोक्छ।",
+      "ठूलो भाँडोमा धोएको चामल र १ लिटर पानी (१:२ अनुपात) हाल्नुहोस्। ठूलो आँचमा उमाल्नुहोस्, त्यसपछि मध्यम आँचमा घटाउनुहोस् र छोप्नुहोस्। चामल नरम र सबै पानी सोसिएसम्म १५-२० मिनेट पकाउनुहोस्। फोर्कले चलाउनु अघि ५ मिनेट आराम दिनुहोस्।",
+      "चामल पकिरहेको बेला, पहेंलो दाललाई राम्ररी धुनुहोस्। प्रेसर कुकरमा दाल, १/२ चम्चा बेसार, १ चम्चा नुन र ४ कप पानी हाल्नुहोस्। उच्च प्रेसरमा १०-१५ मिनेट पकाउनुहोस् जबसम्म दाल नरम र मुछिएको हुँदैन।",
+      "तड्काका लागि: सानो कराहीमा १ चम्चा घिउ मध्यम आँचमा तताउनुहोस्। १ चम्चा जिरा हाल्नुहोस् र ३० सेकेन्डसम्म पड्काउन दिनुहोस्। यो तातो घिउको मिश्रण पाकेको दालमा झान्नुहोस् र राम्ररी चलाउनुहोस्।",
+      "तरकारीको तरकारी तयार गर्नुहोस्: मौसमी तरकारीलाई मुखमा राख्न मिल्ने टुक्रामा काट्नुहोस्। कराहीमा २ चम्चा तेल तताउनुहोस्, १/२ चम्चा जिरा र १/२ चम्चा बेसार हाल्नुहोस्, र १ मिनेट भुट्नुहोस्। तरकारीहरू हाल्नुहोस् र कहिलेकाहीँ चलाउँदै मध्यम आँचमा १०-१५ मिनेट पकाउनुहोस् जबसम्म नरम हुँदैन।",
+      "पस्कनका लागि: परम्परागत थालीमा तातो भात, दाल र तरकारीको तरकारी सजाउनुहोस्। भातको माथि थप स्वादका लागि घिउको डल्लोप हाल्नुहोस्। तातो हुँदै तुरुन्तै पस्कनुहोस्।"
     ],
     tips: ["A dollop of ghee on the rice changes everything."]
   },
   {
-    id: "2", slug: "gundruk-ko-jhol-recipe", title: "Gundruk ko Jhol", nepaliTitle: "गुन्द्रुक को झोल", category: "Main Dishes", prepTime: "30 mins", difficulty: "Easy", isGrandmaRecipe: true, region: " पहाड (Hills)",
+    id: "2", slug: "gundruk-ko-jhol-recipe", title: "Gundruk ko Jhol", nepaliTitle: "गुन्द्रुक को झोल", category: "Main Dishes", prepTime: "30 mins", difficulty: "Easy", region: " पहाड (Hills)",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 4.8, reviews: 412, videoUrl: "",
     seoTitle: "Gundruk ko Jhol Recipe - Authentic Nepali Fermented Soup | Bhansa Nepal",
     description: "A fermented leafy green soup, tangy and rich, a staple in the hilly regions.",
@@ -65,28 +75,36 @@ export const mockRecipes = [
       "50g Soybean",
       "3 Dry chilies"
     ],
+    nepaliIngredients: [
+      "१०० ग्राम गुन्द्रुक (किण्वित साग)",
+      "१ मध्यम प्याज",
+      "२ टमाटर",
+      "४ कली लसुन",
+      "५० ग्राम भटमास",
+      "३ सुकेका खुर्सानी"
+    ],
     nutrition: { calories: 120, protein: "4g", carbs: "15g", fat: "5g" },
     baseServings: 4,
     steps: [
-      "Soak gundruk in warm water for 10 minutes to soften it.",
-      "Roast soybeans in a dry pan until they start to pop and turn brown [5 min].",
-      "Heat mustard oil, fry chopped onions, garlic, and ginger until fragrant.",
-      "Add chopped tomatoes and turmeric, cook until soft [5 min].",
-      "Add soaked gundruk, roasted soybeans, and 3 cups of water. Simmer on medium heat [15 min].",
-      "Serve hot with Dhido or steamed rice."
+      "Start by soaking the gundruk in warm water for 10 minutes to soften it and reduce any strong smell. Drain and rinse once.",
+      "In a dry pan over medium heat, roast the soybeans until they start to pop and turn brown, about 5 minutes. Stir constantly to prevent burning.",
+      "Heat 2 tbsp mustard oil in a large pot over medium heat. Add finely chopped onions, minced garlic, and grated ginger. Fry until the onions turn golden brown, about 5 minutes.",
+      "Add chopped tomatoes and 1/2 tsp turmeric powder. Cook until the tomatoes become soft and the oil starts to separate, about 5 minutes.",
+      "Add the soaked gundruk, roasted soybeans, 3 dry chilies, and 3 cups of water. Bring to a boil, then reduce heat and simmer for 15 minutes until flavors meld.",
+      "Season with salt to taste. Serve hot with dhido (millet porridge) or steamed rice."
     ],
     nepaliSteps: [
-      "गुन्द्रुकलाई नरम बनाउन १० मिनेट मनतातो पानीमा भिजाउनुहोस्।",
-      "भटमासलाई सुक्खा कराामा रङ्ग बदलिउन्जेल भुट्नुहोस् [५ मिनेट]।",
-      "तोरीको तेल तताएर प्याज, लसुन र अदुवा वासना आउन्जेल भुट्नुहोस्।",
-      "टमाटर र बेसार हालेर नरम नहुन्जेल पकाउनुहोस् [५ मिनेट]।",
-      "भिजाएको गुन्द्रुक, भुटेको भटमास र ३ कप पानी हालेर मध्यम आँचमा उमाल्नुहोस् [१५ मिनेट]।",
-      "ढिँडो वा भातसँग तातो-तातो खानुहोस्।"
+      "सुरुमा गुन्द्रुकलाई नरम बनाउन र कडा गन्ध कम गर्न १० मिनेट मनतातो पानीमा भिजाउनुहोस्। पानी निकालेर एक पटक धुनुहोस्।",
+      "सुक्खा कराहीमा भटमासलाई पड्काउन थालेर रङ्ग खैरो नहुन्जेल भुट्नुहोस्, करिब ५ मिनेट। जल्न नदिन निरन्तर चलाउनुहोस्।",
+      "ठूलो भाँडोमा २ चम्चा तोरीको तेल मध्यम आँचमा तताउनुहोस्। मसिनो काटेको प्याज, पिसेको लसुन र कुटेको अदुवा हाल्नुहोस्। प्याज सुन्तला रङ्ग नहुन्जेल भुट्नुहोस्, करिब ५ मिनेट।",
+      "काटेको टमाटर र १/२ चम्चा बेसारको धुलो हाल्नुहोस्। टमाटर नरम भएर तेल छुटुन्जेल पकाउनुहोस्, करिब ५ मिनेट।",
+      "भिजाएको गुन्द्रुक, भुटेको भटमास, ३ सुकेका खुर्सानी र ३ कप पानी हाल्नुहोस्। उमाल्नुहोस्, त्यसपछि आँच कम गरेर १५ मिनेटसम्म उमाल्नुहोस् जबसम्म स्वाद नमिल्छ।",
+      "नुनको स्वाद मिलाउनुहोस्। ढिँडो (कोदोको लेदो) वा भातसँग तातो-तातो पस्कनुहोस्।"
     ],
     tips: ["Roasted soybeans add a necessary crunch."]
   },
   {
-    id: "3", slug: "dhido-with-gundruk-recipe", title: "Dhido with Gundruk", nepaliTitle: "ढिंडो र गुन्द्रुक", category: "Main Dishes", prepTime: "40 mins", difficulty: "Hard", isGrandmaRecipe: true, region: " पहाड (Hills)",
+    id: "3", slug: "dhido-with-gundruk-recipe", title: "Dhido with Gundruk", nepaliTitle: "ढिंडो र गुन्द्रुक", category: "Main Dishes", prepTime: "40 mins", difficulty: "Hard", region: " पहाड (Hills)",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 4.7, reviews: 523, videoUrl: "",
     description: "Traditional porridge-like food made from buckwheat or millet flour, usually eaten hot without chewing.",
     ingredients: [
@@ -95,26 +113,36 @@ export const mockRecipes = [
       "2 tbsp Ghee",
       "1 tsp Salt"
     ],
+    nepaliIngredients: [
+      "२५० ग्राम कोदो वा फापरको पिठो",
+      "१ लिटर पानी",
+      "२ चम्चा घिउ",
+      "१ चम्चा नुन"
+    ],
     nutrition: { calories: 450, protein: "12g", carbs: "80g", fat: "10g" },
     baseServings: 4,
     steps: [
-      "Bring 1 liter of water to a rolling boil in a heavy-bottomed pan [10 min].",
-      "Gradually add millet or buckwheat flour while continuously stirring with a spatula (Dabilo) to avoid lumps.",
-      "Add a pinch of salt and a tablespoon of ghee for richness.",
-      "Keep stirring and mashing the dough against the sides of the pan until it thickens and pulls away [15 min].",
-      "Serve immediately with hot ghee and a side of Gundruk Jhol."
+      "Start by preparing all ingredients: measure the millet or buckwheat flour, ghee, salt, and have 1 liter of water ready.",
+      "In a heavy-bottomed pan, bring 1 liter of water to a rolling boil over high heat [10 min].",
+      "Gradually add the flour while continuously stirring with a spatula (Dabilo) to prevent lumps from forming.",
+      "Add 1 tsp salt and 1 tbsp ghee for richness and flavor.",
+      "Continue stirring vigorously, mashing the mixture against the sides of the pan until it thickens and starts to pull away [15 min].",
+      "Check for doneness: the dhido should be smooth and firm, not sticky.",
+      "Serve immediately while hot, topped with additional ghee and accompanied by Gundruk Jhol."
     ],
     nepaliSteps: [
-      "बाक्लो भाँडोमा १ लिटर पानी मज्जाले उमाल्नुहोस् [१० मिनेट]।",
-      "उम्लेको पानीमा कोदो वा फापरको पिठो अलि-अलि गर्दै हाल्नुहोस् र डबिलाले निरन्तर चलाइरहनुहोस्।",
-      "स्वादका लागि थोरै नुन र एक चम्चा घिउ हाल्नुहोस्।",
-      "पिठो बाक्लो भएर भाँडोको भित्ताबाट नछुटुन्जेल मज्जाले चलाइरहनुहोस् [१५ मिनेट]।",
-      "तातो घिउ र गुन्द्रुकको झोलसँग तुरुन्तै पस्कनुहोस्।"
+      "सबै सामग्री तयार गर्नुहोस्: कोदो वा फापरको पिठो, घिउ, नुन नाप्नुहोस् र १ लिटर पानी तयार राख्नुहोस्।",
+      "बाक्लो भाँडोमा १ लिटर पानी ठूलो आँचमा मज्जाले उमाल्नुहोस् [१० मिनेट]।",
+      "पिठो अलि-अलि गर्दै हाल्दै डबिलाले निरन्तर चलाइरहनुहोस् ताकि गोला नबनोस्।",
+      "१ चम्चा नुन र १ चम्चा घिउ स्वाद र समृद्धिका लागि हाल्नुहोस्।",
+      "भाँडोको भित्तामा मुछ्दै मज्जाले चलाइरहनुहोस् जबसम्म बाक्लो भएर नछुट्छ [१५ मिनेट]।",
+      "पाकेको जाँच गर्नुहोस्: ढिंडो नरम र दृढ हुनुपर्छ, चिप्लो नहुनु।",
+      "तातो हुँदै तुरुन्तै पस्कनुहोस्, थप घिउ र गुन्द्रुकको झोलसँग।"
     ],
     tips: ["Requires immense arm strength to stir properly! Do not chew dhido, just swallow."]
   },
   {
-    id: "4", slug: "thakali-khana-set-recipe", title: "Thakali Khana Set", nepaliTitle: "थकाली खाना", category: "Main Dishes", prepTime: "1.5 hrs", difficulty: "Hard", isGrandmaRecipe: true, region: "Himalayas",
+    id: "4", slug: "thakali-khana-set-recipe", title: "Thakali Khana Set", nepaliTitle: "थकाली खाना", category: "Main Dishes", prepTime: "1.5 hrs", difficulty: "Hard", region: "Himalayas",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 5.0, reviews: 2041, videoUrl: "",
     description: "An iconic, meticulously prepared platter of rice, black dal, curries, and pickles from the Mustang region.",
     ingredients: [
@@ -125,28 +153,40 @@ export const mockRecipes = [
       "300g Mustang potatoes",
       "1/2 tsp Timur (Szechuan pepper)"
     ],
+    nepaliIngredients: [
+      "५०० ग्राम चामल",
+      "२०० ग्राम कालो दाल",
+      "१ चम्चा जिम्बु (हिमालयी जडिबुटी)",
+      "२ चम्चा घिउ",
+      "३०० ग्राम मुस्ताङे आलु",
+      "१/२ चम्चा टिमुर (सिचुवान खुर्सानी)"
+    ],
     nutrition: { calories: 600, protein: "25g", carbs: "90g", fat: "18g" },
     baseServings: 4,
     steps: [
-      "Cook Sona Mansuli rice until perfectly fluffy and non-sticky [25 min].",
-      "Soak black lentils for 2 hours, then slow cook until creamy [40 min].",
-      "Heat ghee, add Jimbu herb until dark, and pour over the lentils for that signature aroma.",
-      "Sauté Mustang potatoes with cumin, turmeric, and local spices until crispy [20 min].",
-      "Prepare tomato and timur (Szechuan pepper) chutney by grinding them together.",
-      "Arrange everything neatly on a brass thali with a dollop of fresh butter."
+      "Start by preparing all ingredients: wash the rice thoroughly, soak black lentils for 2 hours, peel and cut Mustang potatoes, and gather all spices.",
+      "Cook the Sona Mansuli rice in a rice cooker or pot with water until perfectly fluffy and non-sticky [25 min].",
+      "Drain the soaked lentils and slow cook them in a pot with water, turmeric, and salt until creamy and soft [40 min].",
+      "In a small pan, heat ghee over medium heat, add Jimbu herb, and fry until it turns dark and releases its signature aroma.",
+      "Pour the hot ghee mixture over the cooked lentils and stir well to combine flavors.",
+      "In another pan, heat oil, add cumin seeds and turmeric, then sauté the Mustang potatoes until they are crispy on the outside [20 min].",
+      "Prepare the tomato and timur chutney by grinding tomatoes, timur, salt, and a bit of oil together.",
+      "Arrange the rice, lentils, potatoes, and chutney neatly on a brass thali, add a dollop of fresh butter on top, and serve immediately while hot."
     ],
     nepaliSteps: [
-      "चामललाई राम्ररी पखालेर भुसभुसे हुने गरी पकाउनुहोस् [२५ मिनेट]।",
-      "कालो दाललाई २ घण्टा भिजाएर बाक्लो नहुन्जेल बिस्तारै पकाउनुहोस् [४० मिनेट]।",
-      "घिउ तताएर जिम्बु डढाउनुहोस् र दालमा झान्नुहोस्।",
-      "मुस्ताङे आलुलाई जिरा र स्थानीय मसला हालेर कुरकुरे हुने गरी भुट्नुहोस् [२० मिनेट]।",
-      "टमाटर र टिमुरलाई सिलौटामा पिसेर अचार बनाउनुहोस्।",
-      "काँसको थालीमा सबै परिकार सजाएर ताजा मख्खनसँग पस्कनुहोस्।"
+      "सबै सामग्री तयार गर्नुहोस्: चामल राम्ररी धुनुहोस्, कालो दाल २ घण्टा भिजाउनुहोस्, मुस्ताङे आलु छोडेर काट्नुहोस् र सबै मसला जम्मा गर्नुहोस्।",
+      "सोना मंसुली चामललाई चामल कुकर वा भाँडोमा पानी हालेर राम्ररी फुलाएर चिप्लो नहुने गरी पकाउनुहोस् [२५ मिनेट]।",
+      "भिजाएको दाल निकालेर पानी, बेसार र नुन हालेर बाक्लो र नरम नहुन्जेल बिस्तारै पकाउनुहोस् [४० मिनेट]।",
+      "सानो कराहीमा घिउ मध्यम आँचमा तताउनुहोस्, जिम्बु जडिबुटी हाल्नुहोस् र गाढा र वासना आउन्जेल भुट्नुहोस्।",
+      "तातो घिउको मिश्रण पाकेको दालमा खन्याउनुहोस् र राम्ररी चलाउनुहोस्।",
+      "अर्को कराहीमा तेल तताउनुहोस्, जिरा र बेसार हाल्नुहोस्, त्यसपछि मुस्ताङे आलु बाहिर कुरकुरे नहुन्जेल भुट्नुहोस् [२० मिनेट]।",
+      "टमाटर र टिमुर अचार तयार गर्न टमाटर, टिमुर, नुन र अलि तेल सँगै पिस्नुहोस्।",
+      "काँसको थालीमा चामल, दाल, आलु र अचार मिलाएर सजाउनुहोस्, माथिबाट ताजा मख्खनको डल्लोप हाल्नुहोस् र तातो हुँदै तुरुन्तै पस्कनुहोस्।"
     ],
     tips: ["The distinct flavor comes entirely from the Jimbu herb."]
   },
   {
-    id: "5", slug: "aloo-tama-recipe", title: "Aloo Tama", nepaliTitle: "आलु तामा", category: "Main Dishes", prepTime: "45 mins", difficulty: "Medium", isGrandmaRecipe: false, region: "Kathmandu Valley",
+    id: "5", slug: "aloo-tama-recipe", title: "Aloo Tama", nepaliTitle: "आलु तामा", category: "Main Dishes", prepTime: "45 mins", difficulty: "Medium", region: "Kathmandu Valley",
     image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Aloo_Bodi_Tama.jpg", rating: 4.6, reviews: 341, videoUrl: "",
     description: "A classic acidic and spicy curry made of bamboo shoots, potatoes, and black-eyed peas.",
     ingredients: [
@@ -156,26 +196,37 @@ export const mockRecipes = [
       "2 tbsp Mustard oil",
       "1 tsp Turmeric"
     ],
+    nepaliIngredients: [
+      "१५० ग्राम किण्वित बाँसका टुसा (तामा)",
+      "३ मध्यम आलु",
+      "१०० ग्राम बोडी",
+      "२ चम्चा तोरीको तेल",
+      "१ चम्चा बेसार"
+    ],
     nutrition: { calories: 180, protein: "8g", carbs: "25g", fat: "6g" },
     baseServings: 4,
     steps: [
-      "Boil black-eyed peas and potatoes separately until tender [20 min].",
-      "Heat mustard oil until smoking, fry bamboo shoots (Tama) for 5 minutes to reduce bitterness.",
-      "Add cumin seeds, ginger-garlic paste, and chopped onions to the oil.",
-      "Combine boiled potatoes, peas, and fried tama; add water to create a sour stew [15 min].",
-      "Simmer with turmeric, chili powder, and salt until flavors meld."
+      "Start by preparing all ingredients: soak black-eyed peas overnight, peel and cut potatoes into chunks, and clean the fermented bamboo shoots.",
+      "Boil the black-eyed peas and potatoes separately in salted water until tender [20 min].",
+      "Heat mustard oil in a large pan until smoking, then add the bamboo shoots and fry for 5 minutes to reduce bitterness.",
+      "Add cumin seeds, ginger-garlic paste, and chopped onions to the pan, sauté until onions turn golden brown.",
+      "Combine the boiled potatoes and peas with the fried mixture in the pan, stir well to coat.",
+      "Add enough water to create a sour stew consistency, bring to a boil, then simmer for 15 minutes.",
+      "Season with turmeric, chili powder, and salt, cook for another 5 minutes until flavors meld, then serve hot."
     ],
     nepaliSteps: [
-      "बोडी र आलुलाई छुट्टाछुट्टै नरम नहुन्जेल उसिन्नुहोस् [२० मिनेट]।",
-      "तोरीको तेल तताएर तामालाई ५ मिनेट भुट्नुहोस् ताकि यसको कडा गन्ध हटोस्।",
-      "तेलमा जिरा, अदुवा-लसुन पेस्ट र प्याज हालेर भुट्नुहोस्।",
-      "उसिनेको आलु, बोडी र तामा मिसाउनुहोस् र झोल बनाउन पानी हाल्नुहोस् [१५ मिनेट]।",
-      "बेसार, खुर्सानी र नुन हालेर स्वाद नमिलेसम्म उमाल्नुहोस्।"
+      "सबै सामग्री तयार गर्नुहोस्: बोडी रातभरि भिजाउनुहोस्, आलु छोडेर टुक्रा पार्नुहोस् र किण्वित बाँसका टुसा सफा गर्नुहोस्।",
+      "बोडी र आलुलाई छुट्टाछुट्टै नुनिलो पानीमा नरम नहुन्जेल उसिन्नुहोस् [२० मिनेट]।",
+      "ठूलो कराहीमा तोरीको तेल धूँवा आउन्जेल तताउनुहोस्, त्यसपछि तामालाई ५ मिनेट भुट्नुहोस् ताकि कडा गन्ध कम होस्।",
+      "सोही कराहीमा जिरा, अदुवा-लसुन पेस्ट र काटेको प्याज हाल्नुहोस्, प्याज सुन्तला रङ्ग नहुन्जेल भुट्नुहोस्।",
+      "उसिनेको आलु र बोडी मिश्रणमा हाल्नुहोस्, राम्ररी चलाउनुहोस्।",
+      "अमिलो झोल बनाउन पर्याप्त पानी हाल्नुहोस्, उमाल्नुहोस् र १५ मिनेट उमाल्नुहोस्।",
+      "बेसार, खुर्सानी र नुन हालेर स्वाद मिलाउन अर्को ५ मिनेट पकाउनुहोस् र तातो-तातो पस्कनुहोस्।"
     ],
     tips: ["Always fry the tama first; otherwise, the soup will be too bitter."]
   },
   {
-    id: "6", slug: "kwati-recipe", title: "Kwati", nepaliTitle: "क्वाँटी", category: "Main Dishes", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: true, region: "Newa (Kathmandu)",
+    id: "6", slug: "kwati-recipe", title: "Kwati", nepaliTitle: "क्वाँटी", category: "Main Dishes", prepTime: "1 hr", difficulty: "Medium", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/4/42/Kwati_01.jpg", rating: 4.8, reviews: 189, videoUrl: "",
     description: "A hearty soup of 9 different sprouted beans, traditionally consumed during the Janai Purnima festival.",
     ingredients: [
@@ -184,26 +235,36 @@ export const mockRecipes = [
       "2 tbsp Ghee",
       "1 tbsp Ginger garlic paste"
     ],
+    nepaliIngredients: [
+      "५०० ग्राम ९ थरिका गेडागुडी (टुसा उम्रेको)",
+      "१ चम्चा लभेज बीउ (ज्वानो)",
+      "२ चम्चा घिउ",
+      "१ चम्चा अदुवा लसुन पेस्ट"
+    ],
     nutrition: { calories: 250, protein: "18g", carbs: "40g", fat: "4g" },
     baseServings: 4,
     steps: [
-      "Soak 9 varieties of beans for 2-3 days until they sprout [72 hr].",
-      "Pressure cook the sprouted beans with turmeric and ginger-garlic paste until soft [30 min].",
-      "In a small pan, heat ghee and fry lovage seeds (jwano) until aromatic.",
-      "Pour the hot ghee over the bean soup and simmer until the broth is thick and creamy [10 min].",
-      "Serve hot, traditionally with a piece of roasted meat or beaten rice."
+      "Start by soaking 9 varieties of beans in water for 2-3 days, changing water daily, until they sprout [72 hr].",
+      "Once sprouted, rinse the beans and pressure cook them with turmeric, ginger-garlic paste, and sufficient water until soft [30 min].",
+      "In a small pan, heat ghee over medium heat and fry the lovage seeds (jwano) until they turn aromatic and slightly brown.",
+      "Pour the hot ghee with the fried seeds directly over the cooked bean soup.",
+      "Simmer the soup on low heat for 10 minutes, stirring occasionally, until the broth thickens and becomes creamy.",
+      "Check the consistency; add more water if too thick, and adjust salt to taste.",
+      "Serve hot, traditionally with a piece of roasted meat or beaten rice as an accompaniment."
     ],
     nepaliSteps: [
-      "९ थरिका गेडागुडीलाई २-३ दिनसम्म भिजाएर टुसा उमार्नुहोस् [७२ घण्टा]।",
-      "टुसा उम्रेको क्वाँटीलाई बेसार र अदुवा-लसुन पेस्ट हालेर प्रेसर कुकरमा पकाउनुहोस् [३० मिनेट]।",
-      "सानो कराहीमा घिउ तताएर ज्वानो फुराउनुहोस्।",
-      "ज्वानो फुराएको घिउलाई क्वाँटीमा झान्नुहोस् र झोल बाक्लो नहुन्जेल उमाल्नुहोस् [१० मिनेट]।",
-      "तातो-तातो पस्कनुहोस्।"
+      "सुरुमा ९ थरिका गेडागुडीलाई पानीमा २-३ दिनसम्म भिजाउनुहोस्, दैनिक पानी बदल्दै, जबसम्म टुसा उम्रिन्छ [७२ घण्टा]।",
+      "टुसा उम्रेपछि गेडागुडी धुनुहोस् र बेसार, अदुवा-लसुन पेस्ट र पर्याप्त पानी हालेर प्रेसर कुकरमा नरम नहुन्जेल पकाउनुहोस् [३० मिनेट]।",
+      "सानो कराहीमा घिउ मध्यम आँचमा तताउनुहोस् र ज्वानो बीउहरू वासना आउन्जेल र अलि खैरो नहुन्जेल भुट्नुहोस्।",
+      "भुटेको बीउसहितको तातो घिउ पाकेको गेडागुडीको झोलमा सोझै खन्याउनुहोस्।",
+      "झोललाई सानो आँचमा १० मिनेट उमाल्नुहोस्, कहिलेकाहीँ चलाउँदै, जबसम्म झोल बाक्लो र क्रीमी हुँदैन।",
+      "संगति जाँच गर्नुहोस्; धेरै बाक्लो भए पानी थप्नुहोस् र नुनको स्वाद मिलाउनुहोस्।",
+      "तातो-तातो पस्कनुहोस्, परम्परागत रूपमा पोलिएको मासुको टुक्रा वा चिउरासँग।"
     ],
     tips: ["The longer the beans sprout, the sweeter the soup tastes."]
   },
   {
-    id: "7", slug: "masu-bhat-recipe", title: "Masu Bhat", nepaliTitle: "मासु भात", category: "Main Dishes", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: true, region: "All Nepal",
+    id: "7", slug: "masu-bhat-recipe", title: "Masu Bhat", nepaliTitle: "मासु भात", category: "Main Dishes", prepTime: "1 hr", difficulty: "Medium", region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/7/74/Masu_Bhat.jpg", rating: 4.9, reviews: 932, videoUrl: "",
     description: "The beloved weekend special: rich mutton or chicken curry served over a mountain of white rice.",
     ingredients: [
@@ -214,19 +275,37 @@ export const mockRecipes = [
       "2 tbsp Meat Masala",
       "4 tbsp Mustard oil"
     ],
+    nepaliIngredients: [
+      "१ किलो भेडा वा कुखुराको मासु (हाडसहित)",
+      "५०० ग्राम चामल",
+      "३ मध्यम प्याज",
+      "२ टमाटर",
+      "२ चम्चा मासु मसला",
+      "४ चम्चा तोरीको तेल"
+    ],
     baseServings: 4,
-    steps: ["Marinate meat with turmeric and salt.", "Fry onions in mustard oil until deeply caramelized brown.", "Add meat and fry until browned.", "Add tomatoes and spices, cook until oil separates.", "Add water to make a gravy and pressure cook until tender."],
+    steps: [
+      "Start by marinating the bone-in mutton or chicken with turmeric and salt for at least 30 minutes to enhance flavor.",
+      "Wash the rice thoroughly and cook it separately in a pot or rice cooker until fluffy and fully cooked.",
+      "Heat mustard oil in a large heavy-bottomed pan over medium heat.",
+      "Add finely chopped onions to the hot oil and fry until they turn deeply caramelized brown, stirring frequently [10 min].",
+      "Add the marinated meat to the pan and fry on high heat until browned on all sides [10 min].",
+      "Add chopped tomatoes and meat masala, cook until the tomatoes soften and the oil starts to separate [5 min].",
+      "Add sufficient water to make a thick gravy, bring to a boil, then pressure cook for 20-25 minutes until the meat is tender. Serve hot over rice."
+    ],
     nepaliSteps: [
-      "मासुमा बेसार र नुन हालेर मोल्नुहोस्।",
-      "तोरीको तेलमा प्याज रातो/खैरो नहुन्जेल भुट्नुहोस्।",
-      "मासु हालेर रङ्ग नबदलिउन्जेल भुट्नुहोस्।",
-      "टमाटर र मसला हालेर तेल नछुटुन्जेल पकाउनुहोस्।",
-      "पानी हालेर प्रेसर कुकरमा मासु नरम नहुन्जेल पकाउनुहोस् र भातसँग पस्कनुहोस्।"
+      "सुरुमा हाडसहितको भेडा वा कुखुराको मासुलाई बेसार र नुन हालेर कम्तीमा ३० मिनेट मोल्नुहोस् ताकि स्वाद बढोस्।",
+      "चामललाई राम्ररी धोएर भाँडो वा चामल कुकरमा फुलाएर पूर्ण रूपमा पकाउनुहोस्।",
+      "ठूलो बाक्लो भाँडोमा तोरीको तेल मध्यम आँचमा तताउनुहोस्।",
+      "मसिनो काटेको प्याज तातो तेलमा हाल्नुहोस् र गाढा क्यारामेलाइज्ड खैरो नहुन्जेल भुट्नुहोस्, निरन्तर चलाउँदै [१० मिनेट]।",
+      "मोलिएको मासु कराहीमा हाल्नुहोस् र सबैतिर खैरो नहुन्जेल ठूलो आँचमा भुट्नुहोस् [१० मिनेट]।",
+      "काटेको टमाटर र मासु मसला हाल्नुहोस्, टमाटर नरम भएर तेल छुटुन्जेल पकाउनुहोस् [५ मिनेट]।",
+      "बाक्लो ग्रेभी बनाउन पर्याप्त पानी हाल्नुहोस्, उमाल्नुहोस्, त्यसपछि मासु नरम नहुन्जेल २०-२५ मिनेट प्रेसर पकाउनुहोस्। चामलमाथि तातो हाल्नुहोस्।"
     ],
     tips: ["Bone-in meat makes for a much more flavorful gravy."]
   },
   {
-    id: "8", slug: "sukuti-fry-recipe", title: "Sukuti Fry", nepaliTitle: "सुकुटी फ्राई", category: "Main Dishes", prepTime: "20 mins", difficulty: "Easy", isGrandmaRecipe: false, region: " पहाड (Hills)",
+    id: "8", slug: "sukuti-fry-recipe", title: "Sukuti Fry", nepaliTitle: "सुकुटी फ्राई", category: "Main Dishes", prepTime: "20 mins", difficulty: "Easy", region: " पहाड (Hills)",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 4.7, reviews: 402, videoUrl: "",
     description: "Spicy and chewy dry buffalo meat pan-fried with tomatoes, onions, and heavy spices.",
     ingredients: [
@@ -236,19 +315,36 @@ export const mockRecipes = [
       "3 Green chilies",
       "1 bunch Coriander"
     ],
+    nepaliIngredients: [
+      "२०० ग्राम सुकेको मासु (सुकुटी)",
+      "२ टमाटर",
+      "१ ठूलो प्याज",
+      "३ हरिया खुर्सानी",
+      "१ मुट्ठी धनियाँ"
+    ],
     baseServings: 4,
-    steps: ["Soak the dry meat in warm water for 10 minutes to soften slightly.", "Pound the meat lightly with a mortar.", "Fry chopped onions and chilies.", "Add the meat and fry on high heat.", "Add tomatoes and stir-fry until the moisture evaporates."],
+    steps: [
+      "Start by soaking the dry sukuti in warm water for 10 minutes to soften it slightly and remove excess salt.",
+      "Drain the water and lightly pound the sukuti with a mortar or the back of a knife to tenderize the meat.",
+      "Heat oil in a large pan over medium heat.",
+      "Add finely chopped onions and green chilies to the pan, fry until the onions become translucent [3 min].",
+      "Add the pounded sukuti to the pan and fry on high heat, stirring frequently, until it becomes crispy [5 min].",
+      "Add chopped tomatoes and continue stir-frying until all the moisture evaporates and the mixture is dry [5 min].",
+      "Garnish with fresh chopped coriander and serve hot as a snack or side dish."
+    ],
     nepaliSteps: [
-      "सुकुटीलाई नरम बनाउन १० मिनेट मनतातो पानीमा भिजाउनुहोस्।",
-      "सुकुटीलाई खलमा राखेर अलि-अलि कुट्नुहोस्।",
-      "प्याज र खुर्सानी तेलमा भुट्नुहोस्।",
-      "सुकुटी हालेर ठूलो आँचमा भुट्नुहोस्।",
-      "टमाटर हालेर पानी सुकुन्जेल राम्ररी चलाउनुहोस्।"
+      "सुरुमा सुकेको सुकुटीलाई मनतातो पानीमा १० मिनेट भिजाउनुहोस् ताकि अलि नरम होस् र बढी नुन हटोस्।",
+      "पानी निकालेर सुकुटीलाई खल वा चक्कुको पछाडिले हल्का कुट्नुहोस् ताकि मासु नरम होस्।",
+      "ठूलो कराहीमा तेल मध्यम आँचमा तताउनुहोस्।",
+      "मसिनो काटेको प्याज र हरिया खुर्सानी हाल्नुहोस्, प्याज पारदर्शी नहुन्जेल भुट्नुहोस् [३ मिनेट]।",
+      "कुटेको सुकुटी कराहीमा हाल्नुहोस् र ठूलो आँचमा निरन्तर चलाउँदै कुरकुरे नहुन्जेल भुट्नुहोस् [५ मिनेट]।",
+      "काटेको टमाटर हाल्नुहोस् र सबै पानी वाफ नहुन्जेल चलाउँदै भुट्नुहोस् [५ मिनेट]।",
+      "ताजा काटेको धनियाँले सजाउनुहोस् र तातो खाजा वा साइड डिशको रूपमा पस्कनुहोस्।"
     ],
     tips: ["Pairs perfectly with puffed rice (Bhuja) or as a side to drinks."]
   },
   {
-    id: "9", slug: "chicken-choila-recipe", title: "Chicken Choila", nepaliTitle: "कुखुराको छोयला", category: "Main Dishes", prepTime: "40 mins", difficulty: "Medium", isGrandmaRecipe: false, region: "Newa (Kathmandu)",
+    id: "9", slug: "chicken-choila-recipe", title: "Chicken Choila", nepaliTitle: "कुखुराको छोयला", category: "Main Dishes", prepTime: "40 mins", difficulty: "Medium", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Nepali_Cuisine.jpg", rating: 4.8, reviews: 671, videoUrl: "",
     description: "A spectacularly spicy and smoky grilled chicken dish heavily seasoned with garlic, ginger, and mustard oil.",
     ingredients: [
@@ -259,19 +355,37 @@ export const mockRecipes = [
       "1 inch Ginger",
       "4 Red dry chilies"
     ],
+    nepaliIngredients: [
+      "५०० ग्राम कुखुराको स्तन/जाँघ",
+      "३ चम्चा तोरीको तेल",
+      "१ चम्चा मेथी बीउ",
+      "५ कली लसुन",
+      "१ इन्च अदुवा",
+      "४ रातो सुकेका खुर्सानी"
+    ],
     baseServings: 4,
-    steps: ["Boil or grill the chicken until cooked, then shred it into bite-sized pieces.", "Make a paste of roasted tomatoes, lots of garlic, and ginger.", "Mix the chicken with the paste.", "Heat mustard oil, fry fenugreek seeds until black, and pour the smoking oil over the chicken.", "Mix well and garnish with cilantro."],
+    steps: [
+      "Start by boiling the chicken breast or thigh in salted water until fully cooked [20 min], then shred into bite-sized pieces.",
+      "Prepare a paste by grinding roasted tomatoes, minced garlic, and grated ginger together in a mortar or blender.",
+      "Mix the shredded chicken with the tomato-garlic-ginger paste until well coated.",
+      "Heat mustard oil in a small pan over medium heat until it becomes very hot.",
+      "Add fenugreek seeds to the hot oil and fry them until they turn completely black [1 min].",
+      "Pour the smoking hot oil with the blackened seeds directly over the chicken mixture.",
+      "Mix everything thoroughly, garnish with fresh cilantro, and serve as a spicy appetizer."
+    ],
     nepaliSteps: [
-      "कुखुराको मासु उसिन्नुहोस् वा सेकाउनुहोस् र ससाना टुक्रा बनाउनुहोस्।",
-      "पोलेको टमाटर, धेरै लसुन र अदुवाको पेस्ट बनाउनुहोस्।",
-      "मासुलाई उक्त पेस्टसँग राम्ररी मोल्नुहोस्।",
-      "तोरीको तेल तताएर मेथी कालो नहुन्जेल डढाउनुहोस् र मासुमा झान्नुहोस्।",
-      "धनियाँ हालेर राम्ररी चलाउनुहोस्।"
+      "सुरुमा कुखुराको स्तन वा जाँघलाई नुनिलो पानीमा पूर्ण रूपमा पकाउनुहोस् [२० मिनेट], त्यसपछि मुखमा राख्न मिल्ने टुक्रामा च्यात्नुहोस्।",
+      "पोलिएका टमाटर, पिसेको लसुन र कुटेको अदुवालाई खल वा ब्लेन्डरमा पेस्ट बनाउनुहोस्।",
+      "च्यातेको कुखुरालाई टमाटर-लसुन-अदुवा पेस्टसँग राम्ररी मोल्नुहोस्।",
+      "सानो कराहीमा तोरीको तेल मध्यम आँचमा धेरै तताउनुहोस्।",
+      "तातो तेलमा मेथी बीउ हाल्नुहोस् र पूर्ण रूपमा कालो नहुन्जेल भुट्नुहोस् [१ मिनेट]।",
+      "धूँवा आउँदै गरेको तेल कालो बीउसहित कुखुराको मिश्रणमा सोझै खन्याउनुहोस्।",
+      "सबै राम्ररी मिसाउनुहोस्, ताजा धनियाँले सजाउनुहोस् र पिरो खाजाको रूपमा पस्कनुहोस्।"
     ],
     tips: ["The fenugreek must be completely blackened in the oil to get the authentic flavor."]
   },
   {
-    id: "10", slug: "pork-sekuwa-recipe", title: "Pork Sekuwa", nepaliTitle: "बंगुरको सेकुवा", category: "Main Dishes", prepTime: "2 hrs", difficulty: "Medium", isGrandmaRecipe: false, region: "Eastern Nepal",
+    id: "10", slug: "pork-sekuwa-recipe", title: "Pork Sekuwa", nepaliTitle: "बंगुरको सेकुवा", category: "Main Dishes", prepTime: "2 hrs", difficulty: "Medium", region: "Eastern Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/2/27/Street_Food-_Sekuwa.jpg", rating: 4.7, reviews: 512, videoUrl: "",
     description: "Nepali style BBQ. Fatty pork marinated in a blend of Himalayan spices and roasted over a wood fire.",
     ingredients: [
@@ -282,28 +396,40 @@ export const mockRecipes = [
       "1/2 tsp Szechuan pepper (Timur)",
       "1 tbsp Lemon juice"
     ],
+    nepaliIngredients: [
+      "१ किलो बंगुरको बोसो/काँध",
+      "१ चम्चा लसुन पेस्ट",
+      "१ चम्चा अदुवा पेस्ट",
+      "१ चम्चा जिराको धुलो",
+      "१/२ चम्चा सिचुवान खुर्सानी (टिमुर)",
+      "१ चम्चा कागतीको रस"
+    ],
     nutrition: { calories: 650, protein: "28g", carbs: "12g", fat: "55g" },
     baseServings: 4,
     steps: [
-      "Cut pork into medium cubes and clean thoroughly.",
-      "Mix with garlic paste, ginger paste, cumin powder, and timur. Marinate for at least 2 hours.",
-      "Thread the meat onto wooden or metal skewers.",
-      "Grill slowly over a natural charcoal fire, turning occasionally until charred and juicy [30 min].",
-      "Brush with mustard oil while grilling for extra shine and flavor."
+      "Start by cutting the pork belly or shoulder into medium-sized cubes and clean them thoroughly under running water.",
+      "In a large bowl, mix the pork cubes with garlic paste, ginger paste, cumin powder, timur, and lemon juice.",
+      "Marinate the pork mixture for at least 2 hours in the refrigerator to allow flavors to penetrate.",
+      "Thread the marinated pork onto wooden or metal skewers, ensuring even distribution.",
+      "Preheat the grill or prepare a natural charcoal fire for slow cooking.",
+      "Grill the skewers over medium heat, turning occasionally, until the pork is charred on the outside and juicy inside [30 min].",
+      "Brush the skewers with mustard oil during the last few minutes of grilling for extra shine and flavor, then serve hot."
     ],
     nepaliSteps: [
-      "बंगुरको मासुलाई मध्यम टुक्रामा काट्नुहोस् र राम्ररी धुनुहोस्।",
-      "लसुन, अदुवाको पेस्ट, जिराको धुलो र टिमुर हालेर कम्तीमा २ घण्टा मोल्नुहोस्।",
-      "मासुलाई सिकबामा उन्दै जानुहोस्।",
-      "कोइलाको आँचमा बाहिर कुरकुरे र भित्र नरम हुने गरी बिस्तारै पोल्नुहोस् [३० मिनेट]।",
-      "स्वाद र चमकका लागि पोल्दापोल्दै अलिअलि तोरीको तेल लगाउनुहोस्।"
+      "सुरुमा बंगुरको बोसो वा काँधलाई मध्यम टुक्रामा काट्नुहोस् र बगिरहेको पानीमा राम्ररी धुनुहोस्।",
+      "ठूलो भाँडोमा बंगुरका टुक्राहरूलाई लसुन पेस्ट, अदुवा पेस्ट, जिराको धुलो, टिमुर र कागतीको रससँग मिसाउनुहोस्।",
+      "बंगुरको मिश्रणलाई फ्रिजमा कम्तीमा २ घण्टा मोल्नुहोस् ताकि स्वाद भित्र पसोस्।",
+      "मोलिएको बंगुरलाई काठ वा धातुका सिकबामा समान रूपमा उन्दै जानुहोस्।",
+      "ग्रिल तताउनुहोस् वा प्राकृतिक कोइलाको आँच तयार गर्नुहोस्।",
+      "सिकबाहरूलाई मध्यम आँचमा बिस्तारै ग्रिल गर्नुहोस्, कहिलेकाहीँ फर्काउँदै, जबसम्म बाहिर कुरकुरे र भित्र रसिलो हुँदैन [३० मिनेट]।",
+      "ग्रिलको अन्तिम केही मिनेटमा तोरीको तेल लगाउनुहोस् थप चमक र स्वादका लागि, त्यसपछि तातो पस्कनुहोस्।"
     ],
     tips: ["Fatty cuts work best as the melting fat keeps the meat moist on the grill."]
   },
 
   // --- SNACKS / STREET FOOD ---
   {
-    id: "11", slug: "buff-momo-recipe", title: "Buff Momo", nepaliTitle: "बफ म:म", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "Kathmandu Valley",
+    id: "11", slug: "buff-momo-recipe", title: "Buff Momo", nepaliTitle: "बफ म:म", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", region: "Kathmandu Valley",
     image: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Buff_Momo_1.jpg", rating: 5.0, reviews: 3102, videoUrl: "",
     seoTitle: "Traditional Buff Momo Recipe - Nepali Steamed Dumplings | Bhansa Nepal",
     description: "The undisputed king of Nepali street food. Steamed dumplings filled with spiced minced buffalo meat.",
@@ -315,29 +441,41 @@ export const mockRecipes = [
       "1 bunch Coriander",
       "2 tbsp Momo Masala"
     ],
+    nepaliIngredients: [
+      "५०० ग्राम मैदा",
+      "५०० ग्राम भैंसीको किमा गरेको मासु",
+      "२ प्याज",
+      "१ चम्चा जिरा",
+      "१ मुट्ठी धनियाँ",
+      "२ चम्चा म:म मसला"
+    ],
     nutrition: { calories: 320, protein: "18g", carbs: "45g", fat: "9g" },
     baseServings: 4,
     trending: true,
     steps: [
-      "Mix minced meat with chopped onions, momo masala, and oil. Let it rest for 20 minutes.",
-      "Knead a smooth dough with flour and water, let it rest [30 min].",
-      "Roll dough into small thin circles and place a spoonful of filling.",
-      "Pleat the edges to seal the momo into traditional round or half-moon shapes.",
-      "Layer momos in a steamer and steam over boiling water [15 min].",
-      "Serve with spicy sesame and tomato chutney."
+      "Start by preparing the filling: in a bowl, mix minced buffalo meat with finely chopped onions, momo masala, and a drizzle of oil. Let it rest for 20 minutes to absorb flavors.",
+      "For the dough: in a large bowl, knead all-purpose flour with water until a smooth, elastic dough forms. Cover and let it rest for 30 minutes.",
+      "Divide the rested dough into small equal portions and roll them into balls.",
+      "Using a rolling pin, roll each ball into thin circles about 3-4 inches in diameter.",
+      "Place a spoonful of the meat filling in the center of each dough circle.",
+      "Pleat the edges of the dough around the filling to seal it into traditional round or half-moon shapes, ensuring no air pockets.",
+      "Layer the prepared momos in a steamer basket lined with cabbage leaves to prevent sticking.",
+      "Steam over boiling water for 15 minutes until the momos are cooked and translucent. Serve hot with spicy sesame and tomato chutney."
     ],
     nepaliSteps: [
-      "किमामा मसिनो प्याज, म:म मसला र तेल हालेर मोल्नुहोस् र २० मिनेट राख्नुहोस्।",
-      "पिठो मुछेर ३० मिनेटसम्म छोपेर राख्नुहोस्।",
-      "पिठोलाई ससाना रोटी जस्तो बेलेर बीचमा किमा राख्नुहोस्।",
-      "छेउ छेउबाट मोलेर म:मको आकार दिनुहोस्।",
-      "म:म स्टिमरमा राखेर १५ मिनेटसम्म पकाउनुहोस् [१५ मिनेट]।",
-      "पिरो गोलभेडा र तिलको अचारसँग पस्कनुहोस्।"
+      "सुरुमा किमा तयार गर्नुहोस्: भाँडोमा किमा गरेको भैंसीको मासुलाई मसिनो काटेको प्याज, म:म मसला र थोरै तेलसँग मिसाउनुहोस्। स्वाद भित्र पस्न २० मिनेट राख्नुहोस्।",
+      "पिठोका लागि: ठूलो भाँडोमा मैदामा पानी हालेर नरम र लचिलो पिठो मुस्नुहोस्। छोपेर ३० मिनेट राख्नुहोस्।",
+      "आराम गरेको पिठोलाई साना बराबर भागमा बाँड्नुहोस् र गोलो बनाउनुहोस्।",
+      "बेलनाको सहायताले प्रत्येक गोलोलाई ३-४ इन्च व्यासको पातलो वृत्त बनाउनुहोस्।",
+      "प्रत्येक पिठोको वृत्तको बीचमा मासु किमाको एक चम्चा राख्नुहोस्।",
+      "किमालाई घेर्न पिठोको किनाराहरू मोलेर परम्परागत गोलो वा आधा चन्द्र आकारमा बन्द गर्नुहोस्, हावाका पोकेट नहुने गरी।",
+      "म:महरू स्टिमर बास्केटमा बन्दा पातले लाइन गरेर राख्नुहोस् ताकि नटासोस्।",
+      "उम्लेको पानीमाथि १५ मिनेटसम्म स्टिम गर्नुहोस् जबसम्म म:महरू पकिएर पारदर्शी हुँदैन। पिरो गोलभेडा र तिलको अचारसँग तातो पस्कनुहोस्।"
     ],
     tips: ["A fatty ratio in the minced meat makes the momos incredibly juicy."]
   },
   {
-    id: "12", slug: "chicken-momo-recipe", title: "Chicken Momo", nepaliTitle: "चिकेन म:म", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "All Nepal",
+    id: "12", slug: "chicken-momo-recipe", title: "Chicken Momo", nepaliTitle: "चिकेन म:म", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Chicken_Momo_2.jpg", rating: 4.9, reviews: 2841, videoUrl: "",
     description: "Steamed chicken dumplings. Universally loved and lighter than buff momos.",
     ingredients: [
@@ -348,19 +486,37 @@ export const mockRecipes = [
       "1 tbsp Garlic paste",
       "1 tbsp Soy sauce"
     ],
+    nepaliIngredients: [
+      "५०० ग्राम मैदा",
+      "५०० ग्राम कुखुराको किमा",
+      "२ प्याज",
+      "१ चम्चा अदुवा पेस्ट",
+      "१ चम्चा लसुन पेस्ट",
+      "१ चम्चा सोया सस"
+    ],
     baseServings: 4,
-    steps: ["Prepare dough.", "Mix minced chicken with aromatics and soy sauce.", "Wrap the momos.", "Steam for 15 minutes.", "Serve smoking hot."],
+    steps: [
+      "Start by preparing the dough: in a bowl, knead 500g flour with water until smooth and elastic. Cover and let rest for 30 minutes.",
+      "For the filling: in another bowl, mix 500g minced chicken with finely chopped onions, ginger paste, garlic paste, and soy sauce. Let it marinate for 10 minutes.",
+      "Divide the rested dough into small balls and roll each into thin circles.",
+      "Place a spoonful of chicken filling in the center of each circle.",
+      "Pleat the edges to seal the momo into round shapes, ensuring they are tightly closed.",
+      "Arrange the momos in a steamer and steam over boiling water for 15 minutes until cooked.",
+      "Serve immediately while hot, accompanied by tomato chutney or sesame sauce."
+    ],
     nepaliSteps: [
-      "पिठो तयार पार्नुहोस्।",
-      "कुखुराको किमामा अदुवा-लसुन पेस्ट र सोया सस हालेर मोल्नुहोस्।",
-      "म:म बनाउनुहोस्।",
-      "स्टिमरमा १५ मिनेट पकाउनुहोस्।",
-      "तातो-तातो पस्कनुहोस्।"
+      "सुरुमा पिठो तयार गर्नुहोस्: भाँडोमा ५०० ग्राम मैदामा पानी हालेर नरम र लचिलो पिठो मुस्नुहोस्। छोपेर ३० मिनेट राख्नुहोस्।",
+      "किमाका लागि: अर्को भाँडोमा ५०० ग्राम कुखुराको किमालाई मसिनो काटेको प्याज, अदुवा पेस्ट, लसुन पेस्ट र सोया सससँग मिसाउनुहोस्। १० मिनेट मोल्नुहोस्।",
+      "आराम गरेको पिठोलाई साना गोलामा बाँड्नुहोस् र प्रत्येकलाई पातलो वृत्त बनाउनुहोस्।",
+      "प्रत्येक वृत्तको बीचमा कुखुरा किमाको एक चम्चा राख्नुहोस्।",
+      "किनाराहरू मोलेर म:मलाई गोलो आकारमा बन्द गर्नुहोस्, राम्ररी बन्द भएको सुनिश्चित गर्नुहोस्।",
+      "म:महरू स्टिमरमा राखेर उम्लेको पानीमाथि १५ मिनेटसम्म पकाउनुहोस्।",
+      "तुरुन्तै तातो हुँदै पस्कनुहोस्, टमाटर अचार वा तिलको सससँग।"
     ],
     tips: ["Add a tablespoon of oil to the chicken mixture since chicken mince is usually lean."]
   },
   {
-    id: "13", slug: "veg-momo-recipe", title: "Veg Momo", nepaliTitle: "भेज म:म", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "All Nepal",
+    id: "13", slug: "veg-momo-recipe", title: "Veg Momo", nepaliTitle: "भेज म:म", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Veg_Momos_.jpg", rating: 4.6, reviews: 954, videoUrl: "",
     seoTitle: "Veg Momo Recipe Nepal Style - Healthy Steamed Dumplings | Bhansa Nepal",
     description: "Delicious steamed dumplings filled with finely chopped cabbage, carrots, paneer, and onions.",
@@ -372,18 +528,37 @@ export const mockRecipes = [
       "1 Onion",
       "2 tbsp Butter"
     ],
+    nepaliIngredients: [
+      "५०० ग्राम मैदा",
+      "१/२ बन्दा",
+      "२ गाँजर",
+      "२०० ग्राम पनीर",
+      "१ प्याज",
+      "२ चम्चा मख्खन"
+    ],
     baseServings: 4,
-    steps: ["Finely chop all vegetables and squeeze out excess water.", "Mix veggies with crumbled paneer, melted butter, salt, and pepper.", "Wrap into dough balls.", "Steam for 10-12 minutes."],
+    steps: [
+      "Start by finely chopping 1/2 head of cabbage, 2 carrots, and 1 onion into small pieces.",
+      "Squeeze out excess water from the chopped vegetables to prevent soggy momos.",
+      "In a bowl, mix the squeezed vegetables with crumbled paneer, melted butter, salt, and pepper.",
+      "Prepare the dough: knead 500g flour with water into a smooth dough, cover and rest for 30 minutes.",
+      "Divide the dough into small balls, roll into thin circles, and place a spoonful of filling in the center.",
+      "Pleat the edges to seal the momo into round shapes.",
+      "Steam the momos in a steamer over boiling water for 10-12 minutes until cooked. Serve hot with tomato chutney."
+    ],
     nepaliSteps: [
-      "बन्दा र गाँजरलाई मसिनो गरी काट्नुहोस् र पानी निचोर्नुहोस्।",
-      "तरकारीमा पनीर, घिउ, नुन र मरिच हालेर मोल्नुहोस्।",
-      "म:म मोल्नुहोस्।",
-      "१०-१२ मिनेटसम्म स्टिम गर्नुहोस्।"
+      "सुरुमा १/२ बन्दा, २ गाँजर र १ प्याजलाई मसिनो गरी काट्नुहोस्।",
+      "काटेका तरकारीहरूबाट बढी पानी निचोर्नुहोस् ताकि म:महरू भिजेको नहोस्।",
+      "भाँडोमा निचोरेका तरकारीहरूलाई भत्केको पनीर, पगालेको मख्खन, नुन र मरिचसँग मिसाउनुहोस्।",
+      "पिठो तयार गर्नुहोस्: ५०० ग्राम मैदामा पानी हालेर नरम पिठो मुस्नुहोस्, छोपेर ३० मिनेट राख्नुहोस्।",
+      "पिठोलाई साना गोलामा बाँड्नुहोस्, पातलो वृत्त बनाउनुहोस् र बीचमा किमा राख्नुहोस्।",
+      "किनाराहरू मोलेर म:मलाई गोलो आकारमा बन्द गर्नुहोस्।",
+      "म:महरू स्टिमरमा उम्लेको पानीमाथि १०-१२ मिनेटसम्म पकाउनुहोस्। टमाटर अचारसँग तातो पस्कनुहोस्।"
     ],
     tips: ["Squeezing the water out of the cabbage is crucial, otherwise the momos will tear."]
   },
   {
-    id: "14", slug: "chatpate-recipe", title: "Chatpate", nepaliTitle: "चटपटे", category: "Snacks / Street Food", prepTime: "10 mins", difficulty: "Easy", isGrandmaRecipe: false, region: "Terai",
+    id: "14", slug: "chatpate-recipe", title: "Chatpate", nepaliTitle: "चटपटे", category: "Snacks / Street Food", prepTime: "10 mins", difficulty: "Easy", region: "Terai",
     image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Chatpate_7.jpg", rating: 4.8, reviews: 1120, videoUrl: "",
     description: "Explosively spicy, tangy, and crunchy street salad made with puffed rice and instant noodles.",
     ingredients: [
@@ -396,29 +571,43 @@ export const mockRecipes = [
       "1 Lemon",
       "1 tbsp Mustard oil"
     ],
+    nepaliIngredients: [
+      "२०० ग्राम भुजा",
+      "१ प्याकेट वाइवाइ चाउमिन",
+      "२ उसिनेको आलु",
+      "१ प्याज",
+      "१ टमाटर",
+      "२ हरिया खुर्सानी",
+      "१ कागती",
+      "१ चम्चा तोरीको तेल"
+    ],
     nutrition: { calories: 280, protein: "6g", carbs: "50g", fat: "8g" },
     baseServings: 4,
     trending: true,
     steps: [
-      "Chop potatoes, onions, tomatoes, and chilies into tiny cubes.",
-      "In a large bowl, crush instant noodles (Wai Wai) into small pieces.",
-      "Add puffed rice (Bhuja), chickpeas, and the chopped vegetables.",
-      "Pour in raw mustard oil, lemon juice, chili powder, and black salt.",
-      "Toss aggressively for 1 minute to ensure everything is coated evenly.",
-      "Serve immediately in a paper cone while it's still crunchy."
+      "Start by chopping 3 boiled potatoes, 1 onion, 1 tomato, and 2 green chilies into very tiny cubes.",
+      "In a large bowl, crush 1 pack of Wai Wai noodles into small pieces without opening the packet fully.",
+      "Add 200g puffed rice (Bhuja), boiled chickpeas, and the chopped vegetables to the bowl.",
+      "Pour in raw mustard oil, juice from 1 lemon, chili powder, and black salt over the mixture.",
+      "Toss everything aggressively for 1 minute to ensure even coating and mixing.",
+      "Check the seasoning and adjust salt or lemon if needed.",
+      "Serve immediately in a paper cone while it's still crunchy.",
+      "Enjoy as a quick, spicy street snack."
     ],
     nepaliSteps: [
-      "आलु, प्याज, टमाटर र खुर्सानीलाई ससाना टुक्रामा काट्नुहोस्।",
-      "एउटा ठूलो भाँडोमा वाइवाइ चाउचाउलाई फुटाउनुहोस्।",
-      "भुजा, चना र काटेका तरकारीहरू मिसाउनुहोस्।",
-      "तोरीको तेल, कागतीको रस, खुर्सानी र बिरेनुन हाल्नुहोस्।",
-      "सबै मसला मिल्ने गरी १ मिनेटसम्म मज्जाले हल्लाउनुहोस् वा चलाउनुहोस्।",
-      "कुरकुरे हुँदै कागजको कोनीमा पस्कनुहोस्।"
+      "सुरुमा ३ उसिनेको आलु, १ प्याज, १ टमाटर र २ हरिया खुर्सानीलाई एकदमै ससाना टुक्रामा काट्नुहोस्।",
+      "ठूलो भाँडोमा १ प्याकेट वाइवाइ चाउचाउलाई पूर्ण रूपमा नखोली ससाना टुक्रामा फुटाउनुहोस्।",
+      "भाँडोमा २०० ग्राम भुजा, उसिनेका चना र काटेका तरकारीहरू हाल्नुहोस्।",
+      "मिश्रणमा कच्चा तोरीको तेल, १ कागतीको रस, खुर्सानीको धुलो र बिरेनुन खन्याउनुहोस्।",
+      "सबै राम्ररी मिसाउन र कोट गर्न १ मिनेटसम्म मज्जाले हल्लाउनुहोस्।",
+      "मसला जाँच गर्नुहोस् र आवश्यक भए नुन वा कागती थप्नुहोस्।",
+      "कुरकुरे हुँदै कागजको कोनीमा तुरुन्तै पस्कनुहोस्।",
+      "छिटो, पिरो सडक खाजाको रूपमा आनन्द लिनुहोस्।"
     ],
     tips: ["A dash of raw mustard oil gives it the signature street food kick."]
   },
   {
-    id: "15", slug: "aloo-chop-recipe", title: "Aloo Chop", nepaliTitle: "आलु चप", category: "Snacks / Street Food", prepTime: "30 mins", difficulty: "Easy", isGrandmaRecipe: false, region: "Terai",
+    id: "15", slug: "aloo-chop-recipe", title: "Aloo Chop", nepaliTitle: "आलु चप", category: "Snacks / Street Food", prepTime: "30 mins", difficulty: "Easy", region: "Terai",
     image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Aloo_Fritters_-_Howrah_2015-04-26_8540.JPG", rating: 4.5, reviews: 432, videoUrl: "",
     description: "Spiced mashed potato patties, dipped in batter and deep-fried to crispy perfection.",
     ingredients: [
@@ -430,19 +619,38 @@ export const mockRecipes = [
       "1/2 tsp Turmeric",
       "Oil for frying"
     ],
+    nepaliIngredients: [
+      "४ मध्यम आलु",
+      "१ प्याज",
+      "२ हरिया खुर्सानी",
+      "१ कप बेसन (चना पिठो)",
+      "१ चम्चा जिराको धुलो",
+      "१/२ चम्चा बेसार",
+      "तेल तार्नका लागि"
+    ],
     baseServings: 4,
-    steps: ["Boil and mash the potatoes.", "Mix with chopped onions, chillies, cumin, and salt.", "Form small flat patties.", "Make a thick batter using besan, water, and turmeric.", "Dip patties into batter and deep fry until golden."],
+    steps: [
+      "Start by boiling 4 medium potatoes in salted water until soft [20 min], then peel and mash them completely.",
+      "In a bowl, mix the mashed potatoes with finely chopped onion, 2 green chilies, cumin powder, and salt.",
+      "Form the mixture into small flat patties, about 2-3 inches in diameter.",
+      "Prepare a thick batter by mixing 1 cup besan with water, turmeric, and a pinch of salt.",
+      "Heat oil in a deep pan for frying until hot.",
+      "Dip each patty into the batter, coating evenly, and deep fry in hot oil until golden brown on both sides [5 min per batch].",
+      "Remove and drain on paper towels. Serve hot with tamarind chutney."
+    ],
     nepaliSteps: [
-      "आलुलाई उसिन्नुहोस् र मुछ्नुहोस्।",
-      "काटेको प्याज, खुर्सानी, जिरा र नुन मिसाउनुहोस्।",
-      "ससाना गोलो वा चेप्टो आकार बनाउनुहोस्।",
-      "बेसार, पानी र बेसन हालेर बाक्लो घोल बनाउनुहोस्।",
-      "आलुको टिकियालाई घोलमा चोपेर तातो तेलमा रातो हुन्जेल तार्नुहोस्।"
+      "सुरुमा ४ मध्यम आलुलाई नुनिलो पानीमा नरम नहुन्जेल उसिन्नुहोस् [२० मिनेट], त्यसपछि छोडेर पूर्ण रूपमा मुछ्नुहोस्।",
+      "भाँडोमा मुछेको आलुलाई मसिनो काटेको प्याज, २ हरिया खुर्सानी, जिराको धुलो र नुनसँग मिसाउनुहोस्।",
+      "मिश्रणलाई २-३ इन्च व्यासका साना चेप्टा टिकियाहरू बनाउनुहोस्।",
+      "१ कप बेसनमा पानी, बेसार र थोरै नुन हालेर बाक्लो घोल तयार गर्नुहोस्।",
+      "तार्नका लागि गहिरो कराहीमा तेल तताउनुहोस्।",
+      "प्रत्येक टिकियालाई घोलमा डुबाएर समान रूपमा कोट गर्नुहोस् र तातो तेलमा दुवैतिर सुन्तला रातो नहुन्जेल तार्नुहोस् [प्रत्येक ब्याचमा ५ मिनेट]।",
+      "कागजका टowelमा निकालेर पानी निथार्नुहोस्। अमिलो अचारसँग तातो पस्कनुहोस्।"
     ],
     tips: ["Serve with a sour tamarind chutney."]
   },
   {
-    id: "16", slug: "pani-puri-recipe", title: "Pani Puri", nepaliTitle: "पानी पुरी", category: "Snacks / Street Food", prepTime: "20 mins", difficulty: "Easy", isGrandmaRecipe: false, region: "Terai",
+    id: "16", slug: "pani-puri-recipe", title: "Pani Puri", nepaliTitle: "पानी पुरी", category: "Snacks / Street Food", prepTime: "20 mins", difficulty: "Easy", region: "Terai",
     image: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Aloo_Tikki_Chaat.JPG", rating: 4.9, reviews: 1421, videoUrl: "",
     description: "Hollow, crispy fried dough balls stuffed with spicy potatoes and filled with tangy tamarind water.",
     ingredients: [
@@ -453,8 +661,24 @@ export const mockRecipes = [
       "1 bunch Mint leaves",
       "1 tbsp Pani Puri Masala"
     ],
+    nepaliIngredients: [
+      "१ प्याकेट पुरी (किनिएको)",
+      "३ उसिनेका आलु",
+      "१०० ग्राम सेता मटर",
+      "२ चम्चा इमली",
+      "१ मुट्ठी पुदीना पात",
+      "१ चम्चा पानी पुरी मसला"
+    ],
     baseServings: 4,
-    steps: ["Mash boiled potatoes and peas with salt and chili powder.", "Prepare the spiced water by blending mint, tamarind paste, and masala.", "Crack a small hole in a puri, fill with potato mixture, and dunk in the spiced water.", "Eat it whole in one bite!"],
+    steps: [
+      "Start by boiling 3 potatoes and 100g white peas until soft [15 min], then peel and mash them together with salt and chili powder.",
+      "Prepare the spiced water: in a blender, blend 1 bunch mint leaves, 2 tbsp tamarind paste, 1 tbsp pani puri masala, and cold water.",
+      "Strain the blended mixture through a fine sieve to get a smooth, tangy spiced water. Keep it chilled.",
+      "Take a puri and crack a small hole on top using your thumb.",
+      "Fill the puri with a spoonful of the mashed potato and pea mixture.",
+      "Dunk the filled puri into the chilled spiced water until it absorbs some liquid.",
+      "Eat the pani puri whole in one bite immediately to enjoy the burst of flavors."
+    ],
     nepaliSteps: [
       "उसिनेको आलु र मटरमा नुन र खुर्सानी हालेर मुछ्नुहोस्।",
       "पुदिना, अमिलो र मसला मिसाएर पानी तयार पार्नुहोस्।",
@@ -464,7 +688,7 @@ export const mockRecipes = [
     tips: ["The spiced water must be served ice cold."]
   },
   {
-    id: "17", slug: "samosa-recipe", title: "Samosa", nepaliTitle: "समोसा", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "Terai",
+    id: "17", slug: "samosa-recipe", title: "Samosa", nepaliTitle: "समोसा", category: "Snacks / Street Food", prepTime: "1 hr", difficulty: "Medium", region: "Terai",
     image: "https://upload.wikimedia.org/wikipedia/commons/a/af/Samosa_Nepal.jpg", rating: 4.7, reviews: 631, videoUrl: "",
     description: "Triangular pastry crust filled with savory spiced potatoes and green peas, deep fried.",
     ingredients: [
@@ -474,6 +698,14 @@ export const mockRecipes = [
       "1 tsp Cumin seeds",
       "1 tsp Garam masala",
       "Oil for frying"
+    ],
+    nepaliIngredients: [
+      "२ कप मैदा",
+      "३ आलु",
+      "१/२ कप केराउ",
+      "१ चम्चा जिरा बीउ",
+      "१ चम्चा गरम मसला",
+      "तेल तार्नका लागि"
     ],
     baseServings: 4,
     steps: ["Knead flour with oil and water into a stiff dough.", "Cook mashed potatoes and peas with cumin and spices.", "Roll dough, cut in half, and fold into cones.", "Fill the cones with potato mix and seal the edges with water.", "Deep fry on low-medium heat until flaky and brown."],
@@ -487,7 +719,7 @@ export const mockRecipes = [
     tips: ["Frying on high heat will cause the crust to blister and turn soft. Fry on low heat."]
   },
   {
-    id: "18", slug: "bara-recipe", title: "Bara (Wo)", nepaliTitle: "बारा (व:)", category: "Snacks / Street Food", prepTime: "12 hrs", difficulty: "Medium", isGrandmaRecipe: true, region: "Newa (Kathmandu)",
+    id: "18", slug: "bara-recipe", title: "Bara (Wo)", nepaliTitle: "बारा (व:)", category: "Snacks / Street Food", prepTime: "12 hrs", difficulty: "Medium", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/9/95/Bara_%2833428%29.jpg", rating: 4.6, reviews: 312, videoUrl: "",
     description: "A thick, savory pancake made from ground black lentils, crispy on the outside and spongy inside.",
     ingredients: [
@@ -496,6 +728,13 @@ export const mockRecipes = [
       "1 tsp Cumin powder",
       "4 tbsp Mustard oil",
       "2 Eggs"
+    ],
+    nepaliIngredients: [
+      "२५० ग्राम मासको दाल",
+      "१ इन्च अदुवा",
+      "१ चम्चा जिराको धुलो",
+      "४ चम्चा तोरीको तेल",
+      "२ अण्डा"
     ],
     baseServings: 4,
     steps: ["Soak black lentils overnight and remove the skins.", "Grind into a thick, fluffy paste with ginger.", "Heat mustard oil in a flat pan.", "Pour a ladle of batter and spread into a thick circle.", "Cook both sides. Can top with an egg or minced meat before flipping."],
@@ -509,7 +748,7 @@ export const mockRecipes = [
     tips: ["Whisking the batter vigorously traps air, making the Bara incredibly soft."]
   },
   {
-    id: "19", slug: "nepali-pakoda-recipe", title: "Nepali Pakoda", nepaliTitle: "प पकौडा", category: "Snacks / Street Food", prepTime: "20 mins", difficulty: "Easy", isGrandmaRecipe: false, region: "All Nepal",
+    id: "19", slug: "nepali-pakoda-recipe", title: "Nepali Pakoda", nepaliTitle: "प पकौडा", category: "Snacks / Street Food", prepTime: "20 mins", difficulty: "Easy", region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 4.4, reviews: 290, videoUrl: "",
     description: "Onion and vegetable fritters made with gram flour, widely eaten during rainy days with tea.",
     ingredients: [
@@ -518,6 +757,13 @@ export const mockRecipes = [
       "3 Green chilies",
       "1/2 tsp Turmeric",
       "1 tsp Carom seeds (Ajwain)"
+    ],
+    nepaliIngredients: [
+      "३ ठूला प्याज",
+      "१.५ कप बेसन (चना पिठो)",
+      "३ हरिया खुर्सानी",
+      "१/२ चम्चा बेसार",
+      "१ चम्चा अजवाइन बीउ"
     ],
     baseServings: 4,
     steps: ["Mix thinly sliced onions with besan, spices, and a tiny bit of water to form a sticky mass.", "Drop spoonfuls into hot oil.", "Deep fry until dark golden and crispy."],
@@ -529,7 +775,7 @@ export const mockRecipes = [
     tips: ["Don't add too much water; the moisture from the onions is usually enough."]
   },
   {
-    id: "20", slug: "street-chowmein-recipe", title: "Street Chowmein", nepaliTitle: "चाउमिन", category: "Snacks / Street Food", prepTime: "20 mins", difficulty: "Easy", isGrandmaRecipe: false, region: "Kathmandu Valley",
+    id: "20", slug: "street-chowmein-recipe", title: "Street Chowmein", nepaliTitle: "चाउमिन", category: "Snacks / Street Food", prepTime: "20 mins", difficulty: "Easy", region: "Kathmandu Valley",
     image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Fried_Chowmein.jpg", rating: 4.8, reviews: 1432, videoUrl: "",
     description: "Nepali style stir-fried noodles, loaded with cabbage, carrots, soy sauce, and a distinct Momo masala flavor.",
     ingredients: [
@@ -541,6 +787,16 @@ export const mockRecipes = [
       "2 tbsp Ketchup",
       "1 tsp Momo Masala",
       "200g Chicken (optional)"
+    ],
+    nepaliIngredients: [
+      "२५० ग्राम अण्डा चाउमिन",
+      "१/४ बन्दा",
+      "१ गाँजर",
+      "१ प्याज",
+      "२ चम्चा सोया सस",
+      "२ चम्चा केचप",
+      "१ चम्चा म:म मसला",
+      "२०० ग्राम कुखुरा (वैकल्पिक)"
     ],
     baseServings: 4,
     steps: ["Boil the noodles until al dente.", "Stir fry chicken pieces and remove.", "Stir fry julienned vegetables on extremely high heat.", "Add the noodles, chicken, soy sauce, ketchup, and masala.", "Toss vigorously and serve hot."],
@@ -556,7 +812,7 @@ export const mockRecipes = [
 
   // --- SWEETS ---
   {
-    id: "21", slug: "sel-roti-recipe", title: "Sel Roti", nepaliTitle: "सेल रोटी", category: "Sweets", prepTime: "2 hrs", difficulty: "Medium", isGrandmaRecipe: true, region: "All Nepal",
+    id: "21", slug: "sel-roti-recipe", title: "Sel Roti", nepaliTitle: "सेल रोटी", category: "Sweets", prepTime: "2 hrs", difficulty: "Medium", region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/9/99/Sel_roti%2C_Nepalese_food.jpg", rating: 4.8, reviews: 124, videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     seoTitle: "Sel Roti Recipe – Traditional Nepali Sweet Rice Bread | Bhansa Nepal",
     description: "Traditional Nepali festival bread made during Tihar. Sweet, crispy on the outside, soft inside.",
@@ -567,6 +823,14 @@ export const mockRecipes = [
       "2 ripe Bananas",
       "4 pods Cardamom",
       "Water"
+    ],
+    nepaliIngredients: [
+      "५०० ग्राम चामलको पिठो",
+      "१ कप चीनी",
+      "२ चम्चा घिउ",
+      "२ पाकेको केरा",
+      "४ वटा इलायची",
+      "पानी"
     ],
     nutrition: { calories: 280, protein: "3g", carbs: "45g", fat: "12g" },
     baseServings: 4,
@@ -590,7 +854,7 @@ export const mockRecipes = [
     tips: ["Batter consistency is key. If too thick, the roti is hard. If too thin, it loses shape."]
   },
   {
-    id: "22", slug: "yomari-recipe", title: "Yomari", nepaliTitle: "योमरी", category: "Sweets", prepTime: "1.5 hrs", difficulty: "Medium", isGrandmaRecipe: true, region: "Newa (Kathmandu)",
+    id: "22", slug: "yomari-recipe", title: "Yomari", nepaliTitle: "योमरी", category: "Sweets", prepTime: "1.5 hrs", difficulty: "Medium", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/0/03/Yomari_1.jpg", rating: 4.7, reviews: 156, videoUrl: "",
     description: "A Newari delicacy of steamed rice-flour dough filled with sweet chaku (molasses) or khuwa.",
     ingredients: [
@@ -612,7 +876,7 @@ export const mockRecipes = [
     tips: ["The water for the dough MUST be boiling hot to make the flour pliable."]
   },
   {
-    id: "23", slug: "rice-kheer-recipe", title: "Rice Kheer", nepaliTitle: "खीर", category: "Sweets", prepTime: "1 hr", difficulty: "Easy", isGrandmaRecipe: true, region: "All Nepal",
+    id: "23", slug: "rice-kheer-recipe", title: "Rice Kheer", nepaliTitle: "खीर", category: "Sweets", prepTime: "1 hr", difficulty: "Easy", region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Kheer_Khane_Din_.jpg", rating: 4.9, reviews: 542, videoUrl: "",
     description: "A creamy, slow-cooked rice pudding enriched with milk, cashews, cardamom, and coconut.",
     ingredients: [
@@ -637,7 +901,7 @@ export const mockRecipes = [
     tips: ["Cooking on low heat for a long time gives it a slightly pinkish hue and rich caramel flavor."]
   },
   {
-    id: "24", slug: "pua-recipe", title: "Pua", nepaliTitle: "पुवा", category: "Sweets", prepTime: "30 mins", difficulty: "Easy", isGrandmaRecipe: true, region: " पहाड (Hills)",
+    id: "24", slug: "pua-recipe", title: "Pua", nepaliTitle: "पुवा", category: "Sweets", prepTime: "30 mins", difficulty: "Easy", region: " पहाड (Hills)",
     image: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Picturesque_Nepal_%281912%29_%2814779323084%29.jpg", rating: 4.5, reviews: 112, videoUrl: "",
     description: "A quick sweet snack made by roasting rice flour in ghee and boiling it with milk and sugar.",
     ingredients: [
@@ -658,7 +922,7 @@ export const mockRecipes = [
     tips: ["Use coarse rice flour (not fine powder) to get the right texture."]
   },
   {
-    id: "25", slug: "lal-mohan-recipe", title: "Lal Mohan", nepaliTitle: "लाल मोहन", category: "Sweets", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "Kathmandu Valley",
+    id: "25", slug: "lal-mohan-recipe", title: "Lal Mohan", nepaliTitle: "लाल मोहन", category: "Sweets", prepTime: "1 hr", difficulty: "Medium", region: "Kathmandu Valley",
     image: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Lal_Mohan.jpg", rating: 4.8, reviews: 432, videoUrl: "",
     description: "The Nepali version of Gulab Jamun. Deep fried milk-solid spheres soaked in cardamom sugar syrup.",
     ingredients: [
@@ -682,7 +946,7 @@ export const mockRecipes = [
     tips: ["If the balls have cracks, they will break apart while frying."]
   },
   {
-    id: "26", slug: "rasbari-recipe", title: "Rasbari", nepaliTitle: "रसबरी", category: "Sweets", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "Kathmandu Valley",
+    id: "26", slug: "rasbari-recipe", title: "Rasbari", nepaliTitle: "रसबरी", category: "Sweets", prepTime: "1 hr", difficulty: "Medium", region: "Kathmandu Valley",
     image: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Rasgullas_from_Odisha_and_Bengal.jpg", rating: 4.6, reviews: 298, videoUrl: "",
     description: "Spongy, white cheese balls boiled in a light sugar syrup. Very popular at weddings.",
     ingredients: [
@@ -705,7 +969,7 @@ export const mockRecipes = [
     tips: ["Washing the chhena under cold water removes the lemon flavor and stops the cooking process."]
   },
   {
-    id: "27", slug: "gudpak-recipe", title: "Gudpak", nepaliTitle: "गुँदपाक", category: "Sweets", prepTime: "2 hrs", difficulty: "Hard", isGrandmaRecipe: true, region: "Newa (Kathmandu)",
+    id: "27", slug: "gudpak-recipe", title: "Gudpak", nepaliTitle: "गुँदपाक", category: "Sweets", prepTime: "2 hrs", difficulty: "Hard", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Dalbath.jpg", rating: 4.9, reviews: 312, videoUrl: "",
     description: "An incredibly rich, fudge-like sweet made of milk, ghee, edible gum, and nuts. Given to new mothers for strength.",
     ingredients: [
@@ -730,7 +994,7 @@ export const mockRecipes = [
     tips: ["Requires immense patience to boil down the milk properly."]
   },
   {
-    id: "28", slug: "lakhamari-recipe", title: "Lakhamari", nepaliTitle: "लाखामरी", category: "Sweets", prepTime: "3 hrs", difficulty: "Hard", isGrandmaRecipe: true, region: "Newa (Kathmandu)",
+    id: "28", slug: "lakhamari-recipe", title: "Lakhamari", nepaliTitle: "लाखामरी", category: "Sweets", prepTime: "3 hrs", difficulty: "Hard", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/4/46/Lakha_Mari_.jpeg", rating: 4.7, reviews: 189, videoUrl: "",
     description: "A highly intricate, crispy, flaky bread coated in sugar syrup. Essential for Newari weddings.",
     ingredients: [
@@ -752,7 +1016,7 @@ export const mockRecipes = [
     tips: ["Can be kept for months without spoiling."]
   },
   {
-    id: "29", slug: "thekua-recipe", title: "Thekua", nepaliTitle: "ठेकुवा", category: "Sweets", prepTime: "1 hr", difficulty: "Easy", isGrandmaRecipe: true, region: "Terai",
+    id: "29", slug: "thekua-recipe", title: "Thekua", nepaliTitle: "ठेकुवा", category: "Sweets", prepTime: "1 hr", difficulty: "Easy", region: "Terai",
     image: "https://upload.wikimedia.org/wikipedia/commons/1/17/Thekua_Prasadam_of_Chhath_Puja.jpg", rating: 4.6, reviews: 212, videoUrl: "",
     description: "A hard, crunchy, rustic cookie made during the Chhath festival, deeply flavored with jaggery and fennel.",
     ingredients: [
@@ -776,7 +1040,7 @@ export const mockRecipes = [
     tips: ["Low heat is crucial so the inside cooks before the jaggery outside burns."]
   },
   {
-    id: "30", slug: "peda-recipe", title: "Peda", nepaliTitle: "पेड़ा", category: "Sweets", prepTime: "40 mins", difficulty: "Medium", isGrandmaRecipe: false, region: "Terai",
+    id: "30", slug: "peda-recipe", title: "Peda", nepaliTitle: "पेड़ा", category: "Sweets", prepTime: "40 mins", difficulty: "Medium", region: "Terai",
     image: "https://upload.wikimedia.org/wikipedia/commons/5/56/Peda.jpg", rating: 4.8, reviews: 341, videoUrl: "",
     description: "Soft, grainy fudge discs made entirely of milk solids and sugar, infused with cardamom.",
     ingredients: [
@@ -800,7 +1064,7 @@ export const mockRecipes = [
 
   // --- TRADITIONAL / ETHNIC DISHES ---
   {
-    id: "31", slug: "newari-samay-baji-recipe", title: "Newari Samay Baji", nepaliTitle: "समय बजी", category: "Traditional / Ethnic Food", prepTime: "2 hrs", difficulty: "Hard", isGrandmaRecipe: true, region: "Newa (Kathmandu)",
+    id: "31", slug: "newari-samay-baji-recipe", title: "Newari Samay Baji", nepaliTitle: "समय बजी", category: "Traditional / Ethnic Food", prepTime: "2 hrs", difficulty: "Hard", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 5.0, reviews: 890, videoUrl: "",
     description: "A monumental festival platter representing a balanced diet, gods, and cosmos. The heart of Newari cuisine.",
     ingredients: [
@@ -834,7 +1098,7 @@ export const mockRecipes = [
     tips: ["Mustard oil is the absolute binding flavor across all components of Samay Baji."]
   },
   {
-    id: "32", slug: "chatamari-recipe", title: "Chatamari", nepaliTitle: "चतामरी", category: "Traditional / Ethnic Food", prepTime: "45 mins", difficulty: "Medium", isGrandmaRecipe: false, region: "Newa (Kathmandu)",
+    id: "32", slug: "chatamari-recipe", title: "Chatamari", nepaliTitle: "चतामरी", category: "Traditional / Ethnic Food", prepTime: "45 mins", difficulty: "Medium", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Meat_Chatamari.jpg", rating: 4.7, reviews: 521, videoUrl: "",
     seoTitle: "Nepali Pizza Recipe - Traditional Newari Chatamari | Bhansa Nepal",
     description: "Often called the 'Nepali Pizza'. A thin, crispy rice flour crepe topped with minced meat and an egg.",
@@ -868,7 +1132,7 @@ export const mockRecipes = [
     tips: ["Do not flip the Chatamari! It cooks entirely through the trapped steam."]
   },
   {
-    id: "33", slug: "juju-dhau-recipe", title: "Juju Dhau", nepaliTitle: "जुजु धौ", category: "Traditional / Ethnic Food", prepTime: "12 hrs", difficulty: "Hard", isGrandmaRecipe: true, region: "Newa (Kathmandu)",
+    id: "33", slug: "juju-dhau-recipe", title: "Juju Dhau", nepaliTitle: "जुजु धौ", category: "Traditional / Ethnic Food", prepTime: "12 hrs", difficulty: "Hard", region: "Newa (Kathmandu)",
     image: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Juju_Dhau.jpg", rating: 5.0, reviews: 1102, videoUrl: "",
     description: "The 'King of Yogurt' from Bhaktapur. Incredibly rich, sweet, custard-like yogurt set in a clay pot.",
     ingredients: [
@@ -898,7 +1162,7 @@ export const mockRecipes = [
     tips: ["The clay pot absorbs excess water, making the yogurt dense enough that it won't fall out if turned upside down!"]
   },
   {
-    id: "34", slug: "tharu-fish-curry-recipe", title: "Tharu Fish Curry", nepaliTitle: "थारु माछा को तरकारी", category: "Traditional / Ethnic Food", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: true, region: "Tharu (Terai)",
+    id: "34", slug: "tharu-fish-curry-recipe", title: "Tharu Fish Curry", nepaliTitle: "थारु माछा को तरकारी", category: "Traditional / Ethnic Food", prepTime: "1 hr", difficulty: "Medium", region: "Tharu (Terai)",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 4.8, reviews: 432, videoUrl: "",
     description: "A spicy, rustic fish curry from the indigenous Tharu community, heavily reliant on mustard paste.",
     ingredients: [
@@ -930,7 +1194,7 @@ export const mockRecipes = [
     tips: ["Yellow mustard seeds are preferred, and they must be ground to a very fine paste."]
   },
   {
-    id: "35", slug: "sherpa-stew-recipe", title: "Sherpa Stew (Shyakpa)", nepaliTitle: "शेर्पा स्ट्यु", category: "Traditional / Ethnic Food", prepTime: "1.5 hrs", difficulty: "Medium", isGrandmaRecipe: true, region: "Himalayas",
+    id: "35", slug: "sherpa-stew-recipe", title: "Sherpa Stew (Shyakpa)", nepaliTitle: "शेर्पा स्ट्यु", category: "Traditional / Ethnic Food", prepTime: "1.5 hrs", difficulty: "Medium", region: "Himalayas",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", rating: 4.7, reviews: 312, videoUrl: "",
     description: "A thick, hearty, calorie-dense noodle and vegetable stew meant to warm the body in freezing high altitudes.",
     ingredients: [

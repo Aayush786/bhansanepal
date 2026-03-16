@@ -8,13 +8,9 @@ export default function RecipeCard({ recipe }) {
         <img 
           src={recipe.image} 
           alt={recipe.title} 
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        {recipe.isGrandmaRecipe && (
-          <div className="absolute top-4 right-4 bg-brand-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-            👵 Grandma's Secret
-          </div>
-        )}
       </div>
       
       <div className="p-6">

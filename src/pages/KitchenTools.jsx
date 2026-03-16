@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../utils/LanguageContext';
-import { ArrowLeft, BookOpen, Tool, Sparkles, UtensilsCrossed } from 'lucide-react';
+import { ArrowLeft, BookOpen, Sparkles, UtensilsCrossed } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const TOOLS = [

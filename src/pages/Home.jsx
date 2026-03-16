@@ -157,38 +157,6 @@ export default function Home() {
           </section>
         )}
 
-        {/* HajurAama Ko Recipe Spotlight */}
-        {!isSearching && (
-          <section className="bg-gradient-to-tr from-brand-900 via-brand-800 to-brand-700 rounded-3xl p-8 relative overflow-hidden shadow-2xl flex flex-col md:flex-row items-center gap-8 group">
-            <div className="absolute -right-20 -top-20 w-64 h-64 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all duration-700"></div>
-            <div className="flex-1 z-10 text-white">
-              <span className="inline-block bg-white/20 px-4 py-1.5 rounded-full text-sm font-semibold mb-4 backdrop-blur-sm shadow-sm">
-                {t('grandma_ribbon')}
-              </span>
-              <h2 className="text-3xl md:text-4xl font-display font-extrabold mb-4 drop-shadow-md text-white">
-                {t('grandma_title')}
-              </h2>
-              <p className="text-brand-100 font-medium text-lg leading-relaxed mb-6 max-w-xl">
-                {t('grandma_desc')}
-              </p>
-              <button onClick={() => {
-                setActiveCategory('All');
-                setFilteredRecipes(mockRecipes.filter(r => r.isGrandmaRecipe));
-                setIsSearching(true);
-              }} className="bg-white text-brand-900 font-extrabold px-6 py-3 rounded-xl hover:bg-brand-50 hover:scale-105 transition-all shadow-lg flex items-center gap-2">
-                {t('btn_traditional')}
-              </button>
-            </div>
-
-            <div className="w-full md:w-1/3 relative z-10 hidden md:block group-hover:rotate-3 transition-transform duration-500">
-              <div className="aspect-square bg-brand-900/50 rounded-3xl border-2 border-white/20 shadow-2xl overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center text-7xl opacity-50">🔥</div>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Nepali_Dal_Bhat.JPG" className="w-full h-full object-cover mix-blend-overlay opacity-100" alt="Traditional cooking" />
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* Regional Explore Section */}
         {!isSearching && (
           <section>
