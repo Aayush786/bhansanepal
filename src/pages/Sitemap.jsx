@@ -9,6 +9,8 @@ export default function Sitemap() {
       <Helmet>
         <title>Sitemap | All Authentic Nepali Recipes Index | Bhansa Nepal</title>
         <meta name="description" content="Browse our complete list of authentic Nepali recipes. From Dal Bhat to Momos, find every traditional dish here." />
+        <link rel="canonical" href="https://bhansanepal.com/sitemap" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <div className="relative mb-16 p-12 rounded-[3rem] overflow-hidden bg-brand-900 text-white shadow-2xl">

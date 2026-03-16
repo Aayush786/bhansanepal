@@ -56,6 +56,8 @@ export default function Blog() {
         <title>Nepali Food Blog | Articles on Recipes, Culture & Cooking - Bhansa Nepal</title>
         <meta name="description" content="Read articles about authentic Nepali recipes, traditional food culture, Kathmandu street food, and festival delicacies on the Bhansa Nepal blog." />
         <meta name="keywords" content="Nepali food blog, traditional Nepali food articles, Best Street foods in Nepal, Top 20 Nepali foods, Newari dishes" />
+        <link rel="canonical" href="https://bhansanepal.com/blog" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       {/* Blog Header */}

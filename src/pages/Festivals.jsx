@@ -74,6 +74,8 @@ export default function Festivals() {
       <Helmet>
         <title>Nepali Festival Food Guide | Bhansa Nepal</title>
         <meta name="description" content="Discover the traditional foods tied to Nepal's vibrant festivals. From Dashain meats to Tihar sweets." />
+        <link rel="canonical" href="https://bhansanepal.com/festivals" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       {/* Hero Section */}

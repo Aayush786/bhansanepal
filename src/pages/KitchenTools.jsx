@@ -61,6 +61,8 @@ export default function KitchenTools() {
       <Helmet>
         <title>Traditional Nepali Kitchen Tools Guide | Bhansa Nepal</title>
         <meta name="description" content="Learn about Tawa, Karai, Chakla Belan and other traditional tools used in Nepali cooking. A guide for beginners and enthusiasts." />
+        <link rel="canonical" href="https://bhansanepal.com/kitchen-tools" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <button 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ChefHat, Plus, Trash2, Camera } from 'lucide-react';
 
 export default function AddRecipe() {
@@ -35,6 +36,13 @@ export default function AddRecipe() {
 
   return (
     <div className="max-w-3xl mx-auto py-12 animate-in fade-in zoom-in-95 duration-500">
+      <Helmet>
+        <title>Submit Your Nepali Recipe | Share Authentic Recipes - Bhansa Nepal</title>
+        <meta name="description" content="Share your authentic Nepali recipe with the community. Contribute traditional recipes, cooking tips, and help preserve Nepal's culinary heritage." />
+        <link rel="canonical" href="https://bhansanepal.com/add-recipe" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
       <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-brand-100 relative overflow-hidden">
         {/* Decorative corner */}
         <div className="absolute top-0 right-0 w-40 h-40 bg-brand-100/50 rounded-bl-full -z-0"></div>

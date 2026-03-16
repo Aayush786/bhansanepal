@@ -39,6 +39,8 @@ export default function Home() {
         <title>Authentic Nepali Recipes & Traditional Food | Bhansa Nepal</title>
         <meta name="description" content="Discover the best traditional Nepali food, from Momos to Thakali Khana. Search thousands of Nepali recipes by ingredient." />
         <meta name="keywords" content="Nepali recipes, Nepali food recipes, traditional Nepali food, momo recipe Nepal, sel roti recipe" />
+        <link rel="canonical" href="https://bhansanepal.com/" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       {/* Hero Section */}

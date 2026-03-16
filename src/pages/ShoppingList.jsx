@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { ShoppingCart, CheckCircle2, Circle, Trash2, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -31,6 +32,13 @@ export default function ShoppingList() {
 
   return (
     <div className="max-w-2xl mx-auto py-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+      <Helmet>
+        <title>Shopping List | Organize Your Nepali Recipe Ingredients - Bhansa Nepal</title>
+        <meta name="description" content="Keep track of ingredients for your favorite Nepali recipes. Create and manage your shopping list for authentic Nepali cooking." />
+        <link rel="canonical" href="https://bhansanepal.com/shopping-list" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
+
       <Link to="/" className="mb-6 flex items-center gap-2 text-gray-500 hover:text-brand-700 font-semibold transition-colors group">
         <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" /> 
         Back to Home

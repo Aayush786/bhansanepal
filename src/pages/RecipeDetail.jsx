@@ -121,6 +121,7 @@ export default function RecipeDetail() {
         <meta name="keywords" content={recipe.seoKeywords || `${recipe.title} recipe, Nepali ${recipe.category}, how to make ${recipe.title}, authentic Nepali food, ${recipe.region} cuisine, Nepali cooking, traditional recipes`} />
         <meta name="author" content="Bhansa Nepal" />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://bhansanepal.com/recipe/${recipe.slug}`} />
         <meta name="language" content="English" />
         <meta property="og:title" content={recipe.seoTitle || `${recipe.title} Recipe - Authentic Nepali Cuisine | Bhansa Nepal`} />
         <meta property="og:description" content={recipe.seoDescription || `Learn how to cook ${recipe.title} with this authentic Nepali recipe. Step-by-step instructions for traditional ${recipe.category}.`} />
