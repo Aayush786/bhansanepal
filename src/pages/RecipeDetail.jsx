@@ -32,6 +32,51 @@ export default function RecipeDetail() {
   const [activeTimer, setActiveTimer] = useState(null); // { seconds: number, stepIndex: number }
   const [timeLeft, setTimeLeft] = useState(0);
 
+  // Review State
+  const [reviews, setReviews] = useState([]);
+  const [reviewForm, setReviewForm] = useState({ rating: 5, name: '', comment: '' });
+
+  // Load reviews from localStorage
+  useEffect(() => {
+    if (recipe) {
+      const storageKey = `reviews-${recipe.slug}`;
+      const stored = JSON.parse(localStorage.getItem(storageKey) || '[]');
+      setReviews(stored);
+    }
+  }, [recipe]);
+
+  const submitReview = (e) => {
+    e.preventDefault();
+    if (!reviewForm.name.trim() || !reviewForm.comment.trim()) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    const newReview = {
+      id: Date.now(),
+      rating: reviewForm.rating,
+      name: reviewForm.name,
+      comment: reviewForm.comment,
+      date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    };
+
+    const updatedReviews = [newReview, ...reviews];
+    setReviews(updatedReviews);
+    
+    // Save to localStorage
+    const storageKey = `reviews-${recipe.slug}`;
+    localStorage.setItem(storageKey, JSON.stringify(updatedReviews));
+    
+    // Reset form
+    setReviewForm({ rating: 5, name: '', comment: '' });
+  };
+
+  const calculateAverageRating = () => {
+    if (reviews.length === 0) return 0;
+    const sum = reviews.reduce((acc, review) => acc + review.rating, 0);
+    return (sum / reviews.length).toFixed(1);
+  };
+
   useEffect(() => {
     let interval;
     if (activeTimer && timeLeft > 0) {
@@ -147,10 +192,10 @@ export default function RecipeDetail() {
             "description": recipe.description,
             "prepTime": "PT15M", 
             "totalTime": "PT" + (recipe.prepTime.includes('hr') ? recipe.prepTime.split(' ')[0] + 'H' : recipe.prepTime.split(' ')[0] + 'M'),
-            "aggregateRating": recipe.rating ? {
+            "aggregateRating": reviews.length > 0 ? {
               "@type": "AggregateRating",
-              "ratingValue": recipe.rating,
-              "reviewCount": recipe.reviews
+              "ratingValue": calculateAverageRating(),
+              "reviewCount": reviews.length
             } : undefined,
             "keywords": `${recipe.title} recipe, Nepali food`,
             "recipeYield": `${recipe.baseServings} servings`,
@@ -226,14 +271,6 @@ export default function RecipeDetail() {
           <p className="text-xl md:text-2xl text-brand-200 font-medium drop-shadow-md mb-4">
             {recipe.nepaliTitle}
           </p>
-          
-          {recipe.rating && (
-            <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md w-max px-3 py-1.5 rounded-full border border-white/10 shadow-lg">
-              <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
-              <span className="text-white font-bold">{recipe.rating}</span>
-              <span className="text-brand-200 text-sm">({recipe.reviews} reviews)</span>
-            </div>
-          )}
         </div>
       </div>
 
@@ -492,33 +529,118 @@ export default function RecipeDetail() {
             </div>
           )}
 
-          {/* Comments Section */}
+          {/* Reviews Section */}
           <div className="mt-12 mb-8">
-            <h3 className="text-2xl font-display font-bold text-gray-900 mb-6 flex items-center gap-2">
-              <MessageSquare className="w-6 h-6 text-brand-600" />
-              {t('community_reviews')}
-            </h3>
-            
-            {recipe.comments && recipe.comments.length > 0 ? (
-              <div className="space-y-5">
-                {recipe.comments.map((comment, idx) => (
-                   <div key={idx} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm flex gap-4">
-                     <div className="w-10 h-10 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold shrink-0">
-                       {comment.user.charAt(0)}
-                     </div>
-                     <div>
-                       <div className="flex items-baseline gap-2 mb-1">
-                         <span className="font-bold text-gray-900">{comment.user}</span>
-                         <span className="text-xs text-gray-400">{comment.date}</span>
-                       </div>
-                       <p className="text-gray-700">{comment.text}</p>
-                     </div>
-                   </div>
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-2xl font-display font-bold text-gray-900 flex items-center gap-2">
+                <MessageSquare className="w-6 h-6 text-brand-600" />
+                {t('community_reviews') || 'Community Reviews'}
+              </h3>
+              {reviews.length > 0 && (
+                <div className="flex items-center gap-2 bg-brand-50 px-4 py-2 rounded-full border border-brand-200">
+                  <Star className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+                  <span className="font-bold text-gray-900">{calculateAverageRating()}</span>
+                  <span className="text-xs text-gray-500">({reviews.length} {reviews.length === 1 ? 'review' : 'reviews'})</span>
+                </div>
+              )}
+            </div>
+
+            {/* Review Submission Form */}
+            <form onSubmit={submitReview} className="bg-gradient-to-br from-brand-50 to-white rounded-3xl p-8 border border-brand-100/50 mb-8 shadow-sm">
+              <h4 className="text-lg font-bold text-gray-900 mb-4">Share Your Experience</h4>
+              
+              <div className="space-y-4">
+                {/* Name Input */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
+                  <input
+                    type="text"
+                    value={reviewForm.name}
+                    onChange={(e) => setReviewForm({ ...reviewForm, name: e.target.value })}
+                    placeholder="Enter your name"
+                    className="w-full px-4 py-2 border border-brand-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-600 transition-all"
+                  />
+                </div>
+
+                {/* Rating Selector */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-3">Rating</label>
+                  <div className="flex gap-3">
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        type="button"
+                        onClick={() => setReviewForm({ ...reviewForm, rating: star })}
+                        className={`p-2 rounded-lg transition-all ${
+                          reviewForm.rating >= star
+                            ? 'text-yellow-400 bg-yellow-50'
+                            : 'text-gray-300 hover:text-gray-400'
+                        }`}
+                      >
+                        <Star className="w-6 h-6 fill-current" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Comment Textarea */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">Your Review</label>
+                  <textarea
+                    value={reviewForm.comment}
+                    onChange={(e) => setReviewForm({ ...reviewForm, comment: e.target.value })}
+                    placeholder="Share what you think about this recipe..."
+                    rows="4"
+                    className="w-full px-4 py-2 border border-brand-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-600 transition-all resize-none"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  className="w-full bg-brand-600 text-white font-bold py-3 rounded-xl hover:bg-brand-700 transition-colors shadow-md hover:shadow-lg active:scale-95"
+                >
+                  Submit Review
+                </button>
+              </div>
+            </form>
+
+            {/* Reviews List */}
+            {reviews.length > 0 ? (
+              <div className="space-y-4">
+                {reviews.map((review) => (
+                  <div key={review.id} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex items-center gap-3 flex-1">
+                        <div className="w-12 h-12 rounded-full bg-brand-100 text-brand-700 flex items-center justify-center font-bold text-lg shrink-0">
+                          {review.name.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-900">{review.name}</p>
+                          <p className="text-xs text-gray-400">{review.date}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-1">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className={`w-4 h-4 ${
+                              i < review.rating
+                                ? 'text-yellow-400 fill-yellow-400'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">{review.comment}</p>
+                  </div>
                 ))}
               </div>
             ) : (
-              <div className="text-center py-8 bg-gray-50 rounded-2xl border border-dashed border-gray-300 text-gray-500">
-                Be the first to review this recipe!
+              <div className="text-center py-12 bg-gray-50 rounded-2xl border border-dashed border-gray-300">
+                <MessageSquare className="w-12 h-12 text-gray-300 mx-auto mb-3" />
+                <p className="text-gray-500 font-medium">No reviews yet. Be the first to share your experience!</p>
               </div>
             )}
           </div>

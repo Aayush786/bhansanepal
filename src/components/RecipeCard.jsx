@@ -1,4 +1,4 @@
-import { Clock, BarChart, MapPin, Star } from 'lucide-react';
+import { Clock, BarChart, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function RecipeCard({ recipe }) {
@@ -20,13 +20,6 @@ export default function RecipeCard({ recipe }) {
               {recipe.title}
             </h3>
             <p className="text-sm font-medium text-brand-500 mt-1">{recipe.nepaliTitle}</p>
-            {recipe.rating && (
-              <div className="flex items-center gap-1 mt-2 text-sm font-semibold text-gray-700">
-                <Star className="w-4 h-4 text-brand-900 fill-brand-900" />
-                <span>{recipe.rating}</span>
-                <span className="text-gray-400 font-normal">({recipe.reviews})</span>
-              </div>
-            )}
           </div>
           <span className="text-xs font-semibold bg-brand-100 text-brand-700 px-2.5 py-1 rounded-full whitespace-nowrap">
             {recipe.category}
