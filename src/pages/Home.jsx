@@ -251,6 +251,31 @@ export default function Home() {
             </div>
           )}
         </section>
+
+        <section className="mt-20 bg-brand-50 border border-brand-100 rounded-[2rem] p-8">
+          <h2 className="text-3xl font-display font-bold text-gray-900 mb-4">Learn more about Nepali cuisine</h2>
+          <p className="text-gray-600 max-w-2xl mb-6">
+            Explore trusted culinary resources to deepen your understanding of traditional ingredients, festival plates, and regional Nepali food culture.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="https://en.wikipedia.org/wiki/Nepalese_cuisine"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-4 text-center text-sm font-semibold text-brand-700 shadow-sm hover:bg-brand-100 transition"
+            >
+              Nepalese cuisine on Wikipedia
+            </a>
+            <a
+              href="https://en.wikipedia.org/wiki/Momo_(dish)"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-2xl bg-white px-6 py-4 text-center text-sm font-semibold text-brand-700 shadow-sm hover:bg-brand-100 transition"
+            >
+              Learn about Nepali momo
+            </a>
+          </div>
+        </section>
       </div>
     </div>
   );
