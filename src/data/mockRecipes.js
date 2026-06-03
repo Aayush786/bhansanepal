@@ -23,16 +23,24 @@ export const mockRecipes = [
   {
     id: "1", slug: "easy-dal-bhat-recipe", title: "Dal Bhat Tarkari", nepaliTitle: "दाल भात तरकारी", category: "Main Dishes", prepTime: "45 mins", difficulty: "Medium", region: "All Nepal",
     image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Dal_Bhat_Tarkari_2.jpg", videoUrl: "",
-    seoTitle: "How to Cook Nepali Dal Bhat - Authentic Easy Recipe | Bhansa Nepal",
-    seoDescription: "Learn how to cook Nepali Dal Bhat Tarkari with this authentic, easy-to-follow recipe. The ultimate everyday comfort food of Nepal.",
-    description: "The ultimate everyday Nepali meal consisting of steamed rice, lentil soup, and vegetable curry.",
+    seoTitle: "Authentic Nepali Dal Bhat Tarkari Recipe - Step-by-Step Dal Bhat Guide | Bhansa Nepal",
+    seoDescription: "Master Nepali Dal Bhat Tarkari with detailed, step-by-step instructions for fluffy rice, creamy spiced lentils, and hearty seasonal vegetable curry. Perfect for home cooks looking for authentic Nepal food.",
+    seoKeywords: "Dal Bhat recipe, Nepali Dal Bhat, Dal Bhat Tarkari, Nepali cuisine, step-by-step recipe, traditional Nepali food",
+    description: "A complete Dal Bhat Tarkari recipe with precise steps to cook rice, lentils, and vegetable curry in authentic Nepali style.",
     ingredients: [
       "500g Rice",
       "200g Yellow lentils (Dal)",
-      "300g Seasonal vegetable (Cauliflower/Potato)",
+      "1 medium Onion, finely chopped",
+      "4 cloves Garlic, minced",
+      "1 inch piece Ginger, grated",
+      "2-3 Green chilies, slit",
+      "300g Seasonal vegetables (Cauliflower/Potato)",
       "1 tsp Turmeric",
       "1 tsp Cumin seeds",
-      "1 tbsp Ghee"
+      "1 tbsp Ghee",
+      "2 tbsp Vegetable oil",
+      "Salt to taste",
+      "Fresh coriander for garnish"
     ],
     nepaliIngredients: [
       "५०० ग्राम चामल",
@@ -45,12 +53,14 @@ export const mockRecipes = [
     nutrition: { calories: 350, protein: "8g", carbs: "65g", fat: "6g" },
     baseServings: 4,
     steps: [
-      "Start by washing the rice thoroughly under running water until the water runs clear. This removes any impurities and prevents the rice from becoming sticky.",
-      "In a large pot, add the washed rice and 1 liter of water (1:2 ratio). Bring to a boil over high heat, then reduce to medium heat and cover. Cook for 15-20 minutes until the rice is fluffy and all water is absorbed. Let it rest for 5 minutes before fluffing with a fork.",
-      "While the rice is cooking, wash the yellow lentils thoroughly. In a pressure cooker, add the lentils, 1/2 tsp turmeric, 1 tsp salt, and 4 cups of water. Cook on high pressure for 10-15 minutes until the lentils are soft and mushy.",
-      "For the tadka: Heat 1 tbsp ghee in a small pan over medium heat. Add 1 tsp cumin seeds and let them splutter for 30 seconds. Pour this hot ghee mixture over the cooked lentils and stir well.",
-      "Prepare the vegetable curry: Chop the seasonal vegetables into bite-sized pieces. Heat 2 tbsp oil in a pan, add 1/2 tsp cumin seeds, 1/2 tsp turmeric, and sauté for 1 minute. Add the vegetables and cook on medium heat for 10-15 minutes until tender, stirring occasionally.",
-      "To serve: Arrange the hot rice, dal, and vegetable curry on a traditional thali (plate). Add a dollop of ghee on top of the rice for extra flavor. Serve immediately while hot."
+      "Gather all ingredients and prepare your work area. Rinse the rice under running water until the water runs clear, then drain and set aside.",
+      "In a large pot, combine the rinsed rice with 1 liter of water. Bring to a boil over high heat, then lower the flame to medium and cover. Cook gently for 15-20 minutes until the rice is tender and the water is fully absorbed. Turn off the heat and let it sit covered for 5 minutes before fluffing with a fork.",
+      "Rinse the yellow lentils well under cold water. Place them in a pressure cooker with 4 cups of water, 1/2 tsp turmeric, 1 tsp salt, and a pinch of black pepper. Cook on high pressure for 10-12 minutes until the lentils are soft and easily mashed.",
+      "While the lentils cook, heat 2 tbsp oil in a pan over medium heat. Add finely chopped onions, grated ginger, and minced garlic. Sauté until the onions turn translucent and fragrant, about 4 minutes.",
+      "Add 1 tsp turmeric, 1 tsp cumin seeds, and the slit green chilies to the pan. Stir for 30 seconds to bloom the spices, then add the chopped seasonal vegetables. Cook the vegetables for 10-12 minutes until they are tender but still hold their shape.",
+      "Drain any excess water from the cooked lentils if needed, then mash them lightly with a spoon. In a small pan, heat 1 tbsp ghee and add 1 tsp cumin seeds. When the seeds crackle, pour the hot tadka over the dal and mix well.",
+      "Fold the tempered dal and the vegetable curry together on a serving plate, or keep them separate as in traditional Dal Bhat. Add a fresh sprig of coriander and a spoonful of ghee over the rice for an authentic finish.",
+      "Serve the Dal Bhat immediately with pickles, papad, or achar if available. Enjoy the balanced flavors of spice, richness, and freshness in every bite."
     ],
     nepaliSteps: [
       "सुरुमा चामललाई बगिरहेको पानीमा राम्ररी धुनुहोस् जबसम्म पानी सफा हुँदैन। यसले कुनै पनि अशुद्धता हटाउँछ र चामल चिप्लो हुनबाट रोक्छ।",
@@ -64,16 +74,24 @@ export const mockRecipes = [
   },
   {
     id: "2", slug: "gundruk-ko-jhol-recipe", title: "Gundruk ko Jhol", nepaliTitle: "गुन्द्रुक को झोल", category: "Main Dishes", prepTime: "30 mins", difficulty: "Easy", region: " पहाड (Hills)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Gundruk_Jhol.jpg", videoUrl: "",
     seoTitle: "Gundruk ko Jhol Recipe - Authentic Nepali Fermented Soup | Bhansa Nepal",
-    description: "A fermented leafy green soup, tangy and rich, a staple in the hilly regions.",
+    seoDescription: "Cook Gundruk ko Jhol the authentic Nepali way with fermented greens, roasted soybeans, and a bright tomato spice base. This step-by-step recipe makes a tangy, nourishing soup perfect for everyday meals.",
+    seoKeywords: "Gundruk ko Jhol, Nepali soup recipe, fermented greens recipe, Gundruk Jhol, Nepali cuisine, traditional recipe",
+    description: "A fermented leafy green soup made with gundruk, roasted soybeans, tomatoes, and spices. Tangy, savory, and deeply aromatic.",
     ingredients: [
-      "100g Gundruk (Fermented greens)",
-      "1 medium Onion",
-      "2 Tomatoes",
-      "4 cloves Garlic",
-      "50g Soybean",
-      "3 Dry chilies"
+      "100g Gundruk (fermented leafy greens)",
+      "1 medium Onion, finely chopped",
+      "2 Tomatoes, chopped",
+      "4 cloves Garlic, minced",
+      "1 inch Ginger, grated",
+      "50g Soybeans",
+      "3 Dry chilies",
+      "1 tbsp Mustard oil",
+      "1 tsp Turmeric powder",
+      "1 tsp Cumin seeds",
+      "Salt to taste",
+      "Fresh coriander for garnish"
     ],
     nepaliIngredients: [
       "१०० ग्राम गुन्द्रुक (किण्वित साग)",
@@ -86,12 +104,14 @@ export const mockRecipes = [
     nutrition: { calories: 120, protein: "4g", carbs: "15g", fat: "5g" },
     baseServings: 4,
     steps: [
-      "Start by soaking the gundruk in warm water for 10 minutes to soften it and reduce any strong smell. Drain and rinse once.",
-      "In a dry pan over medium heat, roast the soybeans until they start to pop and turn brown, about 5 minutes. Stir constantly to prevent burning.",
-      "Heat 2 tbsp mustard oil in a large pot over medium heat. Add finely chopped onions, minced garlic, and grated ginger. Fry until the onions turn golden brown, about 5 minutes.",
-      "Add chopped tomatoes and 1/2 tsp turmeric powder. Cook until the tomatoes become soft and the oil starts to separate, about 5 minutes.",
-      "Add the soaked gundruk, roasted soybeans, 3 dry chilies, and 3 cups of water. Bring to a boil, then reduce heat and simmer for 15 minutes until flavors meld.",
-      "Season with salt to taste. Serve hot with dhido (millet porridge) or steamed rice."
+      "Begin by soaking the gundruk in warm water for 10 minutes to soften it and mellow the fermented aroma. Drain, rinse once, and squeeze out excess water.",
+      "Toast the soybeans in a dry pan over medium heat until they pop and turn golden brown, about 5 minutes. Stir constantly so they do not burn.",
+      "Heat 1 tbsp mustard oil in a large pot over medium heat. Add cumin seeds and let them crackle, then stir in finely chopped onions, minced garlic, and grated ginger.",
+      "Sauté the aromatics until the onions are soft and translucent, about 4-5 minutes. Add turmeric powder and continue stirring for 30 seconds.",
+      "Stir in chopped tomatoes and dry chilies, then cook until the tomatoes break down and the oil starts to separate from the mixture, about 6 minutes.",
+      "Add the soaked gundruk, roasted soybeans, and 3 cups of water to the pot. Bring everything to a boil, then cover and simmer on low heat for 15 minutes to blend the flavors.",
+      "Season the soup with salt to taste. Finish with fresh coriander before serving for a bright, fragrant touch.",
+      "Serve hot with dhido, steamed rice, or flatbread, and enjoy the rustic tang of authentic Nepali Gundruk ko Jhol."
     ],
     nepaliSteps: [
       "सुरुमा गुन्द्रुकलाई नरम बनाउन र कडा गन्ध कम गर्न १० मिनेट मनतातो पानीमा भिजाउनुहोस्। पानी निकालेर एक पटक धुनुहोस्।",
@@ -105,13 +125,18 @@ export const mockRecipes = [
   },
   {
     id: "3", slug: "dhido-with-gundruk-recipe", title: "Dhido with Gundruk", nepaliTitle: "ढिंडो र गुन्द्रुक", category: "Main Dishes", prepTime: "40 mins", difficulty: "Hard", region: " पहाड (Hills)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
-    description: "Traditional porridge-like food made from buckwheat or millet flour, usually eaten hot without chewing.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Dhido.jpg", videoUrl: "",
+    seoTitle: "Dhido with Gundruk Recipe - Traditional Nepali Millet Porridge | Bhansa Nepal",
+    seoDescription: "Learn how to make Dhido with Gundruk using millet or buckwheat flour, rich ghee, and a savory fermented greens soup. This authentic Nepali meal pairs a hearty, smooth dhido with tangy Gundruk Jhol.",
+    seoKeywords: "Dhido recipe, Gundruk Jhol, Nepali dhido, Nepal food, millet porridge recipe, traditional Nepali meal",
+    description: "A warming Nepalese meal of thick millet or buckwheat porridge served with tangy Gundruk Jhol. Best eaten hot and enjoyed as a comfort dish in the hills.",
     ingredients: [
       "250g Millet or Buckwheat flour",
       "1 liter Water",
       "2 tbsp Ghee",
-      "1 tsp Salt"
+      "1 tsp Salt",
+      "1/4 tsp Black pepper",
+      "Fresh ghee or butter for topping"
     ],
     nepaliIngredients: [
       "२५० ग्राम कोदो वा फापरको पिठो",
@@ -122,13 +147,13 @@ export const mockRecipes = [
     nutrition: { calories: 450, protein: "12g", carbs: "80g", fat: "10g" },
     baseServings: 4,
     steps: [
-      "Start by preparing all ingredients: measure the millet or buckwheat flour, ghee, salt, and have 1 liter of water ready.",
-      "In a heavy-bottomed pan, bring 1 liter of water to a rolling boil over high heat [10 min].",
-      "Gradually add the flour while continuously stirring with a spatula (Dabilo) to prevent lumps from forming.",
-      "Add 1 tsp salt and 1 tbsp ghee for richness and flavor.",
-      "Continue stirring vigorously, mashing the mixture against the sides of the pan until it thickens and starts to pull away [15 min].",
-      "Check for doneness: the dhido should be smooth and firm, not sticky.",
-      "Serve immediately while hot, topped with additional ghee and accompanied by Gundruk Jhol."
+      "Measure and prepare all ingredients first: millet or buckwheat flour, water, ghee, salt, and pepper. Keep a whisk or sturdy spatula ready.",
+      "Bring 1 liter of water to a rolling boil in a heavy-bottomed pan over high heat. Once boiling, reduce the heat to medium.",
+      "Slowly add the flour in a steady stream while continuously stirring with a spatula or wooden spoon to avoid any lumps.",
+      "Add 1 tsp salt, 1 tbsp ghee, and 1/4 tsp black pepper. Continue stirring the mixture vigorously to incorporate the flour evenly.",
+      "Push the dough against the sides of the pan and fold it back into itself. Keep stirring until the dhido becomes thick, smooth, and begins to pull away from the pan [12-15 min].",
+      "Taste the dhido and adjust seasoning if needed. The finished texture should be firm, yet soft enough to swallow with the soup.",
+      "Spoon the hot dhido onto plates, add a drizzle of ghee on top, and serve immediately with Gundruk Jhol for an authentic Nepali meal."
     ],
     nepaliSteps: [
       "सबै सामग्री तयार गर्नुहोस्: कोदो वा फापरको पिठो, घिउ, नुन नाप्नुहोस् र १ लिटर पानी तयार राख्नुहोस्।",
@@ -143,7 +168,11 @@ export const mockRecipes = [
   },
   {
     id: "4", slug: "thakali-khana-set-recipe", title: "Thakali Khana Set", nepaliTitle: "थकाली खाना", category: "Main Dishes", prepTime: "1.5 hrs", difficulty: "Hard", region: "Himalayas",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/Thakali_Khana.jpg",
+    videoUrl: "",
+    seoTitle: "Thakali Khana Set Recipe - Traditional Nepalese Mountain Platter | Bhansa Nepal",
+    seoDescription: "Discover the classic Thakali Khana Set from Nepal's Mustang region. Rice, black lentils, potato curry, and timur chutney served with aromatic Jimbu-infused ghee.",
+    seoKeywords: "Thakali Khana, Thakali Khana Set recipe, Nepali mountain food, Mustang cuisine, Nepal platter, traditional Nepali meal",
     description: "An iconic, meticulously prepared platter of rice, black dal, curries, and pickles from the Mustang region.",
     ingredients: [
       "500g Rice",
@@ -306,7 +335,11 @@ export const mockRecipes = [
   },
   {
     id: "8", slug: "sukuti-fry-recipe", title: "Sukuti Fry", nepaliTitle: "सुकुटी फ्राई", category: "Main Dishes", prepTime: "20 mins", difficulty: "Easy", region: " पहाड (Hills)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Sukuti.jpg",
+    videoUrl: "",
+    seoTitle: "Sukuti Fry Recipe - Nepali Spicy Dried Meat | Bhansa Nepal",
+    seoDescription: "Sukuti Fry is a traditional Nepali dried buffalo meat dish tossed with tomatoes, onions, chilies and spices. Learn to make the chewy, smoky flavor at home.",
+    seoKeywords: "Sukuti Fry, Nepali dried meat, sukuti recipe, Nepal hill cuisine, spicy buffalo meat, traditional Nepali dish",
     description: "Spicy and chewy dry buffalo meat pan-fried with tomatoes, onions, and heavy spices.",
     ingredients: [
       "200g Dry meat (Sukuti)",
@@ -1065,7 +1098,11 @@ export const mockRecipes = [
   // --- TRADITIONAL / ETHNIC DISHES ---
   {
     id: "31", slug: "newari-samay-baji-recipe", title: "Newari Samay Baji", nepaliTitle: "समय बजी", category: "Traditional / Ethnic Food", prepTime: "2 hrs", difficulty: "Hard", region: "Newa (Kathmandu)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Newari_food.jpg",
+    videoUrl: "",
+    seoTitle: "Newari Samay Baji Recipe - Authentic Newa Festival Platter | Bhansa Nepal",
+    seoDescription: "Learn how to assemble Newari Samay Baji with chiura, choila, bara, eggs, and greens. This ceremonial Newa platter brings together celebration and tradition.",
+    seoKeywords: "Newari Samay Baji, Nepal festival platter, Newa cuisine, Newari food, Samay Baji recipe, Kathmandu traditional dishes",
     description: "A monumental festival platter representing a balanced diet, gods, and cosmos. The heart of Newari cuisine.",
     ingredients: [
       "4 cups Beaten rice (Chiura)",
@@ -1163,7 +1200,11 @@ export const mockRecipes = [
   },
   {
     id: "34", slug: "tharu-fish-curry-recipe", title: "Tharu Fish Curry", nepaliTitle: "थारु माछा को तरकारी", category: "Traditional / Ethnic Food", prepTime: "1 hr", difficulty: "Medium", region: "Tharu (Terai)",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/85/Khana.jpg",
+    videoUrl: "",
+    seoTitle: "Tharu Fish Curry Recipe - Mustard-Based Terai Fish Curry | Bhansa Nepal",
+    seoDescription: "A rich Tharu-style mustard fish curry from Nepal's Terai region. Learn to make the sharp, earthy gravy with river fish, garlic, mustard seeds, and green chilies.",
+    seoKeywords: "Tharu Fish Curry, Nepali fish curry, Terai cuisine, mustard fish curry, traditional Tharu recipe",
     description: "A spicy, rustic fish curry from the indigenous Tharu community, heavily reliant on mustard paste.",
     ingredients: [
       "1kg River fish",
@@ -1228,7 +1269,11 @@ export const mockRecipes = [
   },
   {
     id: "36", slug: "kinema-curry-recipe", title: "Kinema Curry", nepaliTitle: "किनेमा तरकारी", category: "Traditional / Ethnic Food", prepTime: "30 mins", difficulty: "Medium", isGrandmaRecipe: true, region: "Eastern Nepal",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/57/Kinema_food-nepal.jpg",
+    videoUrl: "",
+    seoTitle: "Kinema Curry Recipe - Eastern Nepali Fermented Soybean Curry | Bhansa Nepal",
+    seoDescription: "Kinema Curry is a pungent fermented soybean stew from eastern Nepal. Learn how to cook it with onions, tomatoes, turmeric, and traditional Himalayan spices.",
+    seoKeywords: "Kinema Curry, fermented soybean curry, eastern Nepal recipe, Nepali kinema, traditional Nepali stew",
     description: "A distinctly pungent curry made from fermented soybeans. An acquired taste similar to Japanese Natto.",
     ingredients: [
       "200g Kinema (Fermented soybeans)",
@@ -1240,18 +1285,20 @@ export const mockRecipes = [
     nutrition: { calories: 210, protein: "15g", carbs: "12g", fat: "12g" },
     baseServings: 4,
     steps: [
-      "Clean the pungent fermented beans (Kinema) by removing any grit.",
-      "Heat oil, sauté onions, green chilies, and garlic until golden [5 min].",
-      "Add tomatoes and spices, cook until they form a soft paste [5 min].",
-      "Add Kinema and fry on low heat to release its unique aroma [5 min].",
-      "Add half a cup of water, simmer for 10 minutes, and serve with Rice."
+      "Rinse kinema under cool water and remove any hard bits or debris from the fermented beans.",
+      "Heat oil in a pan, then sauté chopped onion, green chilies and garlic until soft and translucent [5 min].",
+      "Add chopped tomatoes, turmeric, cumin, and salt, cooking until the mixture becomes a thick paste [5 min].",
+      "Stir in kinema and fry on low heat, pressing it gently so the beans absorb the spice blend [5 min].",
+      "Add 1/2 cup of water and simmer gently until the curry thickens and the aroma mellows [10 min].",
+      "Taste and adjust salt, then serve with steamed rice or dhido."
     ],
     nepaliSteps: [
-      "किनेमालाई राम्ररी सफा गर्नुहोस्।",
-      "तेल तताएर प्याज, खुर्सानी र लसुन रातो नहुन्जेल भुट्नुहोस् [५ मिनेट]।",
-      "टमाटर र मसला हालेर लेदो बन्ने गरी पकाउनुहोस् [५ मिनेट]।",
-      "किनेमा हालेर यसको विशिष्ट वासना नआउन्जेल ५ मिनेट भुट्नुहोस् [५ मिनेट]।",
-      "आधा कप पानी हालेर १० मिनेट उमाल्नुहोस् र भातसँग खानुहोस्।"
+      "किनेमालाई चिसो पानीले धोएर भित्रको गिट्टी र दाना छुट्याउनुहोस्।",
+      "एक प्यानमा तेल तताएर काटेको प्याज, खुर्सानी र लसुन नरम र पारदर्शी नहुन्जेल भुट्नुहोस् [५ मिनेट]।",
+      "टमाटर, बेसार, जिरा र नुन हालेर मसला घना हुने गरी पकाउनुहोस् [५ मिनेट]।",
+      "किनेमा हालेर मध्यम आँचमा थिच्दै भुट्नुहोस् ताकि दालले मसला सोसियोस् [५ मिनेट]।",
+      "आधा कप पानी राखेर झोल झर्किन र वासना कम हुन १० मिनेटसम्म उमाल्नुहोस् [१० मिनेट]।",
+      "नुन मिलाएर भात वा ढिँडोसँग पस्कनुहोस्।"
     ],
     tips: ["The smell is incredibly strong, but the umami flavor is unparalleled once you get used to it."]
   },
@@ -1412,7 +1459,11 @@ export const mockRecipes = [
   },
   {
     id: "42", slug: "butter-tea-recipe", title: "Butter Tea (Suja)", nepaliTitle: "सुजा (बटर टिया)", category: "Drinks", prepTime: "15 mins", difficulty: "Medium", isGrandmaRecipe: true, region: "Himalayas",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/67/Butter_Milk_Tea.jpg",
+    videoUrl: "",
+    seoTitle: "Butter Tea (Suja) Recipe - Himalayan Yak Butter Tea | Bhansa Nepal",
+    seoDescription: "Butter Tea, or Suja, is a Himalayan staple made with yak butter, salt, and strong tea. Learn the traditional way to brew this high-energy mountain drink.",
+    seoKeywords: "Butter Tea recipe, Suja, Himalayan drink, yak butter tea, Nepal tea recipe, butter milk tea",
     description: "A salty, fatty pink tea made from churned yak butter. Essential for survival in extreme mountain cold.",
     ingredients: [
       "2 tbsp Strong black tea",

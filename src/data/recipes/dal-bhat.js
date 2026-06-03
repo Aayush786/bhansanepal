@@ -1,16 +1,24 @@
 export const dalBhatRecipe = {
   id: "1", slug: "easy-dal-bhat-recipe", title: "Dal Bhat Tarkari", nepaliTitle: "दाल भात तरकारी", category: "Main Dishes", prepTime: "45 mins", difficulty: "Medium", region: "All Nepal",
   image: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Dal_Bhat_Tarkari_2.jpg", rating: 4.9, reviews: 1042, videoUrl: "",
-  seoTitle: "How to Cook Nepali Dal Bhat - Authentic Easy Recipe | Bhansa Nepal",
-  seoDescription: "Learn how to cook Nepali Dal Bhat Tarkari with this authentic, easy-to-follow recipe. The ultimate everyday comfort food of Nepal.",
-  description: "The ultimate everyday Nepali meal consisting of steamed rice, lentil soup, and vegetable curry.",
+  seoTitle: "Authentic Nepali Dal Bhat Tarkari Recipe - Step-by-Step Dal Bhat Guide | Bhansa Nepal",
+  seoDescription: "Master Nepali Dal Bhat Tarkari with detailed, step-by-step instructions for fluffy rice, creamy spiced lentils, and hearty seasonal vegetable curry. Perfect for home cooks seeking authentic Nepal food.",
+  seoKeywords: "Dal Bhat recipe, Nepali Dal Bhat, Dal Bhat Tarkari, Nepali cuisine, step-by-step recipe, traditional Nepali food",
+  description: "A complete Dal Bhat Tarkari recipe with precise steps to cook rice, lentils, and vegetable curry in authentic Nepali style.",
   ingredients: [
     "500g Rice",
     "200g Yellow lentils (Dal)",
-    "300g Seasonal vegetable (Cauliflower/Potato)",
+    "1 medium Onion, finely chopped",
+    "4 cloves Garlic, minced",
+    "1 inch piece Ginger, grated",
+    "2-3 Green chilies, slit",
+    "300g Seasonal vegetables (Cauliflower/Potato)",
     "1 tsp Turmeric",
     "1 tsp Cumin seeds",
-    "1 tbsp Ghee"
+    "1 tbsp Ghee",
+    "2 tbsp Vegetable oil",
+    "Salt to taste",
+    "Fresh coriander for garnish"
   ],
   nepaliIngredients: [
     "५०० ग्राम चामल",
@@ -23,12 +31,14 @@ export const dalBhatRecipe = {
   nutrition: { calories: 350, protein: "8g", carbs: "65g", fat: "6g" },
   baseServings: 4,
   steps: [
-    "Start by washing the rice thoroughly under running water until the water runs clear. This removes any impurities and prevents the rice from becoming sticky.",
-    "In a large pot, add the washed rice and 1 liter of water (1:2 ratio). Bring to a boil over high heat, then reduce to medium heat and cover. Cook for 15-20 minutes until the rice is fluffy and all water is absorbed. Let it rest for 5 minutes before fluffing with a fork.",
-    "While the rice is cooking, wash the yellow lentils thoroughly. In a pressure cooker, add the lentils, 1/2 tsp turmeric, 1 tsp salt, and 4 cups of water. Cook on high pressure for 10-15 minutes until the lentils are soft and mushy.",
-    "For the tadka: Heat 1 tbsp ghee in a small pan over medium heat. Add 1 tsp cumin seeds and let them splutter for 30 seconds. Pour this hot ghee mixture over the cooked lentils and stir well.",
-    "Prepare the vegetable curry: Chop the seasonal vegetables into bite-sized pieces. Heat 2 tbsp oil in a pan, add 1/2 tsp cumin seeds, 1/2 tsp turmeric, and sauté for 1 minute. Add the vegetables and cook on medium heat for 10-15 minutes until tender, stirring occasionally.",
-    "To serve: Arrange the hot rice, dal, and vegetable curry on a traditional thali (plate). Add a dollop of ghee on top of the rice for extra flavor. Serve immediately while hot."
+    "Gather all ingredients and prepare your work area. Rinse the rice under running water until the water runs clear, then drain and set aside.",
+    "In a large pot, combine the rinsed rice with 1 liter of water. Bring to a boil over high heat, then lower the flame to medium and cover. Cook gently for 15-20 minutes until the rice is tender and the water is fully absorbed. Turn off the heat and let it sit covered for 5 minutes before fluffing with a fork.",
+    "Rinse the yellow lentils well under cold water. Place them in a pressure cooker with 4 cups of water, 1/2 tsp turmeric, 1 tsp salt, and a pinch of black pepper. Cook on high pressure for 10-12 minutes until the lentils are soft and easily mashed.",
+    "While the lentils cook, heat 2 tbsp oil in a pan over medium heat. Add finely chopped onions, grated ginger, and minced garlic. Sauté until the onions turn translucent and fragrant, about 4 minutes.",
+    "Add 1 tsp turmeric, 1 tsp cumin seeds, and the slit green chilies to the pan. Stir for 30 seconds to bloom the spices, then add the chopped seasonal vegetables. Cook the vegetables for 10-12 minutes until they are tender but still hold their shape.",
+    "Drain any excess water from the cooked lentils if needed, then mash them lightly with a spoon. In a small pan, heat 1 tbsp ghee and add 1 tsp cumin seeds. When the seeds crackle, pour the hot tadka over the dal and mix well.",
+    "Fold the tempered dal and the vegetable curry together on a serving plate, or keep them separate as in traditional Dal Bhat. Add a fresh sprig of coriander and a spoonful of ghee over the rice for an authentic finish.",
+    "Serve the Dal Bhat immediately with pickles, papad, or achar if available. Enjoy the balanced flavors of spice, richness, and freshness in every bite."
   ],
   nepaliSteps: [
     "सुरुमा चामललाई बगिरहेको पानीमा राम्ररी धुनुहोस् जबसम्म पानी सफा हुँदैन। यसले कुनै पनि अशुद्धता हटाउँछ र चामल चिप्लो हुनबाट रोक्छ।",
