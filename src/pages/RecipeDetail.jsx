@@ -259,7 +259,9 @@ export default function RecipeDetail() {
         <img 
           src={recipe.image} 
           alt={recipe.title} 
-          loading="lazy"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 via-gray-900/30 to-transparent"></div>

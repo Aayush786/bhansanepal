@@ -9,6 +9,8 @@ export default function RecipeCard({ recipe }) {
           src={recipe.image} 
           alt={recipe.title} 
           loading="lazy"
+          decoding="async"
+          fetchpriority="low"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>

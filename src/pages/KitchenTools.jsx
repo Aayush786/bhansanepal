@@ -94,6 +94,9 @@ export default function KitchenTools() {
               <img 
                 src={tool.image} 
                 alt={tool.name} 
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>

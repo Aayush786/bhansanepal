@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "images:prepare": "node scripts/download_and_optimize_images.cjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -30,8 +31,10 @@
     "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.4.0",
     "postcss": "^8.5.8",
+    "sharp": "^0.32.1",
     "tailwindcss": "^3.4.19",
     "vite": "^7.3.1",
+    "vite-plugin-imagemin": "^0.6.1",
     "vite-plugin-pwa": "^1.2.0"
   }
 }

@@ -935,7 +935,7 @@ export const mockRecipes = [
   },
   {
     id: "24", slug: "pua-recipe", title: "Pua", nepaliTitle: "पुवा", category: "Sweets", prepTime: "30 mins", difficulty: "Easy", region: " पहाड (Hills)",
-    image: "https://www.spiceupthecurry.com/wp-content/uploads/2014/04/batata-poha-recipe-1.jpg", videoUrl: "",
+    image: "/images/webp/d2259241-batata-poha-recipe-1.jpg.webp", videoUrl: "",
     description: "A quick sweet snack made by roasting rice flour in ghee and boiling it with milk and sugar.",
     ingredients: [
       "2 cups Coarse rice flour",
@@ -1003,7 +1003,7 @@ export const mockRecipes = [
   },
   {
     id: "27", slug: "gudpak-recipe", title: "Gudpak", nepaliTitle: "गुँदपाक", category: "Sweets", prepTime: "2 hrs", difficulty: "Hard", region: "Newa (Kathmandu)",
-    image: "https://english.onlinekhabar.com/wp-content/uploads/2021/07/gudpak-sold-in-plastic-bowl-1024x1024.jpg", videoUrl: "",
+    image: "/images/webp/c573a55b-gudpak-sold-in-plastic-bowl-1024x1024.jpg.webp", videoUrl: "",
     description: "An incredibly rich, fudge-like sweet made of milk, ghee, edible gum, and nuts. Given to new mothers for strength.",
     ingredients: [
       "2 liters Milk",
@@ -1391,7 +1391,7 @@ export const mockRecipes = [
   },
   {
     id: "40", slug: "kachila-recipe", title: "Kachila", nepaliTitle: "कचिला", category: "Traditional / Ethnic Food", prepTime: "15 mins", difficulty: "Medium", isGrandmaRecipe: true, region: "Newa (Kathmandu)",
-    image: "https://wfg32p.s3.amazonaws.com/media/dishes/kachila_7244-reg.jpg", videoUrl: "",
+    image: "/images/webp/3e370a52-kachila7244-reg.jpg.webp", videoUrl: "",
     description: "A daring delicacy of raw minced buffalo meat marinated heavily in spices and mustard oil.",
     ingredients: [
       "500g Minced buffalo meat",
@@ -1426,7 +1426,7 @@ export const mockRecipes = [
   // --- DRINKS ---
   {
     id: "41", slug: "masala-chiya-recipe", title: "Masala Chiya", nepaliTitle: "मसाला चिया", category: "Drinks", prepTime: "10 mins", difficulty: "Easy", isGrandmaRecipe: true, region: "All Nepal",
-    image: "https://junifoods.com/wp-content/uploads/2022/12/Nepali-Masala-Tea-Chiya-%E0%A4%A8%E0%A5%87%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A5%80-%E0%A4%9A%E0%A4%BF%E0%A4%AF%E0%A4%BE.jpg", videoUrl: "",
+    image: "/images/webp/978bc1a4-Nepali-Masala-Tea-Chiya-E0A4A8E0A587E0A4AAE0A4BEE0A4B2E0A580-E0A49AE0A4BFE0A4AFE0A4BE.jpg.webp", videoUrl: "",
     description: "The fuel of Nepal. Heavily spiced, milk-rich tea boiled aggressively to extract maximum flavor.",
     ingredients: [
       "2 tbsp CTC Black Tea leaves",

@@ -62,7 +62,13 @@ export default function Blog() {
 
       {/* Blog Header */}
       <div className="bg-brand-900 rounded-3xl p-12 text-center mb-16 relative overflow-hidden shadow-2xl">
-        <div className="absolute inset-0 bg-[url('https://upload.wikimedia.org/wikipedia/commons/9/94/Lunch_Platter%2C_Nepali_Lunch%2C_La_Cocina_Food_Conference.jpg')] opacity-10 mix-blend-overlay object-cover"></div>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/9/94/Lunch_Platter%2C_Nepali_Lunch%2C_La_Cocina_Food_Conference.jpg"
+          alt="Blog background"
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full opacity-10 mix-blend-overlay object-cover"
+        />
         <div className="relative z-10">
           <BookOpen className="w-12 h-12 text-brand-300 mx-auto mb-6" />
           <h1 className="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
@@ -100,6 +106,9 @@ export default function Blog() {
                 <img 
                   src={displayedPosts[0].image} 
                   alt={displayedPosts[0].title} 
+                  loading="lazy"
+                  decoding="async"
+                  fetchpriority="low"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-6 left-6 bg-brand-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase tracking-wider">
@@ -135,6 +144,9 @@ export default function Blog() {
               <img 
                 src={post.image} 
                 alt={post.title} 
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm text-brand-700 font-bold px-3 py-1 rounded-full text-xs shadow-sm">

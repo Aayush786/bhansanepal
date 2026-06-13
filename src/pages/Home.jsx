@@ -95,6 +95,9 @@ export default function Home() {
                   <img
                     src={recipe.image}
                     alt={recipe.title}
+                    loading="lazy"
+                    decoding="async"
+                    fetchpriority="low"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -142,12 +145,12 @@ export default function Home() {
                 <div className="w-full md:w-1/2 grid grid-cols-2 gap-4">
                   <div className="space-y-4 pt-8">
                     <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-                      <img src="https://i.postimg.cc/fLLhsdDD/2149033964.jpg" className="w-full h-full object-cover" alt="Sel Roti" />
+                      <img src="https://i.postimg.cc/fLLhsdDD/2149033964.jpg" loading="lazy" decoding="async" fetchpriority="low" className="w-full h-full object-cover" alt="Sel Roti" />
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                      <img src="https://i.postimg.cc/Gh6PJx6B/2148723505.jpg" className="w-full h-full object-cover" alt="Festive Food" />
+                      <img src="/images/webp/9958a265-2148723505.jpg.webp" loading="lazy" decoding="async" fetchpriority="low" className="w-full h-full object-cover" alt="Festive Food" />
                     </div>
                     <div className="aspect-square bg-brand-50 rounded-3xl flex items-center justify-center p-6 text-center shadow-inner">
                       <p className="text-brand-800 font-display font-black text-xl leading-none">50+ <br /> <span className="text-sm font-bold text-brand-600 uppercase tracking-tighter">Festive Dishes</span></p>
