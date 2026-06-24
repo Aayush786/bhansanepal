@@ -782,7 +782,7 @@ export const mockRecipes = [
   },
   {
     id: "19", slug: "nepali-pakoda-recipe", title: "Nepali Pakoda", nepaliTitle: "प पकौडा", category: "Snacks / Street Food", prepTime: "20 mins", difficulty: "Easy", region: "All Nepal",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&w=600&q=80", videoUrl: "",
     description: "Onion and vegetable fritters made with gram flour, widely eaten during rainy days with tea.",
     ingredients: [
       "3 large Onions",
@@ -799,11 +799,21 @@ export const mockRecipes = [
       "१ चम्चा अजवाइन बीउ"
     ],
     baseServings: 4,
-    steps: ["Mix thinly sliced onions with besan, spices, and a tiny bit of water to form a sticky mass.", "Drop spoonfuls into hot oil.", "Deep fry until dark golden and crispy."],
+    steps: [
+      "Peel and thinly slice the onions. In a large mixing bowl, combine the sliced onions, finely chopped green chilies, carom seeds (ajwain), turmeric powder, and salt. Massage the mixture with your hands for 2 minutes to release moisture from the onions.",
+      "Gradually add the gram flour (besan) to the bowl. Mix well with your hands. Add a very tiny splash of water (only 1-2 tablespoons) if the mixture is too dry. The batter should be thick and sticky, binding the onions together, not runny.",
+      "Heat vegetable oil in a deep frying pan (karai) over medium-high heat. To test if the oil is ready, drop a tiny piece of batter in; it should sizzle and rise immediately without burning.",
+      "Gently drop small spoonfuls (or use your fingers to shape rustic clumps) of the onion mixture into the hot oil. Avoid crowding the pan so they fry evenly.",
+      "Lower the heat slightly to medium and fry the pakodas for 4-5 minutes, turning them occasionally, until they are evenly cooked, dark golden, and crispy on all sides.",
+      "Use a slotted spoon to drain the pakodas and place them on paper towels to remove excess oil. Serve hot immediately with mint chutney, tomato sauce, or a steaming cup of Nepali masala tea."
+    ],
     nepaliSteps: [
-      "मसिनो गरी काटेको प्याजमा बेसन, मसला र थोरै पानी हालेर च्यापच्यापे बनाउनुहोस्।",
-      "सानो सानो डल्ला पारेर तातो तेलमा हाल्नुहोस्।",
-      "कडा र रातो नहुन्जेल तार्नुहोस्।"
+      "प्याजलाई ताछेर मसिनो लामो टुक्रामा काट्नुहोस्। एउटा ठूलो भाँडोमा काटेको प्याज, मसिनो गरी काटेको हरियो खुर्सानी, ज्वानो, बेसार र नुन राख्नुहोस्। हातले २ मिनेट जति मिच्नुहोस् ताकि प्याजको आफ्नै ओसिलोपन बाहिर निस्कियोस्।",
+      "अब भाँडोमा बिस्तारै बेसन (चनाको पिठो) थप्नुहोस् र हातले राम्ररी मिसाउनुहोस्। यदि मिश्रण धेरै सुख्खा भएमा मात्र १-२ चम्चा पानीको छिटका दिनुहोस्। घोल बाक्लो र च्यापच्यापे हुनुपर्छ, पातलो बग्ने खालको हुनुहुँदैन।",
+      "एउटा गहिरो कराहीमा मध्यम-ठूलो आँचमा तेल तताउनुहोस्। तेल तातेको जाँच्न थोरै घोल तेलमा हाल्नुहोस्; यदि यो तुरुन्तै बाहिर निस्कन्छ र भुटिन थाल्छ भने तेल तयार भयो।",
+      "हातले वा चम्चाको सहायताले प्याजको मिश्रणलाई सानो-सानो डल्लो बनाएर तातो तेलमा सावधानीपूर्वक हाल्नुहोस्। धेरै डल्ला एकैचोटी नहाल्नुहोस् ताकि सबै समान रूपमा पाक्न पाओस्।",
+      "आँचलाई मध्यममा घटाउनुहोस् र पकौडालाई कहिलेकाहीँ फर्काउँदै ४-५ मिनेटसम्म तार्नुहोस्, जबसम्म तिनीहरू सबैतिरबाट समान रूपमा गाढा सुनौलो र कुरकुरे हुँदैनन्।",
+      "झाँझरको सहायताले पकौडालाई तेलबाट निकाल्नुहोस् र अतिरिक्त तेल सोस्नका लागि पेपर टावलमा राख्नुहोस्। तातो-तातो पकौडालाई पुदिनाको अचार, टमाटरको सस वा तातो मसाला चियासँग पस्कनुहोस्।"
     ],
     tips: ["Don't add too much water; the moisture from the onions is usually enough."]
   },
@@ -945,12 +955,21 @@ export const mockRecipes = [
     ],
     nutrition: { calories: 350, protein: "6g", carbs: "48g", fat: "15g" },
     baseServings: 4,
-    steps: ["Heat a generous amount of ghee in a pan.", "Roast the coarse rice flour until golden brown and aromatic.", "Add sugar and pour warm milk over it.", "Cook until the liquid is absorbed and the mixture becomes crumbly and soft."],
+    steps: [
+      "In a deep pan or karai, heat 4 tablespoons of ghee over medium heat until it melts and becomes hot.",
+      "Add 2 cups of coarse rice flour to the hot ghee. Stir continuously and roast the flour on medium-low heat for 10-12 minutes. The flour should change color to light golden brown and release a rich, roasted aroma. Be careful not to burn it.",
+      "Once the flour is roasted, add 1/2 cup of sugar and stir well for 1 minute to distribute the sweetness.",
+      "Gently pour 1 liter of warm milk into the pan while stirring constantly to prevent lumps from forming. The mixture will start bubbling and absorbing the liquid.",
+      "Reduce the heat to low, cover the pan, and cook for 5-7 minutes. Stir occasionally. The rice flour will swell, absorbing all the milk, and the texture should become soft, moist, and slightly crumbly.",
+      "Turn off the heat, stir in cardamom powder or chopped nuts if desired, and let it sit covered for 2 minutes. Serve warm as a comforting traditional dessert or breakfast snack."
+    ],
     nepaliSteps: [
-      "कराइमा प्रसस्त घिउ तताउनुहोस्।",
-      "चामलको पिठोलाई रातो हुन्जेल र वासना आउन्जेल भुट्नुहोस्।",
-      "चिनी हाल्नुहोस् र माथिबाट तातो दूध खन्याउनुहोस्।",
-      "दूध सबै सोसिएर फुसफुसे वा नरम नहुन्जेल पकाउनुहोस्।"
+      "एउटा गहिरो कराहीमा ४ ठूलो चम्चा घिउ मध्यम आँचमा पग्लेर तातो नहुन्जेल तताउनुहोस्।",
+      "तातो घिउमा २ कप खस्रो चामलको पिठो हाल्नुहोस्। लगातार चलाउँदै मध्यम-सानो आँचमा १०-१२ मिनेटसम्म पिठो भुट्नुहोस्। चामलको पिठो हल्का सुनौलो खैरो रंगको हुनुपर्छ र यसबाट मीठो वासना आउनुपर्छ। पिठो डढ्न नदिनुहोस्।",
+      "पिठो राम्ररी भुटिसकेपछि, त्यसमा १/२ कप चिनी हाल्नुहोस् र मिठास राम्ररी मिलोस् भन्नका लागि १ मिनेटसम्म चलाउनुहोस्।",
+      "चलाउने क्रम जारी राख्दै कराहीमा बिस्तारै १ लिटर तातो दूध खन्याउनुहोस् ताकि पिठोको डल्ला नबनोस्। मिश्रणमा फोका आउन थाल्नेछ र दूध सोस्न थाल्नेछ।",
+      "आँचलाई सानो पार्नुहोस्, कराही छोप्नुहोस् र ५-७ मिनेटसम्म पकाउनुहोस्। बीच-बीचमा चलाइराख्नुहोस्। चामलको पिठोले सबै दूध सोसेर नरम, ओसिलो र फुसफुसे (crumbly) बनावटको हुनेछ।",
+      "ग्यास बन्द गर्नुहोस्, यदि मनपर्छ भने अलैंचीको धूलो वा काटेको काजु-बदाम मिसाउनुहोस् र २ मिनेटसम्म छोपेर राख्नुहोस्। तातो-तातो पुवालाई खाजा वा मिठाइको रूपमा पस्कनुहोस् र आनन्द लिनुहोस्।"
     ],
     tips: ["Use coarse rice flour (not fine powder) to get the right texture."]
   },
@@ -1039,12 +1058,21 @@ export const mockRecipes = [
     ],
     nutrition: { calories: 420, protein: "6g", carbs: "60g", fat: "18g" },
     baseServings: 4,
-    steps: ["Make a dough using flour and lentil paste.", "Pipe it through a cloth into complex, interlacing star or wheel patterns into hot oil.", "Deep fry until extremely crispy and dry.", "Dip quickly into a thick sugar syrup and set aside to cool and crystallize."],
+    steps: [
+      "Soak the black gram (urad dal) overnight, then grind it into a very smooth, thick paste. In a large bowl, mix the ground black gram paste, flour (maida), and melted ghee. Knead the mixture into a soft, smooth, yet pliable dough. Let the dough rest covered with a damp cloth for at least 2-3 hours to ferment slightly.",
+      "After resting, transfer the dough into a traditional piping cloth or piping bag fitted with a medium round nozzle. Ensure the dough is smooth and free of air bubbles for easy piping.",
+      "Heat a generous amount of ghee or oil in a wide, flat-bottomed frying pan (karai) over medium heat. To test, squeeze a small bit of dough; it should sizzle immediately.",
+      "Gently squeeze the piping bag to pipe the dough directly into the hot oil, creating intricate, interlacing concentric circles, star-like patterns, or classic wheel shapes. Fry on medium-low heat for 8-10 minutes, flipping once, until the lakhamari is crispy, crunchy, and a uniform light golden-brown color.",
+      "While frying, prepare the sugar syrup by boiling 2 cups of sugar with 1 cup of water in a separate saucepan until it reaches a thick, sticky, 'one-thread' consistency.",
+      "Remove the fried lakhamari from the oil, drain it well, and immediately dip it into the warm sugar syrup for 30-40 seconds. Lift the lakhamari out of the syrup, place it on a wire rack or greased tray, and let it cool completely until the sugar syrup crystallizes into a white, sweet outer crust."
+    ],
     nepaliSteps: [
-      "मैदा र मासको दालको पिठो हालेर पिठो तयार पार्नुहोस्।",
-      "कपडाको सहायताले तातो तेलमा विभिन्न बुट्टा बनाउँदै पिठो हाल्नुहोस्।",
-      "एकदमै कडा र कुरकुरे नहुन्जेल तार्नुहोस्।",
-      "चिनीको बाक्लो चास्नीमा एकछिन डुबाएर निकाल्नुहोस्।"
+      "मासको दाललाई रातभर भिजाउनुहोस्, त्यसपछि यसलाई मसिनो र बाक्लो लेदो (paste) हुने गरी पिस्नुहोस्। एउटा ठूलो भाँडोमा मैदा, मासको दालको लेदो र पग्लिएको घिउ मिसाउनुहोस्। मिश्रणलाई राम्ररी माडेर नरम पिठो (dough) तयार पार्नुहोस्। पिठोलाई भिजेको कपडाले छोपेर कम्तीमा २-३ घण्टा आराम गर्न दिनुहोस्।",
+      "आराम गरिसकेपछि, पिठोलाई प्वाल भएको विशेष सुती कपडा वा पाइपिङ ब्यागमा राख्नुहोस्। ब्याग भित्र हावाको फोका नहुने गरी पिठो सेट गर्नुहोस् ताकि बुट्टा बनाउँदा सजिलो होस्।",
+      "एउटा चौडा, थेप्चो पिँध भएको कराहीमा मध्यम आँचमा प्रसस्त घिउ वा तेल तताउनुहोस्। तेल तातेको जाँच्न थोरै पिठो चुहाउनुहोस्; पिठो सिसिल गर्दै तुरुन्तै माथि आउनुपर्छ।",
+      "तातो तेलमा सिधै पाइपिङ ब्याग थिचेर गोलाकार, तारा आकार वा परम्परागत लाखामरीको चक्र आकारको बुट्टा बनाउँदै पिठो हाल्नुहोस्। मध्यम-सानो आँचमा ८-१० मिनेटसम्म दुबै तर्फ फर्काउँदै तार्नुहोस्, जबसम्म यो कडा, कुरकुरे र सुनौलो खैरो हुँदैन।",
+      "लाखामरी तार्दै गर्दा, अर्को भाँडोमा २ कप चिनी र १ कप पानी उमालेर बाक्लो, च्यापच्यापे 'एक-तार' चास्नी (sugar syrup) तयार पार्नुहोस्।",
+      "लाखामरीलाई तेलबाट निकाल्नुहोस् र तुरुन्तै तातो चास्नीमा ३०-४० सेकेन्डसम्म डुबाउनुहोस्। त्यसपछि यसलाई जालीदार र्याक वा चिल्लो प्लेटमा राखेर सेलाउन दिनुहोस्, जबसम्म चास्नी सुकेर सेतो र कडा हुँदैन।"
     ],
     tips: ["Can be kept for months without spoiling."]
   },
@@ -1236,7 +1264,7 @@ export const mockRecipes = [
   },
   {
     id: "35", slug: "sherpa-stew-recipe", title: "Sherpa Stew (Shyakpa)", nepaliTitle: "शेर्पा स्ट्यु", category: "Traditional / Ethnic Food", prepTime: "1.5 hrs", difficulty: "Medium", region: "Himalayas",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=80", videoUrl: "",
     description: "A thick, hearty, calorie-dense noodle and vegetable stew meant to warm the body in freezing high altitudes.",
     ingredients: [
       "500g Wheat flour",
@@ -1330,7 +1358,7 @@ export const mockRecipes = [
   },
   {
     id: "38", slug: "tama-sadeko-recipe", title: "Tama Sadeko", nepaliTitle: "तामा साधेको", category: "Traditional / Ethnic Food", prepTime: "15 mins", difficulty: "Easy", isGrandmaRecipe: true, region: "Kathmandu Valley",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80", videoUrl: "",
     description: "A sharp, highly acidic cold salad of fermented bamboo shoots, mixed with raw mustard oil.",
     ingredients: [
       "200g Fermented bamboo shoots (Tama)",
@@ -1362,7 +1390,7 @@ export const mockRecipes = [
   },
   {
     id: "39", slug: "phagshapa-recipe", title: "Phagshapa", nepaliTitle: "फगशापा", category: "Traditional / Ethnic Food", prepTime: "1 hr", difficulty: "Medium", isGrandmaRecipe: false, region: "Eastern Nepal",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=600&q=80", videoUrl: "",
     description: "A fiery pork dish cooked with dry red chilies and radishes, popular in Limbu and Rai communities.",
     ingredients: [
       "1kg Pork belly",
@@ -1579,7 +1607,7 @@ export const mockRecipes = [
   },
   {
     id: "46", slug: "aloo-cauli-tarkari-recipe", title: "Aloo Cauli Tarkari", nepaliTitle: "आलु काउली", category: "Simple Home Foods", prepTime: "25 mins", difficulty: "Easy", isGrandmaRecipe: false, region: "All Nepal",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80", videoUrl: "",
     description: "The most common vegetable side dish in Nepal pairing potato and cauliflower with simple spices.",
     ingredients: [
       "2 medium Potatoes",
@@ -1609,7 +1637,7 @@ export const mockRecipes = [
   },
   {
     id: "47", slug: "momo-chutney-recipe", title: "Tomato Chutney (Golbheda ko Achar)", nepaliTitle: "गोलभेडाको अचार", category: "Simple Home Foods", prepTime: "10 mins", difficulty: "Easy", isGrandmaRecipe: true, region: "All Nepal",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?auto=format&fit=crop&w=600&q=80", videoUrl: "",
     seoTitle: "Nepali Momo Achar Recipe - Spicy Tomato & Sesame Chutney | Bhansa Nepal",
     description: "A spicy, tangy, and smoky condiment served alongside almost every Dal Bhat meal and every Momo plate.",
     ingredients: [
@@ -1668,7 +1696,7 @@ export const mockRecipes = [
   },
   {
     id: "49", slug: "jhaneko-dal-recipe", title: "Jhaneko Dal", nepaliTitle: "झानेको दाल", category: "Simple Home Foods", prepTime: "25 mins", difficulty: "Easy", isGrandmaRecipe: false, region: "All Nepal",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80", videoUrl: "",
     description: "Everyday lentil soup made extraordinary with a volatile hot oil tempering poured over it at the last second.",
     ingredients: [
       "1 cup Yellow or Red Lentils",
@@ -1698,7 +1726,7 @@ export const mockRecipes = [
   },
   {
     id: "50", slug: "wai-wai-sadeko-recipe", title: "Wai Wai Sadeko", nepaliTitle: "सुख्खा चाउचाउ", category: "Simple Home Foods", prepTime: "5 mins", difficulty: "Easy", isGrandmaRecipe: false, region: "All Nepal",
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dal_Bhat_Tarkari_Machha.jpg/800px-Dal_Bhat_Tarkari_Machha.jpg", videoUrl: "",
+    image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80", videoUrl: "",
     description: "The ultimate midnight snack for Nepali youth. Raw Wai Wai instant noodles mixed with raw veggies.",
     ingredients: [
       "2 packs Wai Wai noodles",
