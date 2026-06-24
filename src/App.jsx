@@ -8,6 +8,7 @@ import Festivals from "./pages/Festivals";
 import Sitemap from "./pages/Sitemap";
 import KitchenTools from "./pages/KitchenTools";
 import ScrollToTop from "./components/ScrollToTop";
+import Logo from "./components/Logo";
 import { useLanguage } from "./utils/LanguageContext";
 import { UtensilsCrossed, PlusCircle, ShoppingCart, BookOpen, Globe, List, Menu, X } from 'lucide-react';
 import { useState } from 'react';
@@ -35,8 +36,8 @@ function App() {
       <div className="min-h-screen bg-brand-50 w-full overflow-x-hidden flex flex-col">
         {/* Responsive Navbar */}
         <nav className="glass-panel sticky top-0 z-50 px-6 py-4 flex justify-between items-center shadow-lg">
-          <Link to="/" className="text-xl md:text-2xl font-display font-bold text-brand-700 flex items-center gap-2 hover:scale-105 transition-all shrink-0">
-            <span className="text-brand-900 drop-shadow-sm">🌶️</span> <span className="tracking-tight">Bhansa Nepal</span>
+          <Link to="/" className="flex items-center hover:scale-105 transition-all shrink-0" aria-label="Bhansa Nepal Home">
+            <Logo className="text-brand-700 hover:text-brand-900 transition-colors" width="130px" />
           </Link>
           
           {/* Desktop Nav */}
@@ -92,7 +93,10 @@ function App() {
         {/* Footer with Sitemap */}
         <footer className="glass-panel mt-20 py-8 border-t border-brand-100 px-6">
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 transition-all text-center md:text-left">
-            <div className="text-brand-900 font-display font-bold">© 2026 Bhansa Nepal</div>
+            <div className="flex items-center gap-3">
+              <Logo className="text-brand-900" width="100px" />
+              <span className="text-brand-800/70 text-xs font-bold">© 2026</span>
+            </div>
             <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-brand-600">
               <a href="/sitemap" className="hover:text-brand-900 flex items-center gap-1.5">
                 <List className="w-4 h-4" /> Recipes Index (Sitemap)

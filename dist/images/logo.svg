@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 160" width="100%" height="100%">
+  <!-- First line: bhansa -->
+  <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- b: stem -->
+    <path d="M 50,35 V 80" />
+    <!-- b: bowl -->
+    <path d="M 50,62 C 58,58 70,58 70,71 C 70,84 58,84 50,80" />
+    <!-- b: pan handle -->
+    <path d="M 50,60 C 35,53 20,53 10,56 C 5,57.5 5,61.5 10,61 C 20,60 35,60 50,63" />
+    
+    <!-- h: stem & arch -->
+    <path d="M 82,35 V 80" />
+    <path d="M 82,62 C 87,56 99,56 99,68 V 80" />
+    
+    <!-- a: bowl & stem -->
+    <path d="M 123,80 C 123,68 111,68 111,74 C 111,80 123,80 123,74 V 80" />
+    <path d="M 123,58 V 80" />
+    
+    <!-- n: stem & arch -->
+    <path d="M 137,58 V 80" />
+    <path d="M 137,62 C 142,56 154,56 154,68 V 80" />
+    
+    <!-- s: curve -->
+    <path d="M 174,60 C 166,58 162,63 166,67 C 171,70 174,72 171,78 C 168,82 162,80 160,77" />
+  </g>
+  
+  <!-- House (representing final a) - filled -->
+  <path d="M 183,63 L 198,49 L 213,63 H 209 V 80 H 204 V 72 C 204,69 198,69 198,72 V 80 H 193 V 63 Z" fill="currentColor" />
+  <!-- Chimney -->
+  <path d="M 205,56 V 42 H 209 V 59 Z" fill="currentColor" />
+  <!-- Smoke -->
+  <path d="M 207,37 C 205,32 209,29 207,24 C 205,19 209,16 207,11" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M 211,35 C 209,30 213,27 211,22 C 209,17 213,14 211,9" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+
+  <!-- Second line: nepal -->
+  <g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- n: stem & arch -->
+    <path d="M 82,106 V 128" />
+    <path d="M 82,110 C 87,104 99,104 99,116 V 128" />
+    
+    <!-- e: loop & curve -->
+    <path d="M 111,118 H 123 C 123,109 111,109 111,118 C 111,127 123,127 123,121" />
+    
+    <!-- p: stem & bowl -->
+    <path d="M 137,106 V 138" />
+    <path d="M 137,112 C 142,106 154,106 154,118 C 154,130 142,130 137,124" />
+    
+    <!-- a: bowl & stem -->
+    <path d="M 170,128 C 170,116 158,116 158,122 C 158,128 170,128 170,122 V 128" />
+    <path d="M 170,106 V 128" />
+    
+    <!-- l: stem -->
+    <path d="M 183,96 V 128" />
+  </g>
+</svg>
