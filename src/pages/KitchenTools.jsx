@@ -12,7 +12,7 @@ const TOOLS = [
     description: "A flat or slightly concave circular griddle, usually made of cast iron or aluminum, used for making flatbreads.",
     useCase: "Perfect for Sel Roti, Chapati, and Marini.",
     features: ["Heat retention", "Non-stick seasoning", "Heavy-duty"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Tawa_Iron_Pan.jpg/800px-Tawa_Iron_Pan.jpg"
+    image: "https://images.unsplash.com/photo-1604152135912-04a022e23696?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "karai",
@@ -21,7 +21,7 @@ const TOOLS = [
     description: "A deep, thick-walled cooking pot similar to a wok but with steeper sides. Essential for deep frying and curries.",
     useCase: "Used for deep-frying Sel Roti, making Goat Curry, and sautéing vegetables.",
     features: ["Distributes heat evenly", "Deep volume", "Strong handles"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Kadai_cooking_pot.jpg/800px-Kadai_cooking_pot.jpg"
+    image: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "chakla-belan",
@@ -30,7 +30,7 @@ const TOOLS = [
     description: "The pair of a circular rolling board (Chakla) and a rolling pin (Belan). Usually made of wood or marble.",
     useCase: "Used to roll out dough for Roti, Sel Roti, and various snacks.",
     features: ["Smooth surface", "Ergonomic pin", "Durable wood"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Chakla_belan.jpg/800px-Chakla_belan.jpg"
+    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "khal-musal",
@@ -39,7 +39,7 @@ const TOOLS = [
     description: "A traditional mortar and pestle used for crushing spices and making fresh ginger-garlic paste.",
     useCase: "Essential for fresh masalas in every Nepali curry.",
     features: ["Coarse grinding", "Stone or Metal", "Heavy base"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stone_mortar_and_pestle_01.jpg/800px-Stone_mortar_and_pestle_01.jpg"
+    image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=600&q=80"
   },
   {
     id: "deka",
@@ -48,7 +48,7 @@ const TOOLS = [
     description: "Large brass or copper pots used for slow-cooking rice, dals, or large quantities of meat during feasts.",
     useCase: "Ideal for slow-simmered dishes and cultural gatherings.",
     features: ["Brass construction", "Heat retention", "Large capacity"],
-    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Copper_pot_India.jpg/800px-Copper_pot_India.jpg"
+    image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=600&q=80"
   }
 ];
 

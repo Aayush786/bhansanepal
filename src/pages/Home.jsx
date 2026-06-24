@@ -5,7 +5,30 @@ import { useLanguage } from '../utils/LanguageContext';
 import { mockRecipes, RECIPE_CATEGORIES } from '../data/mockRecipes';
 import RecipeCard from '../components/RecipeCard';
 import IngredientSearch from '../components/IngredientSearch';
-import { UtensilsCrossed, Sparkles, Dices, Flame, TrendingUp } from 'lucide-react';
+import { UtensilsCrossed, Dices, Flame, TrendingUp } from 'lucide-react';
+
+const regionalSpots = [
+  {
+    name: 'Kathmandu Valley',
+    matchNames: ['Kathmandu Valley', 'Newa (Kathmandu)'],
+    image: 'https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    name: 'Terai',
+    matchNames: ['Terai', 'Tharu (Terai)'],
+    image: 'https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    name: 'Himalayas',
+    matchNames: ['Himalayas'],
+    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    name: ' पहाड (Hills)',
+    matchNames: [' पहाड (Hills)', 'Eastern Nepal'],
+    image: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=600&q=80',
+  }
+];
 
 export default function Home() {
   const navigate = useNavigate();
@@ -119,69 +142,31 @@ export default function Home() {
           </section>
         )}
 
-        {/* Featured Festival Dish Spotlight */}
-        {!isSearching && (
-          <section className="relative group cursor-pointer" onClick={() => navigate('/festivals')}>
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-brand-600/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="relative bg-white border border-brand-100 rounded-[3rem] p-8 md:p-12 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-50 rounded-full blur-3xl -mr-20 -mt-20 opacity-50"></div>
-
-              <div className="flex flex-col md:flex-row items-center gap-10 relative z-10">
-                <div className="w-full md:w-1/2">
-                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 text-orange-700 font-bold text-xs uppercase tracking-widest mb-6">
-                    <Sparkles className="w-3 h-3" /> Cultural Spotlight
-                  </div>
-                  <h2 className="text-4xl font-display font-black text-slate-900 mb-6 leading-tight">
-                    Taste the <span className="text-orange-600">Tradition</span>
-                  </h2>
-                  <p className="text-lg text-gray-600 font-medium mb-8 leading-relaxed">
-                    Every Nepali festival is defined by its flavors. From the crispy <span className="text-brand-700 font-bold">Sel Roti</span> of Tihar to the spicy <span className="text-brand-700 font-bold">Choila</span> of Indra Jatra.
-                  </p>
-                  <button className="bg-brand-600 text-white font-bold px-8 py-3.5 rounded-2xl shadow-lg shadow-brand-600/20 hover:scale-105 transition-all">
-                    Explore Festival Guide
-                  </button>
-                </div>
-
-                <div className="w-full md:w-1/2 grid grid-cols-2 gap-4">
-                  <div className="space-y-4 pt-8">
-                    <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg transform -rotate-3 hover:rotate-0 transition-transform duration-500">
-                      <img src="https://i.postimg.cc/fLLhsdDD/2149033964.jpg" loading="lazy" decoding="async" fetchpriority="low" className="w-full h-full object-cover" alt="Sel Roti" />
-                    </div>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-500">
-                      <img src="/images/webp/9958a265-2148723505.jpg.webp" loading="lazy" decoding="async" fetchpriority="low" className="w-full h-full object-cover" alt="Festive Food" />
-                    </div>
-                    <div className="aspect-square bg-brand-50 rounded-3xl flex items-center justify-center p-6 text-center shadow-inner">
-                      <p className="text-brand-800 font-display font-black text-xl leading-none">50+ <br /> <span className="text-sm font-bold text-brand-600 uppercase tracking-tighter">Festive Dishes</span></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* Regional Explore Section */}
         {!isSearching && (
-          <section>
+          <section className="mb-12">
             <h2 className="text-3xl font-display font-bold text-gray-900 mb-8">{t('region_title')}</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['Kathmandu Valley', 'Terai', 'Himalayas', ' पहाड (Hills)'].map((region, idx) => (
+              {regionalSpots.map((spot, idx) => (
                 <button
                   key={idx}
                   onClick={() => {
                     setActiveCategory('All');
-                    setFilteredRecipes(mockRecipes.filter(r => r.region === region));
+                    setFilteredRecipes(mockRecipes.filter(r => spot.matchNames.includes(r.region)));
                     setIsSearching(true);
                   }}
-                  className="group relative h-32 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className="group relative h-32 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-full"
                 >
-                  <div className="absolute inset-0 bg-brand-800 transition-colors group-hover:bg-brand-600"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                    <span className="text-white font-bold font-display text-lg">{region}</span>
-                    <span className="text-brand-200 group-hover:text-white group-hover:translate-x-1 transition-all">→</span>
+                  <img 
+                    src={spot.image} 
+                    alt={spot.name} 
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-900/30 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-left">
+                    <span className="text-white font-bold font-display text-base md:text-lg drop-shadow">{spot.name}</span>
+                    <span className="text-white/80 bg-white/20 backdrop-blur-sm p-1 px-2.5 rounded-full group-hover:bg-brand-600 group-hover:text-white transition-all text-sm">→</span>
                   </div>
                 </button>
               ))}
